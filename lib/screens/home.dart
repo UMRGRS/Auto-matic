@@ -7,19 +7,19 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(31, 1, 185, 1),
-        leading: Icon(Icons.logo_dev),
-        title: Text("Auto-matic", style: TextStyle(color: Colors.white),),
+        leading: const Icon(Icons.logo_dev),
+        title: const Text("Auto-matic"),
       ),
       body: Scaffold(
-        backgroundColor: Color.fromRGBO(224, 221, 207, 1),
+        backgroundColor: Config.firstColor,
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Color.fromRGBO(31, 1, 185, 1),
+      bottomNavigationBar: const BottomAppBar(
         child: Center(
-          child: Text("Auto-matic", style: TextStyle(color: Colors.white),),
+          child: Text(
+            "Auto-matic",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        height: 50,
       ),
     );
   }
