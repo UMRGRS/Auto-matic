@@ -16,7 +16,7 @@ class App extends StatelessWidget {
             titleTextStyle: const TextStyle(color: Colors.white, fontSize: 25)),
         bottomAppBarTheme: BottomAppBarTheme(
             color: Config.secondColor, elevation: 3, height: 50),
-      ),
+      fontFamily: 'Helvetica'),
       debugShowCheckedModeBanner: false,
       home: const Home(),
     );
