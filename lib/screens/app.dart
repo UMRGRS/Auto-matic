@@ -8,15 +8,16 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Auto-matic",
       theme: ThemeData(
-        useMaterial3: true,
-        appBarTheme: AppBarTheme(
-            iconTheme: const IconThemeData(color: Colors.white),
-            color: Config.secondColor,
-            elevation: 3,
-            titleTextStyle: const TextStyle(color: Colors.white, fontSize: 25)),
-        bottomAppBarTheme: BottomAppBarTheme(
-            color: Config.secondColor, elevation: 3, height: 50),
-      fontFamily: 'Helvetica'),
+          useMaterial3: true,
+          appBarTheme: AppBarTheme(
+              iconTheme: const IconThemeData(color: Colors.white),
+              color: Config.secondColor,
+              elevation: 3,
+              titleTextStyle:
+                  const TextStyle(color: Colors.white, fontSize: 25)),
+          bottomAppBarTheme: BottomAppBarTheme(
+              color: Config.secondColor, elevation: 3, height: 50),
+          fontFamily: 'Helvetica'),
       debugShowCheckedModeBanner: false,
       home: const Home(),
     );
