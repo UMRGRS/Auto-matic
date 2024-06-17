@@ -1,7 +1,4 @@
 import 'package:auto_matic/config/config.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Profile extends StatelessWidget {
   Profile({super.key, this.username = "John Doe"});
@@ -33,55 +30,50 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Config.firstColor,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              child: Text(
-                "Bienvenido $username",
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-              ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            child: Text(
+              "Bienvenido $username",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
-            const UserCard(),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Expanded(
-                    flex: 2,
-                    child: Text(
-                      "Lista de vehículos",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                    ),
+          ),
+          const UserCard(),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Expanded(
+                  flex: 2,
+                  child: Text(
+                    "Lista de vehículos",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
-                  Expanded(
-                    child: Container(
-                      alignment: Alignment.centerRight,
-                      child: ImportantTextButton(
-                      text: "Añadir vehículo",
-                      onPressed: () {},
-                      iconPath: "assets/pages/profile/icons/add.svg"),
-                    ),
-                  )
-                ],
-              ),
+                ),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    child: ImportantTextButton(
+                    text: "Añadir vehículo",
+                    onPressed: () {},
+                    iconPath: "assets/pages/profile/icons/add.svg"),
+                  ),
+                )
+              ],
             ),
-            SizedBox(
-              height: vehicules.length * 110,
-              child: VehiculeList(
-                vehicules: vehicules,
-              ),
+          ),
+          SizedBox(
+            height: vehicules.length * 110,
+            child: VehiculeList(
+              vehicules: vehicules,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

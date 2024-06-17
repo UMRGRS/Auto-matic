@@ -61,9 +61,13 @@ class VehiculeList extends StatelessWidget {
                               const Text(
                                 "Modelo",
                                 style: TextStyle(fontWeight: FontWeight.bold),
+
                               ),
                               Text(
                                 "${vehicules[index]["modelo"]}",
+                                maxLines: 3,
+                                overflow: TextOverflow.clip,
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),

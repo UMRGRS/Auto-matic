@@ -9,3 +9,7 @@ export 'profile/widgets/infoCard.dart';
 export 'profile/widgets/vehiculeList.dart';
 export 'profile/widgets/stateIndicator.dart';
 export 'profile/widgets/profileInputText.dart';
+
+//Vehicule realtime data
+export 'vehiculeRD/vehiculeRD.dart';
+export 'vehiculeRD/widgets/vehiculeDataCard.dart';
