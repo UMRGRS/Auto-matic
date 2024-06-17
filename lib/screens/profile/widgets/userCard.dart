@@ -16,40 +16,51 @@ class UserCard extends StatelessWidget {
     return Card(
       color: Colors.white,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Flex(
           mainAxisSize: MainAxisSize.min,
-          direction: isScreenWide ? Axis.horizontal: Axis.vertical,
+          direction: isScreenWide ? Axis.horizontal : Axis.vertical,
           children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
                   "assets/images/default.jpg",
                 )),
+            const SizedBox(
+              width: 10,
+              height: 10,
+            ),
             Flexible(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InfoCard(
-                        width: double.infinity,
-                        label: "Nombre",
-                        text: firstname),
-                    InfoCard(
-                        width: double.infinity,
-                        label: "Apellido",
-                        text: lastname),
-                    InfoCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InfoCard(
+                      width: double.infinity, label: "Nombre", text: firstname),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  InfoCard(
                       width: double.infinity,
-                      label: "Correo electronico",
-                      text: email,
-                      iconPath:
-                      "assets/pages/profile/icons/email.svg",
-                    )
-                  ],
-                ),
+                      label: "Apellido",
+                      text: lastname),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  InfoCard(
+                    width: double.infinity,
+                    label: "Correo electronico",
+                    text: email,
+                    iconPath: "assets/pages/profile/icons/email.svg",
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  ImportantTextButton(iconPath: "assets/pages/profile/icons/edit.svg",
+                    text: "Cambiar contraseña",
+                    onPressed: () {},
+                  )
+                ],
               ),
             ),
           ],

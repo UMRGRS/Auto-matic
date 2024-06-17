@@ -11,8 +11,12 @@ class Home extends StatelessWidget {
         title: const Text("Auto-matic"),
       ),
       body: Container(
-        child: Profile(),
+        height: double.infinity,
+        width: double.infinity,
         color: Config.firstColor,
+        child: SingleChildScrollView(
+          child: Profile(),
+        ),
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(

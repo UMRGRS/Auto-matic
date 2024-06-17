@@ -15,15 +15,31 @@ export 'package:auto_matic/widgets/widgets.dart';
 import 'package:auto_matic/utils/utils.dart';
 export 'package:auto_matic/utils/utils.dart';
 
-class Config{
-    //Color palette
-    static Color firstColor = const Color.fromRGBO(224, 221, 207, 1);
-    static Color secondColor = const Color.fromRGBO(31, 1, 185, 1);
-    static Color thirdColor = const Color.fromRGBO(153, 143, 199, 1);
-    static Color fourthColor = const Color.fromRGBO(71, 68, 72, 1);
-    static Color fifthColor = const Color.fromRGBO(186, 45, 11, 1);
-    //Special colors
-    static Color trafficLightGreen = const Color.fromRGBO(237, 102, 92, 1);
-    static Color trafficLightYellow = const Color.fromRGBO(240, 220, 91, 1);
-    static Color trafficLightRed = const Color.fromRGBO(79, 240, 141, 1);
+enum vehiculeState{OK,Danger,Urgent}
+
+class Config {
+  //Color palette
+  static Color firstColor = const Color.fromRGBO(224, 221, 207, 1);
+  static Color secondColor = const Color.fromRGBO(31, 1, 185, 1);
+  static Color thirdColor = const Color.fromRGBO(153, 143, 199, 1);
+  static Color fourthColor = const Color.fromRGBO(71, 68, 72, 1);
+  static Color fifthColor = const Color.fromRGBO(186, 45, 11, 1);
+
+  static List<Map<String, dynamic>> vehiculeState = [
+    {
+      "text": "OK",
+      "iconPath": "assets/pages/profile/icons/check.svg",
+      "color": const Color.fromRGBO(79, 240, 141, 1),
+    },
+    {
+      "text": "¡Atencion!",
+      "iconPath": "assets/pages/profile/icons/danger.svg",
+      "color": const Color.fromRGBO(240, 220, 91, 1),
+    },
+    {
+      "text": "¡Peligro!",
+      "iconPath": "assets/pages/profile/icons/cross.svg",
+      "color": const Color.fromRGBO(237, 102, 92, 1),
+    },
+  ];
 }
