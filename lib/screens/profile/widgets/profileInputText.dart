@@ -6,8 +6,8 @@ class ProfileInputText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+      decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(width: 2, color: Colors.grey))),
       controller: TextEditingController(text: info),
     );

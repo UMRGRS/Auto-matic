@@ -25,11 +25,8 @@ class VehiculeList extends StatelessWidget {
                         clipBehavior: Clip.hardEdge,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20)),
-                        child: Expanded(
-                          flex: 1,
-                          child: Image.asset(
-                            "assets/images/default.jpg",
-                          ),
+                        child: Image.asset(
+                          "assets/images/default.jpg",
                         ),
                       ),
                       const SizedBox(
