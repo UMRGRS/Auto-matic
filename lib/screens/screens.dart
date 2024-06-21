@@ -5,11 +5,14 @@ export 'home.dart';
 //Profile
 export 'profile/profile.dart';
 export 'profile/widgets/userCard.dart';
-export 'profile/widgets/infoCard.dart';
 export 'profile/widgets/vehiculeList.dart';
 export 'profile/widgets/stateIndicator.dart';
-export 'profile/widgets/profileInputText.dart';
 
 //Vehicule realtime data
 export 'vehiculeRD/vehiculeRD.dart';
 export 'vehiculeRD/widgets/vehiculeDataCard.dart';
+export 'vehiculeRD/widgets/vehiculeIndicators.dart';
+export 'vehiculeRD/widgets/RPM_KPM.dart';
+export 'vehiculeRD/widgets/TempBattery.dart';
+export 'vehiculeRD/widgets/ServicesCard.dart';
+export 'vehiculeRD/widgets/FailureCodesCard.dart';

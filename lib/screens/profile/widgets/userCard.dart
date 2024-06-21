@@ -36,27 +36,33 @@ class UserCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InfoCard(
-                      width: double.infinity, label: "Nombre", text: firstname),
+                    width: double.infinity,
+                    label: "Nombre",
+                    text: firstname,
+                    trailingPath: "assets/pages/profile/icons/edit.svg",
+                  ),
                   const SizedBox(
                     height: 3,
                   ),
                   InfoCard(
                       width: double.infinity,
                       label: "Apellido",
-                      text: lastname),
+                      text: lastname,
+                      trailingPath: "assets/pages/profile/icons/edit.svg"),
                   const SizedBox(
                     height: 3,
                   ),
                   InfoCard(
-                    width: double.infinity,
-                    label: "Correo electronico",
-                    text: email,
-                    iconPath: "assets/pages/profile/icons/email.svg",
-                  ),
+                      width: double.infinity,
+                      label: "Correo electronico",
+                      text: email,
+                      iconPath: "assets/pages/profile/icons/email.svg",
+                      trailingPath: "assets/pages/profile/icons/edit.svg"),
                   const SizedBox(
                     height: 3,
                   ),
-                  ImportantTextButton(iconPath: "assets/pages/profile/icons/edit.svg",
+                  ImportantTextButton(
+                    iconPath: "assets/pages/profile/icons/edit.svg",
                     text: "Cambiar contraseña",
                     onPressed: () {},
                   )

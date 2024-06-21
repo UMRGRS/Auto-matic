@@ -25,7 +25,7 @@ class ImportantTextButton extends StatelessWidget {
             direction: Axis.horizontal,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SvgPicture.asset(iconPath, color: Colors.white,),
+              SvgPicture.asset(iconPath, color: Colors.white,width: 20,),
               SizedBox(width: responsive.wp(0.5),),
               Text(
                 text,

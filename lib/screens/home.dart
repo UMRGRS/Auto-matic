@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
         color: Config.firstColor,
         width: double.infinity,
         height: double.infinity,
-        child: const VehiculeRD(),
+        child: VehiculeRD(),
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(
