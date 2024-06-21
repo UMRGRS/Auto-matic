@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
       ),
       body: Scaffold(
         backgroundColor: Config.firstColor,
+
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(
