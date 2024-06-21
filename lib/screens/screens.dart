@@ -1,5 +1,4 @@
 export 'app.dart';
 export 'home.dart';
+export 'landing.dart';
 
-
-//Comprobando que git funcione correctamente 2
