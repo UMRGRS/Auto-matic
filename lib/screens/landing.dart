@@ -1,5 +1,6 @@
 import 'package:auto_matic/config/config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Landing extends StatelessWidget {
   const Landing({super.key});
@@ -49,7 +50,7 @@ class Landing extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                margin: const EdgeInsets.all(2.0),
+                margin: const EdgeInsets.all(20.0),
                 color: Colors.black,
                 width: MediaQuery.of(context).size.width / 6 - 20,
                 height: MediaQuery.of(context).size.width / 6 - 20,
@@ -62,7 +63,8 @@ class Landing extends StatelessWidget {
                   children: [
                     const Text(
                       "Nombre del producto",
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     const Text(
                       "Texto de descripción del producto",
@@ -71,7 +73,8 @@ class Landing extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         backgroundColor: Color(0xFFBA2D0B),
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 50),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -97,50 +100,149 @@ class Landing extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              children: List.generate(4, (index) {
-                return FractionallySizedBox(
-                  widthFactor: 0.5,
-                  heightFactor: 0.5,
-                  child: Container(
-                    margin: const EdgeInsets.all(2.0),
-                    color: Color(0xFF998FC7),
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(2.0),
-                          color: Colors.black,
-                          width: MediaQuery.of(context).size.width / 10,
-                          height: MediaQuery.of(context).size.width / 10,
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.all(2.0),
-                            child: const Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Nombre del producto",
-                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    "Bottom text",
-                                    style: TextStyle(fontSize: 8),
-                                  ),
-                                ],
-                              ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(20.0),
+                  color: const Color(0xff998fc7),
+
+                  child: Row(
+                    children: [
+                      Container( //reemplazar container por imagen
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.black,
+                        width: 90,
+                        height: 90,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(2.0),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Servicio 1",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
-                          ),
+                            Text(
+                              "Texto de descripción del servicio 1",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                );
-              }),
-            ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(20.0),
+                  color: const Color(0xff998fc7),
+
+                  child: Row(
+                    children: [
+                      Container( //reemplazar container por imagen
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.black,
+                        width: 90,
+                        height: 90,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(2.0),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Servicio 2",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Texto de descripción del servicio 2",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(20.0),
+                  color: const Color(0xff998fc7),
+
+                  child: Row(
+                    children: [
+                      Container(//reemplazar container por imagen
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.black,
+                        width: 90,
+                        height: 90,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(2.0),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Servicio 3",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Texto de descripción del servicio 3",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(20.0),
+                  color: const Color(0xff998fc7),
+
+                  child: Row(
+                    children: [
+                      Container( //reemplazar container por imagen
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.black,
+                        width: 90,
+                        height: 90,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(2.0),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Servicio 4",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Texto de descripción del servicio 4",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
