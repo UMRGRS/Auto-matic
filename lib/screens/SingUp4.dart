@@ -9,17 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Auto-Matic'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.cancel),
-              onPressed: () {
-                // Lógica para cancelar
-              },
-            ),
-          ],
-        ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: LayoutBuilder(
@@ -173,3 +162,4 @@ class _AccessWithSocialMediaSection extends StatelessWidget {
     );
   }
 }
+
