@@ -8,41 +8,6 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.logo_dev),
-        title: const Text("Auto-matic"),
-        actions: [
-          TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-            onPressed: () {},
-            child: const Text(
-              "Iniciar sesión",
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          const SizedBox(width: 8),
-          TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-            onPressed: () {},
-            child: const Text(
-              "Registrarse",
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -246,14 +211,6 @@ class Landing extends StatelessWidget {
               ],
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        child: Center(
-          child: Text(
-            "Auto-matic",
-            style: TextStyle(color: Colors.white),
-          ),
         ),
       ),
     );
