@@ -29,8 +29,8 @@ class Landing extends StatelessWidget {
                     children: [
                       const Text(
                         "Nombre del producto",
-                        style:
-                            TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       const Text(
                         "Texto de descripción del producto",
@@ -72,10 +72,10 @@ class Landing extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(20.0),
                     color: const Color(0xff998fc7),
-        
                     child: Row(
                       children: [
-                        Container( //reemplazar container por imagen
+                        Container(
+                          //reemplazar container por imagen
                           margin: const EdgeInsets.all(10.0),
                           color: Colors.black,
                           width: 90,
@@ -106,10 +106,10 @@ class Landing extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(20.0),
                     color: const Color(0xff998fc7),
-        
                     child: Row(
                       children: [
-                        Container( //reemplazar container por imagen
+                        Container(
+                          //reemplazar container por imagen
                           margin: const EdgeInsets.all(10.0),
                           color: Colors.black,
                           width: 90,
@@ -144,10 +144,10 @@ class Landing extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(20.0),
                     color: const Color(0xff998fc7),
-        
                     child: Row(
                       children: [
-                        Container(//reemplazar container por imagen
+                        Container(
+                          //reemplazar container por imagen
                           margin: const EdgeInsets.all(10.0),
                           color: Colors.black,
                           width: 90,
@@ -178,10 +178,10 @@ class Landing extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(20.0),
                     color: const Color(0xff998fc7),
-        
                     child: Row(
                       children: [
-                        Container( //reemplazar container por imagen
+                        Container(
+                          //reemplazar container por imagen
                           margin: const EdgeInsets.all(10.0),
                           color: Colors.black,
                           width: 90,
