@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:auto_matic/config/config.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white, // Fondo blanco
+      color: Config.firstColor, // Fondo blanco
       padding: EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start, // Alinear al principio
