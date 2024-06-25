@@ -27,8 +27,8 @@ class Landing extends StatelessWidget {
                     children: [
                       const Text(
                         "Nombre del producto",
-                        style:
-                            TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       const Text(
                         "Texto de descripción del producto",
