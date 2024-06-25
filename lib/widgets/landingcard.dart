@@ -1,9 +1,11 @@
 import 'package:auto_matic/config/config.dart';
 
 class Landingcard extends StatefulWidget {
-  const Landingcard({super.key, required this.titulo, required this.texto});
+  const Landingcard({super.key, required this.titulo, required this.texto, required this.imagen});
   final String titulo;
   final String texto;
+  final String imagen;
+
 
   @override
   State<Landingcard> createState() => _LandingcardState();
@@ -18,7 +20,7 @@ class _LandingcardState extends State<Landingcard> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.developer_board),
+              leading: Image.asset(widget.imagen),
               title: Text(widget.titulo),
               subtitle: Text(widget.texto),
             ),

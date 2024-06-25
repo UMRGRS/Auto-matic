@@ -66,14 +66,34 @@ class Landing extends StatelessWidget {
             ),
             const Row(
               children: [
-                Expanded(child: Landingcard(titulo: 'Servicio 1',texto: 'Descripcion del servicio 1',)), //new widget
-                Expanded(child: Landingcard(titulo: 'Servicio 2',texto: 'Descripcion del servicio 2',)),
+                Expanded(
+                    child: Landingcard(
+                  titulo: 'Servicio 1',
+                  texto: 'Descripcion del servicio 1',
+                  imagen: 'imagenes/default.png',
+                )), //new widget
+                Expanded(
+                    child: Landingcard(
+                  titulo: 'Servicio 2',
+                  texto: 'Descripcion del servicio 2',
+                  imagen: 'imagenes/default.png',
+                )),
               ],
             ),
             const Row(
               children: [
-                Expanded(child: Landingcard(titulo: 'Servicio 3',texto: 'Descripcion del servicio 3',)),
-                Expanded(child: Landingcard(titulo: 'Servicio 4',texto: 'Descripcion del servicio 4',)),
+                Expanded(
+                    child: Landingcard(
+                  titulo: 'Servicio 3',
+                  texto: 'Descripcion del servicio 3',
+                  imagen: 'imagenes/default.png',
+                )),
+                Expanded(
+                    child: Landingcard(
+                  titulo: 'Servicio 4',
+                  texto: 'Descripcion del servicio 4',
+                  imagen: 'imagenes/default.png',
+                )),
               ],
             ),
           ],
