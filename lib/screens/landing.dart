@@ -66,7 +66,7 @@ class Landing extends StatelessWidget {
             ),
             const Row(
               children: [
-                Expanded(child: Landingcard(titulo: 'Servicio 1',texto: 'Descripcion del servicio 1',)),
+                Expanded(child: Landingcard(titulo: 'Servicio 1',texto: 'Descripcion del servicio 1',)), //new widget
                 Expanded(child: Landingcard(titulo: 'Servicio 2',texto: 'Descripcion del servicio 2',)),
               ],
             ),
