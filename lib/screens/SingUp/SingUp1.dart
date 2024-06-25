@@ -1,25 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:auto_matic/config/config.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class Singup1 extends StatelessWidget {
+  const Singup1({super.key});
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: MyBody(),
-      ),
-    );
-  }
-}
-
-class MyBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white, // Fondo blanco
+      color: Config.firstColor, // Fondo blanco
       padding: EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start, // Alinear al principio
@@ -41,9 +28,9 @@ class MyBody extends StatelessWidget {
             onPressed: () {
               // Lógica para el botón "Continuar"
             },
-            child: Text('Continuar', style: TextStyle(color: Colors.white)), // Letra blanca
+            child: Text('Continuar', style: TextStyle(color: Config.firstColor)), // Letra blanca
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF208454), // Color hexadecimal #208454
+              backgroundColor: Config.secondColor, // Color hexadecimal #208454
             ),
           ),
           SizedBox(height: 32.0),
@@ -58,6 +45,7 @@ class MyBody extends StatelessWidget {
   }
 }
 
+
 class TimelineWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -66,7 +54,7 @@ class TimelineWidget extends StatelessWidget {
       children: [
         Container( // Fondo compartido para CircleAvatar y Text
           decoration: BoxDecoration(
-            color: Color(0xFFBA2D0B), // Color hexadecimal #BA2D0B
+            color: Config.fifthColor, // Color hexadecimal #BA2D0B
             borderRadius: BorderRadius.circular(10),
           ),
           padding: EdgeInsets.all(4),
@@ -79,7 +67,7 @@ class TimelineWidget extends StatelessWidget {
               Text(
                 'Código Único', // Etiqueta de la sección actual
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Config.firstColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -89,7 +77,7 @@ class TimelineWidget extends StatelessWidget {
         Expanded(child: Divider(color: Colors.grey)),
         Container( // Fondo compartido para CircleAvatar y Text
           decoration: BoxDecoration(
-            color: Color(0xFFFFFF), // Color hexadecimal #FFFFFF
+            color: Config.firstColor, // Color hexadecimal #FFFFFF
             borderRadius: BorderRadius.circular(10),
           ),
           padding: EdgeInsets.all(4),
@@ -112,7 +100,7 @@ class TimelineWidget extends StatelessWidget {
         Expanded(child: Divider(color: Colors.grey)),
         Container( // Fondo compartido para CircleAvatar y Text
           decoration: BoxDecoration(
-            color: Color(0xFFFFFF), // Color hexadecimal #FFFFFF
+            color: Config.firstColor, // Color hexadecimal #FFFFFF
             borderRadius: BorderRadius.circular(10),
           ),
           padding: EdgeInsets.all(4),
