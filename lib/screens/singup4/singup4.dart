@@ -1,7 +1,4 @@
 import 'package:auto_matic/config/config.dart';
-<<<<<<<< HEAD:lib/screens/signup4/signup4.dart
-========
-import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(MyApp());
