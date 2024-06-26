@@ -12,13 +12,14 @@ class Home extends StatelessWidget {
       ),
       body: Container(
         color: Config.firstColor,
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Singup1(),
-            //ConstructorBody()
-          ]
-        ),
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                  CreateAccountSection(),
+                  SizedBox(width: 40),
+                  AccessWithSocialMediaSection(),
+                  SizedBox(width: 40),
+                  TimelineWidget(currentPage: 4),
+        ]),
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(

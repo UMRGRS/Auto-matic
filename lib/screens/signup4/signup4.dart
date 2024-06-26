@@ -1,39 +1,7 @@
 import 'package:auto_matic/config/config.dart';
 
-class ConstructorBody extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return Row(
-                children: [
-                  // Sección de creación de cuenta
-                  Expanded(
-                    flex: 2,
-                    child: _CreateAccountSection(),
-                  ),
-                  SizedBox(width: 40),
-                  // Sección de acceso con redes sociales
-                  Expanded(
-                    flex: 1,
-                    child: _AccessWithSocialMediaSection(),
-                  ),
-                ],
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 /// Sección de creación de cuenta
-class _CreateAccountSection extends StatelessWidget {
+class CreateAccountSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -109,7 +77,7 @@ class _CreateAccountSection extends StatelessWidget {
             // Tu lógica aquí
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF208454), // Cambia el valor hexadecimal aquí
+            backgroundColor: Config.secondColor, // Cambia el valor hexadecimal aquí
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -129,7 +97,7 @@ class _CreateAccountSection extends StatelessWidget {
 }
 
 // Sección de acceso con redes sociales
-class _AccessWithSocialMediaSection extends StatelessWidget {
+class AccessWithSocialMediaSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
