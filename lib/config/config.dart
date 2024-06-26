@@ -3,6 +3,12 @@ library config.globals;
 import 'package:flutter/material.dart';
 export 'package:flutter/material.dart';
 
+import 'package:auto_matic/widgets/widgets.dart';
+export 'package:auto_matic/widgets/widgets.dart';
+
+import 'package:flutter/cupertino.dart';
+export 'package:flutter/cupertino.dart' hide RefreshCallback;
+
 import 'package:auto_matic/screens/screens.dart';
 export 'package:auto_matic/screens/screens.dart';
 
