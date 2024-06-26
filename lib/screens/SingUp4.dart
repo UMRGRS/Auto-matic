@@ -1,3 +1,4 @@
+import 'package:auto_matic/config/config.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -42,11 +44,11 @@ class _CreateAccountSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Crear cuenta', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue)),
+        Text('Crear cuenta', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Config.secondColor)),
         SizedBox(height: 20),
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Config.firstColor,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
@@ -113,7 +115,7 @@ class _CreateAccountSection extends StatelessWidget {
             // Tu lógica aquí
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF208454), // Cambia el valor hexadecimal aquí
+            backgroundColor: Config.fifthColor, // Cambia el valor hexadecimal aquí
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -121,7 +123,7 @@ class _CreateAccountSection extends StatelessWidget {
           child: Text(
             'Continuar',
             style: TextStyle(
-              color: Color(0xFFFFFFFF), // Cambia el valor hexadecimal aquí
+              color: Config.firstColor, // Cambia el valor hexadecimal aquí
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
