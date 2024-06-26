@@ -1,4 +1,6 @@
 export 'app.dart';
 export 'home.dart';
-export 'landing.dart';
 
+//Exports de landing
+export 'landing/widgets/landingcard.dart';
+export 'landing/landing.dart';
