@@ -1,45 +1,4 @@
 import 'package:auto_matic/config/config.dart';
-<<<<<<<< HEAD:lib/screens/signup4/signup4.dart
-========
-import 'package:flutter/cupertino.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return Row(
-                children: [
-                  // Sección de creación de cuenta
-                  Expanded(
-                    flex: 2,
-                    child: _CreateAccountSection(),
-                  ),
-                  SizedBox(width: 40),
-                  // Sección de acceso con redes sociales
-                  Expanded(
-                    flex: 1,
-                    child: _AccessWithSocialMediaSection(),
-                  ),
-                ],
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
->>>>>>>> origin/AMinjarez:lib/screens/singup4/singup4.dart
 
 /// Sección de creación de cuenta
 class CreateAccountSection extends StatelessWidget {
@@ -118,11 +77,7 @@ class CreateAccountSection extends StatelessWidget {
             // Tu lógica aquí
           },
           style: ElevatedButton.styleFrom(
-<<<<<<<< HEAD:lib/screens/signup4/signup4.dart
             backgroundColor: Config.secondColor, // Cambia el valor hexadecimal aquí
-========
-            backgroundColor: Config.fifthColor, // Cambia el valor hexadecimal aquí
->>>>>>>> origin/AMinjarez:lib/screens/singup4/singup4.dart
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
