@@ -77,7 +77,7 @@ flutter:
   fonts:
     - family: Helvetica
       fonts:
-        - asset: /assets/fonts/Helvetica.ttf
+        - asset: assets/fonts/Helvetica.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
