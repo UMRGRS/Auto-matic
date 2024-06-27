@@ -20,7 +20,7 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 0 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 0 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
@@ -51,7 +51,7 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 1 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 1 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
@@ -62,7 +62,7 @@ class TimelineWidget extends StatelessWidget {
                         ? Colors.deepOrange
                         : Colors.deepOrange,
                     radius: avatarSize,
-                    child: Text('1', style: TextStyle(fontSize: textSize)),
+                    child: Text('2', style: TextStyle(fontSize: textSize)),
                   ),
                   Text(
                     'Código Único',
@@ -82,7 +82,7 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 2 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 2 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),

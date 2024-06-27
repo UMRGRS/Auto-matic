@@ -11,8 +11,8 @@ class Home extends StatelessWidget {
         title: const Text("Auto-matic"),
       ),
       body: Container(
-        color: Config.firstColor,
-        child: SinguUp4(),
+        child: SinguUp4 (
+        ),
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(

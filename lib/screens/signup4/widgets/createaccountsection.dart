@@ -1,31 +1,24 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:flutter/cupertino.dart';
 /// Sección de creación de cuenta
 class CreateAccountSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Crear cuenta', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Config.secondColor)),
         SizedBox(height: 20),
         Container(
           decoration: BoxDecoration(
-            color: Config.firstColor,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 3),
-              ),
-            ],
           ),
-          padding: EdgeInsets.all(20),
+
           child: Column(
             children: [
               Row(
                 children: [
-                  Expanded(
+                  Expanded  (
                     child: TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Nombre',
@@ -67,27 +60,35 @@ class CreateAccountSection extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child:
+                      ElevatedButton(
+                        onPressed: () {
+                          // Tu lógica aquí
+                        },
+                        style: ElevatedButton.styleFrom(
+
+                          backgroundColor: Config.sixColor, // Cambia el valor hexadecimal aquí
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          'Continuar',
+                          style: TextStyle(
+                            color: Config.firstColor, // Cambia el valor hexadecimal aquí
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                  ),
+                ],
+              ),
             ],
-          ),
-        ),
-        SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            // Tu lógica aquí
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Config.secondColor, // Cambia el valor hexadecimal aquí
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          child: Text(
-            'Continuar',
-            style: TextStyle(
-              color: Config.firstColor, // Cambia el valor hexadecimal aquí
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
       ],

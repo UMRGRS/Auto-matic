@@ -7,30 +7,30 @@ class SinguUp4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Config.firstColor, // Fondo blanco
-      padding: EdgeInsets.all(16.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            // Sección de creación de cuenta
-            Expanded(
-              flex: 2,
-              child: CreateAccountSection(),
-            ),
-            SizedBox(width: 40),
-            // Sección de acceso con redes sociales
-            Expanded(
-              flex: 1,
-              child: AccessWithSocialMediaSection(),
-            ),
-            Expanded(
-              flex: 2,
-              child: TimelineWidget(currentPage: 4),
-            ),
-            SizedBox(width: 40),
-            //ConstructorBody()
-          ]
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Sección de creación de cuenta
+                Expanded(
+                  flex: 2,
+                  child: CreateAccountSection(),
+                ),
+                // Sección de acceso con redes sociales
+                Expanded(
+                  flex: 1,
+                  child: AccessWithSocialMediaSection(),
+                ),
+                //ConstructorBody()
+              ]
+          ),
+          TimelineWidget(currentPage: 0)
+        ],
       ),
     );
   }

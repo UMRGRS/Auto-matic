@@ -6,7 +6,6 @@ class SinguUp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Config.firstColor, // Fondo blanco
       padding: EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start, // Alinear al principio
@@ -34,7 +33,7 @@ class SinguUp1 extends StatelessWidget {
             ),
           ),
           SizedBox(height: 32.0),
-          TimelineWidget(currentPage: 1), // Línea de tiempo
+          TimelineWidget(currentPage: 0), // Línea de tiempo
           SizedBox(height: 16.0),
 
           SizedBox(height: 16.0),
