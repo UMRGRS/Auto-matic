@@ -19,11 +19,11 @@ enum vehiculeState{OK,Danger,Urgent}
 
 class Config {
   //Color palette
-  static const Color firstColor = const Color.fromRGBO(224, 221, 207, 1);
-  static const Color secondColor = const Color.fromRGBO(31, 1, 185, 1);
-  static const Color thirdColor = const Color.fromRGBO(153, 143, 199, 1);
-  static const Color fourthColor = const Color.fromRGBO(71, 68, 72, 1);
-  static const Color fifthColor = const Color.fromRGBO(186, 45, 11, 1);
+  static const Color firstColor = Color.fromRGBO(224, 221, 207, 1);
+  static const Color secondColor = Color.fromRGBO(31, 1, 185, 1);
+  static const Color thirdColor = Color.fromRGBO(153, 143, 199, 1);
+  static const Color fourthColor = Color.fromRGBO(71, 68, 72, 1);
+  static const Color fifthColor = Color.fromRGBO(186, 45, 11, 1);
 
   static List<Map<String, dynamic>> vehiculeState = [
     {

@@ -1,10 +1,10 @@
 import 'package:auto_matic/config/config.dart';
 
 class Profile extends StatelessWidget {
-  Profile({super.key, this.username = "John Doe"});
-  final String username;
+  Profile({super.key});
 
   //Get this data from firebase
+  final String username = "John Doe";
   final List<Map<String, dynamic>> vehicules = [
     {
       "apodo": "Mi carrito uwu",
@@ -30,51 +30,69 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-            child: Text(
-              "Bienvenido $username",
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
-          ),
-          const UserCard(),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const Expanded(
-                  flex: 2,
-                  child: Text(
-                    "Lista de vehículos",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      body: Container(
+        color: Config.firstColor,
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 5),
+                      child: Text(
+                        "Bienvenido $username",
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 30),
+                      ),
+                    ),
+                    const UserCard(),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Expanded(
+                            flex: 2,
+                            child: Text(
+                              "Lista de vehículos",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                              child: ImportantTextButton(
+                                  text: "Añadir vehículo",
+                                  onPressed: () {},
+                                  iconPath:
+                                      "assets/pages/profile/icons/add.svg"),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: vehicules.length * 110,
+                      child: VehiculeList(
+                        vehicules: vehicules,
+                      ),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: ImportantTextButton(
-                    text: "Añadir vehículo",
-                    onPressed: () {},
-                    iconPath: "assets/pages/profile/icons/add.svg"),
-                  ),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: vehicules.length * 110,
-            child: VehiculeList(
-              vehicules: vehicules,
-            ),
-          ),
-        ],
+              ),
+            );
+          },
+        ),
       ),
+      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 }

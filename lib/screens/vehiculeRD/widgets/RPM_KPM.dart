@@ -12,9 +12,12 @@ class RPMKPM extends StatefulWidget {
 class _RPMKPMState extends State<RPMKPM> {
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
+    Responsive responsive = Responsive.of(context);
+    bool isScreenWide = responsive.width >= 600;
+    return Flex(
+      direction: isScreenWide ? Axis.horizontal:Axis.vertical,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
         Card(
           child: Padding(
             padding: EdgeInsets.all(8.0),

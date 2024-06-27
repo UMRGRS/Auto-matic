@@ -13,7 +13,6 @@ class ImportantTextButton extends StatelessWidget {
       onPressed: onPressed,
       padding: EdgeInsets.zero,
       child: Container(
-
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         decoration: BoxDecoration(
             color: Config.fifthColor,

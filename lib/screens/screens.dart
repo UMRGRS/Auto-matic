@@ -8,7 +8,7 @@ export 'profile/widgets/userCard.dart';
 export 'profile/widgets/vehiculeList.dart';
 export 'profile/widgets/stateIndicator.dart';
 
-//Vehicule realtime data
+//Vehicule realtime data/
 export 'vehiculeRD/vehiculeRD.dart';
 export 'vehiculeRD/widgets/vehiculeDataCard.dart';
 export 'vehiculeRD/widgets/vehiculeIndicators.dart';

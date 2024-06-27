@@ -5,35 +5,36 @@ class VehiculeRD extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return SingleChildScrollView(
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                      padding: const EdgeInsets.all(10),
-                      height: constraints.maxHeight,
-                      child: const VehiculeDataCard()),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  flex: 8,
-                  child: SizedBox(
-                    height: constraints.maxHeight,
-                    child: const VehiculeIndicators(),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      body: Container(
+        color: Config.firstColor,
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: const VehiculeIndicators(),
+              ),
+            );
+          },
+        ),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const [
+            SizedBox(
+              height: 100,
+            ),
+            VehiculeDataCard(),
+            SizedBox(
+              height: 50,
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 }

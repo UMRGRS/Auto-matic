@@ -36,27 +36,26 @@ class UserCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InfoCard(
-                    width: double.infinity,
                     label: "Nombre",
                     text: firstname,
+                    leadingPath: "assets/pages/profile/icons/person.svg",
                     trailingPath: "assets/pages/profile/icons/edit.svg",
                   ),
                   const SizedBox(
                     height: 3,
                   ),
                   InfoCard(
-                      width: double.infinity,
                       label: "Apellido",
                       text: lastname,
+                      leadingPath: "assets/pages/profile/icons/person.svg",
                       trailingPath: "assets/pages/profile/icons/edit.svg"),
                   const SizedBox(
                     height: 3,
                   ),
                   InfoCard(
-                      width: double.infinity,
                       label: "Correo electronico",
                       text: email,
-                      iconPath: "assets/pages/profile/icons/email.svg",
+                      leadingPath: "assets/pages/profile/icons/email.svg",
                       trailingPath: "assets/pages/profile/icons/edit.svg"),
                   const SizedBox(
                     height: 3,

@@ -6,24 +6,22 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.logo_dev),
-        title: const Text("Auto-matic"),
-      ),
+      appBar: const CustomAppBar(),
       body: Container(
         color: Config.firstColor,
-        width: double.infinity,
-        height: double.infinity,
-        child: VehiculeRD(),
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        child: Center(
-          child: Text(
-            "Auto-matic",
-            style: TextStyle(color: Colors.white),
-          ),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                //Change later for the appropriate screen
+                child: Container(),
+              ),
+            );
+          },
         ),
       ),
+      bottomNavigationBar: const CustomBottomAppBar()
     );
   }
 }
