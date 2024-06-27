@@ -1,4 +1,4 @@
-import 'package:auto_matic/config/config.dart';
+import 'package:auto_matic/config/config.dart';   
 
 class TimelineWidget extends StatelessWidget {
   final int currentPage;

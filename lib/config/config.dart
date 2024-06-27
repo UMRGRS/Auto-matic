@@ -3,18 +3,11 @@ library config.globals;
 import 'package:flutter/material.dart';
 export 'package:flutter/material.dart';
 
-//Se importa y exporta la pantalla de Sign Up1
-import 'package:auto_matic/screens/signup1/signup1.dart';
-export 'package:auto_matic/screens/signup1/signup1.dart';
-
-////Se importa y exporta la pantalla de Sign Up4
-import 'package:auto_matic/screens/signup4/signup4.dart';
-export 'package:auto_matic/screens/signup4/signup4.dart';
-
 ////Se importa y exporta los widgets generales
 import 'package:auto_matic/widgets/widgets.dart';
 export 'package:auto_matic/widgets/widgets.dart';
 
+////Se importa y exporta las pantallas
 import 'package:auto_matic/screens/screens.dart';
 export 'package:auto_matic/screens/screens.dart';
 

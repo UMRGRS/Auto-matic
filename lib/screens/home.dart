@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
       ),
       body: Container(
         color: Config.firstColor,
-        child: Scaffold(),
+        child: SinguUp4(),
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(
