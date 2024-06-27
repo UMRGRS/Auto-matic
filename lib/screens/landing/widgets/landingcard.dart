@@ -17,22 +17,14 @@ class Landingcard extends StatefulWidget {
 class _LandingcardState extends State<Landingcard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      margin: EdgeInsets.all(10),
-      child: Card.filled(
-        color: const Color(0xff998fc7),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Expanded(
-              child: ListTile(
-                leading: Image.asset(widget.imagen),
-                title: Text(widget.titulo),
-                subtitle: Text(widget.texto),
-              ),
-            )
-          ],
+    return Card.filled(
+      color: const Color(0xff998fc7),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: ListTile(
+          leading: Image.asset(widget.imagen),
+          title: Text(widget.titulo),
+          subtitle: Text(widget.texto),
         ),
       ),
     );
