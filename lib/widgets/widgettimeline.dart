@@ -1,4 +1,4 @@
-import 'package:auto_matic/config/config.dart';   
+import 'package:auto_matic/config/config.dart';
 
 class TimelineWidget extends StatelessWidget {
   final int currentPage;
@@ -20,6 +20,37 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
+                color: currentPage == 0 ? Config.fifthColor : Config.firstColor,
+                borderRadius: BorderRadius.circular(9),
+              ),
+              padding: EdgeInsets.all(4),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: currentPage == 0
+                        ? Colors.deepOrange
+                        : Colors.deepOrange,
+                    radius: avatarSize,
+                    child: Text('1', style: TextStyle(fontSize: textSize)),
+                  ),
+                  Text(
+                    'Código Único',
+                    style: TextStyle(
+                      color:
+                          currentPage == 0 ? Colors.white : Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: textSize,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          //...
+          Flexible(
+            flex: 1,
+            child: Container(
+              decoration: BoxDecoration(
                 color: currentPage == 1 ? Config.fifthColor : Config.firstColor,
                 borderRadius: BorderRadius.circular(9),
               ),
@@ -37,7 +68,7 @@ class TimelineWidget extends StatelessWidget {
                     'Código Único',
                     style: TextStyle(
                       color:
-                          currentPage == 1 ? Colors.white : Colors.black,
+                      currentPage == 1 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: textSize,
                     ),
@@ -51,42 +82,14 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: Config.firstColor,
+                color: currentPage == 2 ? Config.fifthColor : Config.firstColor,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
               child: Row(
                 children: [
                   CircleAvatar(
-                    backgroundColor: Colors.deepOrange,
-                    radius: avatarSize,
-                    child: Text('2', style: TextStyle(fontSize: textSize)),
-                  ),
-                  Text(
-                    'Datos del Vehiculo',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: textSize,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          //...
-          Flexible(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: currentPage == 4 ? Config.fifthColor : Config.firstColor,
-                borderRadius: BorderRadius.circular(9),
-              ),
-              padding: EdgeInsets.all(4),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: currentPage == 4
+                    backgroundColor: currentPage == 2
                         ? Colors.deepOrange
                         : Colors.deepOrange,
                     radius: avatarSize,
@@ -95,7 +98,7 @@ class TimelineWidget extends StatelessWidget {
                   Text(
                     'Datos del usuario',
                     style: TextStyle(
-                      color: currentPage == 4 ? Colors.white : Colors.black,
+                      color: currentPage == 2 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: textSize,
                     ),
