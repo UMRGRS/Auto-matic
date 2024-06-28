@@ -1,4 +1,5 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TimelineWidget extends StatelessWidget {
   final int currentPage;
@@ -8,7 +9,6 @@ class TimelineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final screenWidth = constraints.maxWidth;
-      final screenHeight = constraints.maxHeight;
 
       // Ajusta el tamaño de los elementos según el tamaño de la pantalla
       final avatarSize = screenWidth * 0.024;
@@ -17,6 +17,7 @@ class TimelineWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Flexible(
+            flex: 1,
             child: Container(
               decoration: BoxDecoration(
                 color: currentPage == 0 ? Config.fifthColor : Colors.white,
@@ -36,7 +37,7 @@ class TimelineWidget extends StatelessWidget {
                     'Código Único',
                     style: TextStyle(
                       color:
-                          currentPage == 0 ? Colors.white : Colors.black,
+                      currentPage == 0 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: textSize,
                     ),
@@ -45,6 +46,7 @@ class TimelineWidget extends StatelessWidget {
               ),
             ),
           ),
+          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
           //...
           Flexible(
             flex: 1,
@@ -76,7 +78,8 @@ class TimelineWidget extends StatelessWidget {
               ),
             ),
           ),
-          //...
+          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
+
           Flexible(
             flex: 1,
             child: Container(
@@ -102,12 +105,14 @@ class TimelineWidget extends StatelessWidget {
                       fontSize: textSize,
                     ),
                   ),
+
                 ],
               ),
             ),
           ),
+
         ],
       );
-    });
-  }
+      });
+    }
 }
