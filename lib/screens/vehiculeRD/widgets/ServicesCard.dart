@@ -11,7 +11,7 @@ class ServicesCard extends StatefulWidget {
 class _ServiceCardState extends State<ServicesCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 350,
       child: Card(
           child: Padding(
@@ -20,33 +20,66 @@ class _ServiceCardState extends State<ServicesCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Servicios",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Text("Kilometros hasta el siguiente servicio"),
+            const Text(
+              "Progreso hasta el siguiente servicio (KM)",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+              ),
+            ),
             FAProgressBar(
               maxValue: 100,
               border: Border.all(width: 0.1),
-              currentValue: 50,
+              currentValue: 87,
               displayText: '%',
+              displayTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.white,
+              ),
               progressColor: Colors.green,
             ),
-            Text(
+            const Text(
               "Restante: 3780KM",
-              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+              ),
             ),
-            Text("Dias hasta el siguiente servicio"),
+            const Divider(
+              height: 10,
+              thickness: 1,
+              color: Colors.grey,
+            ),
+            const Text(
+              "Progreso hasta el siguiente servicio (Días)",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+              ),
+            ),
             FAProgressBar(
               maxValue: 100,
               border: Border.all(width: 0.1),
-              currentValue: 50,
+              currentValue: 69,
               displayText: '%',
+              displayTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.white,
+              ),
               progressColor: Colors.green,
             ),
-            Text(
-              "Restante: 90 dias",
-              textAlign: TextAlign.center,
+            const Text(
+              "Restante: 84 dias",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+              ),
             ),
             ImportantTextButton(
               text: "Reiniciar servicio",

@@ -16,19 +16,19 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Codigos de falla",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          Container(
+          SizedBox(
             height: 300,
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
                 return Card(
                   child: ListTile(
-                    leading: Text("Codigo:"),
-                    title: Text("P02345"),
+                    leading: const Text("Codigo:"),
+                    title: const Text("P02345"),
                     trailing: IconButton(icon: Icon(Icons.search), onPressed: () {  },),
                   ),
                 );

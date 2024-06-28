@@ -31,9 +31,11 @@ class VehiculeIndicators extends StatelessWidget {
           const Column(
             children: [
               TempBattery(),
+              SizedBox(height: 10,),
               RPMKPM(),
             ],
           ),
+          const SizedBox(height: 10,),
           // FAILURE CODES / SERVICES
           Builder(builder: (_){
             if(isScreenWide){
@@ -48,6 +50,7 @@ class VehiculeIndicators extends StatelessWidget {
               return const Column(
                 children: [
                   ServicesCard(),
+                  SizedBox(height: 10,),
                   FailureCodesCard()
                 ],
               );
