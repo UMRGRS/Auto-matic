@@ -17,7 +17,6 @@ class TimelineWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Flexible(
-            flex: 1,
             child: Container(
               decoration: BoxDecoration(
                 color: currentPage == 0 ? Config.fifthColor : Colors.white,
