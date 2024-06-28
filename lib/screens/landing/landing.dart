@@ -68,15 +68,15 @@ class Landing extends StatelessWidget {
               children: [
                 Expanded(
                     child: Landingcard(
-                  titulo: 'Servicio 1',
+                  titulo: 'Temperatura',
                   texto: 'Descripcion del servicio 1',
-                  imagen: 'imagenes/default.png',
+                  imagen: 'assets/pages/landing/icons/temperatura.svg',
                 )), //new widget
                 Expanded(
                     child: Landingcard(
-                  titulo: 'Servicio 2',
+                  titulo: 'Velocidad',
                   texto: 'Descripcion del servicio 2',
-                  imagen: 'imagenes/default.png',
+                  imagen: 'assets/pages/landing/icons/velocidad.svg',
                 )),
               ],
             ),
@@ -84,15 +84,15 @@ class Landing extends StatelessWidget {
               children: [
                 Expanded(
                     child: Landingcard(
-                  titulo: 'Servicio 3',
+                  titulo: 'Voltaje de la batería',
                   texto: 'Descripcion del servicio 3',
-                  imagen: 'imagenes/default.png',
+                  imagen: 'assets/pages/landing/icons/voltaje.svg',
                 )),
                 Expanded(
                     child: Landingcard(
-                  titulo: 'Servicio 4',
+                  titulo: 'Revoluciones',
                   texto: 'Descripcion del servicio 4',
-                  imagen: 'imagenes/default.png',
+                  imagen: 'assets/pages/landing/icons/rpm.svg',
                 )),
               ],
             ),
