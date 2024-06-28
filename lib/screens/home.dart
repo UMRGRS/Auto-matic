@@ -1,4 +1,5 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:auto_matic/screens/signup/widgets/indice.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,7 +12,16 @@ class Home extends StatelessWidget {
         title: const Text("Auto-matic"),
       ),
       body: Scaffold(
-        backgroundColor: Config.firstColor,
+        body: Container( child: Wrap(
+          children: [
+            Signup(),
+            SizedBox(
+              height: 500,
+            ),
+            TimelineWidget(currentPage: 0)
+          ],
+        )),
+
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Center(
