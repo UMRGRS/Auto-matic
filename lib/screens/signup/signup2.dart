@@ -27,17 +27,7 @@ class Signup extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
 
-                Ink(
-                  decoration: const ShapeDecoration(
-                    color: Colors.black87,
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    icon: const Icon(Icons.question_mark),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ),
+                InkButton(),
               ],
             ),
             SizedBox(
@@ -52,18 +42,22 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            TextButton(
-              onPressed: () => {},
-              style: TextButton.styleFrom(
-                backgroundColor: Config.sixColor, // Asegúrate de que Config.sixColor esté definido
-              ),
-              child: Text(
-                "Registrar",
-                style: TextStyle(
-                  color: Colors.black,
+            Container(
+              height: 40,
+              width: 200,
+              child: TextButton(
+                onPressed: () => {},
+                style: TextButton.styleFrom(
+                  backgroundColor: Config.sixColor, // Asegúrate de que Config.sixColor esté definido
+                ),
+                child: Text(
+                  "Continuar",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

@@ -3,8 +3,14 @@ library config.globals;
 import 'package:flutter/material.dart';
 export 'package:flutter/material.dart';
 
+import 'package:flutter/cupertino.dart';
+export 'package:flutter/cupertino.dart' hide RefreshCallback;
+
 import 'package:auto_matic/screens/screens.dart';
 export 'package:auto_matic/screens/screens.dart';
+
+import 'package:auto_matic/widgets/widgets.dart';
+export 'package:auto_matic/widgets/widgets.dart';
 
 class Config{
     static Color firstColor = const Color.fromRGBO(224, 221, 207, 1);

@@ -1,3 +1,4 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_matic/config/config.dart';
 
 class TimelineWidget extends StatelessWidget {
@@ -20,7 +21,7 @@ class TimelineWidget extends StatelessWidget {
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 0 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 0 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
@@ -46,12 +47,13 @@ class TimelineWidget extends StatelessWidget {
               ),
             ),
           ),
+          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
           //...
           Flexible(
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 1 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 1 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
@@ -77,12 +79,13 @@ class TimelineWidget extends StatelessWidget {
               ),
             ),
           ),
-          //...
+          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
+
           Flexible(
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color: currentPage == 2 ? Config.fifthColor : Config.firstColor,
+                color: currentPage == 2 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
               padding: EdgeInsets.all(4),
@@ -108,6 +111,7 @@ class TimelineWidget extends StatelessWidget {
               ),
             ),
           ),
+
         ],
       );
     });
