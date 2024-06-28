@@ -1,4 +1,6 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_svg/svg.dart';
 
 class VehiculeDataCard extends StatelessWidget {
   const VehiculeDataCard({super.key});
@@ -11,9 +13,29 @@ class VehiculeDataCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         direction: Axis.vertical,
         children: [
-          const Text(
-            "Apodo",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(width:40,),
+              const Flexible(
+                child: Column(
+                  children: [
+                    Text(
+                      "Apodo chiquito",
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ],
+                ),
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    "assets/pages/profile/icons/edit.svg",
+                    color: Colors.black54,
+                  )),
+            ],
           ),
           Container(
             width: 200,
@@ -23,10 +45,10 @@ class VehiculeDataCard extends StatelessWidget {
               "assets/images/default.jpg",
             ),
           ),
-          InfoCard(label: "Modelo", text: "Sentra"),
-          InfoCard(label: "Fabricante", text: "Nissan"),
-          InfoCard(label: "Año", text: "2002"),
-          InfoCard(label: "VIN", text: "TGFDREWSDRFTGYHUJ"),
+          const InfoCard(label: "Modelo", text: "Sentra"),
+          const InfoCard(label: "Fabricante", text: "Nissan"),
+          const InfoCard(label: "Año", text: "2002"),
+          const InfoCard(label: "VIN", text: "TGFDREWSDRFTGYHUJ"),
           Container(
             alignment: Alignment.centerRight,
             child: ImportantTextButton(
