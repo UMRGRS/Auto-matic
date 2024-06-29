@@ -10,9 +10,7 @@ class Home extends StatelessWidget {
         leading: const Icon(Icons.logo_dev),
         title: const Text("Auto-matic"),
       ),
-      body: Scaffold(
-        backgroundColor: Config.firstColor,
-      ),
+      body: const Landing(),
       bottomNavigationBar: const BottomAppBar(
         child: Center(
           child: Text(
