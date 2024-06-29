@@ -12,7 +12,7 @@ class _Signup3State extends State<Signup3> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0), // Ajusta el margen lateral
+      padding: EdgeInsets.symmetric(horizontal: 16.0), 
       child: Align(
         alignment: Alignment.centerLeft,
         child: Column(
@@ -43,7 +43,7 @@ class _Signup3State extends State<Signup3> {
                   child: TextButton(
                     onPressed: () => {},
                     style: TextButton.styleFrom(
-                      backgroundColor: Config.sixColor, // Asegúrate de que Config.sixColor esté definido
+                      backgroundColor: Config.sixColor,
                     ),
                     child: Text(
                       "Continuar",
@@ -60,7 +60,7 @@ class _Signup3State extends State<Signup3> {
                   child: TextButton(
                     onPressed: () => {},
                     style: TextButton.styleFrom(
-                      backgroundColor: Config.sixColor, // Asegúrate de que Config.sixColor esté definido
+                      backgroundColor: Color.fromARGB(71,68, 72, 1),
                     ),
                     child: Text(
                       "Corregir VIM",
