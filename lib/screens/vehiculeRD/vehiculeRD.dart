@@ -1,7 +1,7 @@
 import 'package:auto_matic/config/config.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class VehiculeRD extends StatelessWidget {
+  const VehiculeRD({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +14,27 @@ class Home extends StatelessWidget {
             return SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                //Change later for the appropriate screen
-                child: Container(),
+                child: const VehiculeIndicators(),
               ),
             );
           },
         ),
       ),
-      bottomNavigationBar: const CustomBottomAppBar()
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const [
+            SizedBox(
+              height: 100,
+            ),
+            VehiculeDataCard(),
+            SizedBox(
+              height: 50,
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 }
