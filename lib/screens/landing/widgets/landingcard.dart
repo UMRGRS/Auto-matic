@@ -29,8 +29,8 @@ class _LandingcardState extends State<Landingcard> {
         child: ListTile(
           leading: SizedBox(
               width: 50, height: 50, child: SvgPicture.asset(widget.imagen)),
-          title: Text(widget.titulo),
-          subtitle: Text(widget.texto),
+          title: Text(widget.titulo, style: const TextStyle(fontWeight: FontWeight.bold),),
+          subtitle: Text(widget.texto, style: const TextStyle(color: Colors.black, fontSize: 15.0),),
         ),
       ),
     );
