@@ -12,7 +12,7 @@ class _Signup3State extends State<Signup3> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0), 
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Column(
