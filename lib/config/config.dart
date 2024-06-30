@@ -6,6 +6,7 @@ export 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 export 'package:flutter/cupertino.dart' hide RefreshCallback;
 
+////Se importa y exporta las pantallas
 import 'package:auto_matic/screens/screens.dart';
 export 'package:auto_matic/screens/screens.dart';
 

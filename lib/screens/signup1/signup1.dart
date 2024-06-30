@@ -1,4 +1,7 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:auto_matic/screens/signup1/widgets/ink_button.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
 
 class SignUp1 extends StatelessWidget {
   const SignUp1({super.key});
