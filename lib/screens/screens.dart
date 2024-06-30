@@ -22,7 +22,7 @@ export 'landing/landing.dart';
 
 //Signup
 export 'signup1/signup1.dart';
-export 'signup4/signup4.dart';
 
-//Export signup 1
-export 'signup1/signup1.dart';
+export 'signup4/signup4.dart';
+export 'signup4/widgets/accesswithSM.dart';
+export 'signup4/widgets/createAccount.dart';

@@ -19,7 +19,7 @@ class App extends StatelessWidget {
               color: Config.secondColor, elevation: 3, height: 50),
           fontFamily: 'Helvetica'),
       debugShowCheckedModeBanner: false,
-      home: const SignUp1(),
+      home: const SignUp4(),
     );
   }
 }

@@ -25,6 +25,7 @@ class Config {
   static const Color thirdColor = Color.fromRGBO(153, 143, 199, 1);
   static const Color fourthColor = Color.fromRGBO(71, 68, 72, 1);
   static const Color fifthColor = Color.fromRGBO(186, 45, 11, 1);
+  static const Color confirmGreen = Color.fromRGBO(32, 133, 69, 1);
 
   static Map<vehiculeState, Map<String, dynamic>> VehiculeStates = {
     vehiculeState.OK: {

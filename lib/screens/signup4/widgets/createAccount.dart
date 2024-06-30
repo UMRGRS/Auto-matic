@@ -1,14 +1,16 @@
 import 'package:auto_matic/config/config.dart';
-import 'package:flutter/cupertino.dart';
+
 /// Sección de creación de cuenta
-class CreateAccountSection extends StatelessWidget {
+class CreateAccount extends StatelessWidget {
+  const CreateAccount({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Crear cuenta', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Config.secondColor)),
-        SizedBox(height: 20),
+        const Text('Crear cuenta', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Config.secondColor)),
+        const SizedBox(height: 20),
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -60,7 +62,7 @@ class CreateAccountSection extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 children: [
                   Expanded(
@@ -70,13 +72,12 @@ class CreateAccountSection extends StatelessWidget {
                           // Tu lógica aquí
                         },
                         style: ElevatedButton.styleFrom(
-
-                          backgroundColor: Config.sixColor, // Cambia el valor hexadecimal aquí
+                          backgroundColor: Config.confirmGreen,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Continuar',
                           style: TextStyle(
                             color: Config.firstColor, // Cambia el valor hexadecimal aquí
