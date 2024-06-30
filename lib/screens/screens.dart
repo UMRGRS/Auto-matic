@@ -19,10 +19,7 @@ export 'vehiculeRD/widgets/FailureCodesCard.dart';
 //Landing
 export 'landing/widgets/landingcard.dart';
 export 'landing/landing.dart';
-export 'home.dart';
 
-//Export signup 4
-export 'signup4/signup4.dart';
-
-//Export signup 1
+//Signup
 export 'signup1/signup1.dart';
+export 'signup4/signup4.dart';

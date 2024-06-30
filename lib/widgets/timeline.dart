@@ -1,14 +1,13 @@
 import 'package:auto_matic/config/config.dart';
 
-class TimelineWidget extends StatelessWidget {
+class Timeline extends StatelessWidget {
   final int currentPage;
-  TimelineWidget({required this.currentPage});
+  Timeline({required this.currentPage});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final screenWidth = constraints.maxWidth;
-      final screenHeight = constraints.maxHeight;
 
       // Ajusta el tamaño de los elementos según el tamaño de la pantalla
       final avatarSize = screenWidth * 0.024;

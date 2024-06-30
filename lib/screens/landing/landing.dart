@@ -20,7 +20,7 @@ class Landing extends StatelessWidget {
                     children: [
                       Card(
                         child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           height: 300,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
