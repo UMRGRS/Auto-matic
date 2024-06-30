@@ -26,3 +26,12 @@ export 'signup1/signup1.dart';
 export 'signup4/signup4.dart';
 export 'signup4/widgets/accesswithSM.dart';
 export 'signup4/widgets/createAccount.dart';
+export 'home.dart';
+
+//Exports signup2
+export 'signup/signup2.dart';
+export 'signup/widgets/indice.dart';
+export 'signup/widgets/botonsin.dart';
+
+//Exports signup2
+export 'signup3/signup3.dart';
