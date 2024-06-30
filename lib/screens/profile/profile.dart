@@ -33,6 +33,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(),
       body: Container(
+        padding: const EdgeInsets.all(10),
         color: Config.firstColor,
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {

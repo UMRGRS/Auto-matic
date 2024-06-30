@@ -3,32 +3,21 @@ import 'package:auto_matic/config/config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class StateIndicator extends StatefulWidget {
-  StateIndicator({super.key, required this.state});
+  const StateIndicator({super.key, required this.state});
   final vehiculeState state;
 
   @override
-  State<StateIndicator> createState() => _StateIndicatorState(state);
+  State<StateIndicator> createState() => _StateIndicatorState();
 }
 
 class _StateIndicatorState extends State<StateIndicator> {
-  _StateIndicatorState(this.state);
+  _StateIndicatorState();
 
-  final vehiculeState state;
   late final Map<String, dynamic> data;
   @override
   void initState() {
     super.initState();
-    switch (state) {
-      case vehiculeState.OK:
-        data = Config.vehiculeState[0];
-        break;
-      case vehiculeState.Danger:
-        data = Config.vehiculeState[1];
-        break;
-      case vehiculeState.Urgent:
-        data = Config.vehiculeState[2];
-        break;
-    }
+    data = Config.VehiculeStates[widget.state]!;
   }
 
   @override
