@@ -20,7 +20,6 @@ class SignUp1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Row(
@@ -35,24 +34,20 @@ class SignUp1 extends StatelessWidget {
                               InfoButton(),
                             ],
                           ),
-                          ConstrainedBox(
-                            constraints: BoxConstraints(
-                                maxWidth: MediaQuery.of(context).size.width),
-                            child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: 'XXXX-XXXX-XXXX-XXXX',
-                                border:
-                                    OutlineInputBorder(), // Agregamos borde al TextField
-                              ),
-                              inputFormatters: [
-                                MaskTextInputFormatter(
-                                  mask: 'xxxx-xxxx-xxxx-xxxx',
-                                  filter: {
-                                    'x': RegExp(r'[0-9]'),
-                                  },
-                                ),
-                              ],
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: 'XXXX-XXXX-XXXX-XXXX',
+                              border:
+                                  OutlineInputBorder(), // Agregamos borde al TextField
                             ),
+                            inputFormatters: [
+                              MaskTextInputFormatter(
+                                mask: 'xxxx-xxxx-xxxx-xxxx',
+                                filter: {
+                                  'x': RegExp(r'[0-9]'),
+                                },
+                              ),
+                            ],
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),

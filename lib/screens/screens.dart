@@ -12,9 +12,9 @@ export 'vehiculeRD/vehiculeRD.dart';
 export 'vehiculeRD/widgets/vehiculeDataCard.dart';
 export 'vehiculeRD/widgets/vehiculeIndicators.dart';
 export 'vehiculeRD/widgets/RPM_KPM.dart';
-export 'vehiculeRD/widgets/TempBattery.dart';
-export 'vehiculeRD/widgets/ServicesCard.dart';
-export 'vehiculeRD/widgets/FailureCodesCard.dart';
+export 'vehiculeRD/widgets/tempBattery.dart';
+export 'vehiculeRD/widgets/servicesCard.dart';
+export 'vehiculeRD/widgets/failureCodesCard.dart';
 
 //Landing
 export 'landing/widgets/landingcard.dart';
@@ -23,15 +23,12 @@ export 'landing/landing.dart';
 //Signup
 export 'signup1/signup1.dart';
 
+export 'signup2/signup2.dart';
+
+export 'signup3/signup3.dart';
+export 'signup3/widgets/dataBox.dart';
+
 export 'signup4/signup4.dart';
 export 'signup4/widgets/accesswithSM.dart';
 export 'signup4/widgets/createAccount.dart';
-export 'home.dart';
 
-//Exports signup2
-export 'signup/signup2.dart';
-export 'signup/widgets/indice.dart';
-export 'signup/widgets/botonsin.dart';
-
-//Exports signup2
-export 'signup3/signup3.dart';
