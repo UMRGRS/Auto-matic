@@ -9,12 +9,19 @@ class AccessWithSM extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Accede con', style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold, color: Config.secondColor)),
+        const Text('Accede con',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            )),
         const SizedBox(height: 10),
         SignInButton(
-            buttonType: ButtonType.google,
-            onPressed: () {
-            }),
+          buttonType: ButtonType.google,
+          onPressed: () {},
+          buttonSize: ButtonSize.large,
+          btnText: "Iniciar sesión con Google",
+          width: 280,
+        ),
       ],
     );
   }

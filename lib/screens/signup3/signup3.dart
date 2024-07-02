@@ -23,7 +23,7 @@ class SignUp3 extends StatelessWidget {
                           const Row(
                             children: [
                               Text(
-                                "Confirma los datos",
+                                "Confirma los datos de tu vehículo",
                                 style: TextStyle(fontSize: 30),
                                 textAlign: TextAlign.left,
                               ),
@@ -32,46 +32,45 @@ class SignUp3 extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          const Datebox(),
+                          const Databox(),
                           const SizedBox(
                             height: 10,
                           ),
                           Row(
                             children: [
-                              SizedBox(
-                                height: 40,
-                                width: 200,
-                                child: TextButton(
-                                  onPressed: () => {},
-                                  style: TextButton.styleFrom(
-                                    backgroundColor: Config.confirmGreen,
-                                  ),
-                                  child: const Text(
-                                    "Continuar",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  // Lógica para el botón "Continuar"
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Config.confirmGreen,
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Continuar',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15)),
                                 ),
                               ),
                               const SizedBox(
                                 width: 10,
                               ),
-                              SizedBox(
-                                height: 40,
-                                width: 200,
-                                child: TextButton(
-                                  onPressed: () => {},
-                                  style: TextButton.styleFrom(
-                                    backgroundColor:
-                                        const Color.fromARGB(71, 68, 72, 1),
-                                  ),
-                                  child: const Text(
-                                    "Corregir VIN",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  // Lógica para el botón "Corregir VIN"
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey,
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text('Corregir VIN',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15)),
                                 ),
                               ),
                             ],

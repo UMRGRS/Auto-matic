@@ -19,20 +19,29 @@ class _LandingcardState extends State<Landingcard> {
   @override
   Widget build(BuildContext context) {
     return Card.filled(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-          side: const BorderSide(color: Colors.black, width: 3.0)),
-      borderOnForeground: true,
-      color: const Color(0xff998fc7),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+            side: const BorderSide(color: Colors.black, width: 2.0)),
+        color: const Color(0xff998fc7),
         child: ListTile(
-          leading: SizedBox(
-              width: 50, height: 50, child: SvgPicture.asset(widget.imagen)),
-          title: Text(widget.titulo, style: const TextStyle(fontWeight: FontWeight.bold),),
-          subtitle: Text(widget.texto, style: const TextStyle(color: Colors.black, fontSize: 15.0),),
-        ),
-      ),
-    );
+            leading: SvgPicture.asset(widget.imagen, height: 50,),
+            title: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 120),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    widget.titulo,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    widget.texto,
+                    style: const TextStyle(fontSize: 15),
+                  ),
+                ],
+              ),
+            ),
+        ));
   }
 }

@@ -49,22 +49,23 @@ class SignUp1 extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Lógica para el botón "Continuar"
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Config.confirmGreen,
-                              ),
-                              child: const Text('Continuar',
-                                  style: TextStyle(color: Config.firstColor)),
+                          const SizedBox(height: 10,),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Lógica para el botón "Continuar"
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Config.confirmGreen,
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text('Continuar',
+                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
                             ),
                           ),
                         ],
                       ),
-                      Timeline(currentPage: 0), // Línea de tiempo
+                      const Timeline(currentPage: 0), // Línea de tiempo
                     ],
                   ),
                 ),
