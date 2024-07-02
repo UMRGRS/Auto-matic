@@ -32,9 +32,6 @@ class SignUp2 extends StatelessWidget {
                               InfoButton(),
                             ],
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
                           TextField(
                             decoration: const InputDecoration(
                               hintText: 'ZPBUA1ZL9KLA00848',
