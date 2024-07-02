@@ -3,16 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class Timeline extends StatelessWidget {
   final int currentPage;
-  Timeline({required this.currentPage});
+  const Timeline({super.key, required this.currentPage});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      final screenWidth = constraints.maxWidth;
-
-      // Ajusta el tamaño de los elementos según el tamaño de la pantalla
-      final avatarSize = screenWidth * 0.024;
-      final textSize = screenWidth * 0.01;
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -23,23 +18,24 @@ class Timeline extends StatelessWidget {
                 color: currentPage == 0 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: currentPage == 0
                         ? Colors.deepOrange
-                        : Colors.deepOrange,
-                    radius: avatarSize,
-                    child: Text('1', style: TextStyle(fontSize: textSize)),
+                        : Colors.grey,
+                    radius: 28,
+                    child: const Text('1', style: TextStyle(fontSize: 15)),
                   ),
+                  const SizedBox(width: 10,),
                   Text(
                     'Código Único',
                     style: TextStyle(
                       color:
                       currentPage == 0 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: textSize,
+                      fontSize: 15,
                     ),
                   ),
                 ],
@@ -55,23 +51,24 @@ class Timeline extends StatelessWidget {
                 color: currentPage == 1 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: currentPage == 1
                         ? Colors.deepOrange
-                        : Colors.deepOrange,
-                    radius: avatarSize,
-                    child: Text('2', style: TextStyle(fontSize: textSize)),
+                        : Colors.grey,
+                    radius: 28,
+                    child: const Text('2', style: TextStyle(fontSize: 15)),
                   ),
+                  const SizedBox(width: 10,),
                   Text(
-                    'Código Único',
+                    'Datos del vehiculo',
                     style: TextStyle(
                       color:
                       currentPage == 1 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: textSize,
+                      fontSize: 15,
                     ),
                   ),
                 ],
@@ -87,22 +84,23 @@ class Timeline extends StatelessWidget {
                 color: currentPage == 2 ? Config.fifthColor : Colors.white,
                 borderRadius: BorderRadius.circular(9),
               ),
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: currentPage == 2
                         ? Colors.deepOrange
-                        : Colors.deepOrange,
-                    radius: avatarSize,
-                    child: Text('3', style: TextStyle(fontSize: textSize)),
+                        : Colors.grey,
+                    radius: 28,
+                    child: const Text('3', style: TextStyle(fontSize: 15)),
                   ),
+                  const SizedBox(width: 10,),
                   Text(
                     'Datos del usuario',
                     style: TextStyle(
                       color: currentPage == 2 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: textSize,
+                      fontSize: 15,
                     ),
                   ),
 

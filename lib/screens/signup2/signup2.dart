@@ -1,4 +1,5 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUp2 extends StatelessWidget {
   const SignUp2({super.key});
@@ -34,35 +35,43 @@ class SignUp2 extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          TextFormField(
+                          TextField(
                             decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: "xxx-xxx-xxx-xxx",
+                              hintText: 'ZPBUA1ZL9KLA00848',
+                              border:
+                                  OutlineInputBorder(), // Agregamos borde al TextField
                             ),
+                            inputFormatters: [
+                              MaskTextInputFormatter(
+                                mask: 'xxxxxxxxxxxxxxxxx',
+                                filter: {
+                                  'x': RegExp(r'[(A-H|J-N|P|R-Z|0-9)]'),
+                                },
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          SizedBox(
-                            height: 40,
-                            width: 200,
-                            child: TextButton(
-                              onPressed: () => {},
-                              style: TextButton.styleFrom(
-                                backgroundColor: Config
-                                    .confirmGreen, // Asegúrate de que Config.sixColor esté definido
-                              ),
-                              child: const Text(
-                                "Continuar",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Lógica para el botón "Continuar"
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Config.confirmGreen,
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text('Continuar',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15)),
                             ),
                           ),
                         ],
                       ),
-                      Timeline(currentPage: 0)
+                      const Timeline(currentPage: 0)
                     ],
                   ),
                 ),

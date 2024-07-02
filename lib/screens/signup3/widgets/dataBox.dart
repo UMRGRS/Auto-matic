@@ -1,32 +1,65 @@
-// TODO Implement this library.import 'package:auto_matic/config/config.dart';
+import 'package:auto_matic/config/config.dart';
+import 'package:flutter/cupertino.dart';
 
-class Datebox extends StatefulWidget {
-  const Datebox({super.key});
+class Databox extends StatefulWidget {
+  const Databox({super.key});
 
   @override
-  State<Datebox> createState() => _DateboxState();
+  _DataboxState createState() => _DataboxState();
 }
 
-class _DateboxState extends State<Datebox> {
+class _DataboxState extends State<Databox> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.black, width: 2.0), // Define el borde de la card
-        borderRadius: BorderRadius.circular(4.0), // Define el radio de los bordes
-      ),
+    return const Card(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Row( children: [Text("Modelo"), SizedBox(width: 50,),Text("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")],),
-            SizedBox(height: 20,),
-            Row(children: [Text("Fabricante"),SizedBox(width: 50,),Text("xxxxxxxxxxxxxxxxxxxxxxxxxxxx")],),
-            SizedBox(height: 20,),
-            Row(children: [Text("Año"),SizedBox(width: 50,),Text("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")],),
-            SizedBox(height: 20,),
-            Row(children: [Text("VIM"),SizedBox(width: 50,),Text("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")],),
-
+            ListTile(
+              leading: Text(
+                "Modelo",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "Sentra",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            Divider(height: 5),
+            ListTile(
+              titleAlignment: ListTileTitleAlignment.center,
+              leading: Text(
+                "Fabricante",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "Nissan",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            Divider(height: 5),
+            ListTile(
+              leading: Text(
+                "Año",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "2002",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            Divider(height: 5),
+            ListTile(
+              leading: Text(
+                "VIN",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "ZPBUA1ZL9KLA00848",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
           ],
         ),
       ),

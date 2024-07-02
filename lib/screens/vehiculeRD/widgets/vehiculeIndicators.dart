@@ -8,7 +8,7 @@ class VehiculeIndicators extends StatelessWidget {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,

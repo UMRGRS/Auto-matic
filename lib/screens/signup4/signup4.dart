@@ -15,20 +15,20 @@ class SignUp4 extends StatelessWidget {
               return SingleChildScrollView(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: Column(
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Row(
+                      Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Sección de creación de cuenta
                             Expanded(
-                              flex: 2,
+                              flex: 10,
                               child: CreateAccount(),
                             ),
                             // Sección de acceso con redes sociales
                             Expanded(
-                              flex: 1,
+                              flex: 3,
                               child: AccessWithSM(),
                             ),
                             //ConstructorBody()
