@@ -28,7 +28,7 @@ class SignUp1 extends StatelessWidget {
                                 'Introduce el código único del producto',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 24,
+                                  fontSize: 30,
                                 ),
                               ),
                               InfoButton(),
