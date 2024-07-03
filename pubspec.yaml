@@ -35,11 +35,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  sign_button: ^2.0.6
   mask_text_input_formatter: ^2.0.0
   flutter_svg: ^2.0.10+1
   speedometer_chart: ^1.0.8
   flutter_animation_progress_bar: ^2.3.1
+  sign_in_button: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +71,7 @@ flutter:
     - assets/pages/profile/icons/
     - assets/pages/landing/icons/
     - assets/pages/signup/icons/
+    - assets/pages/login/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

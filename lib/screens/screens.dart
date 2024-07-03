@@ -34,4 +34,5 @@ export 'signup4/widgets/createAccount.dart';
 
 //LogIn
 export 'logIn/logIn.dart';
+export 'logIn/widgets/logInForm.dart';
 
