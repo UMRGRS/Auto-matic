@@ -6,7 +6,19 @@ class SignUp4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+          actions: [
+            AppBarButton(
+              text: "Inicia sesión",
+              onPressed: () {},
+            ),
+            AppBarButton(
+              text: "Cancelar",
+              onPressed: () {},
+              color: Config.fifthColor,
+            ),
+          ],
+        ),
         body: Container(
           padding: const EdgeInsets.all(10),
           color: Config.firstColor,
@@ -33,7 +45,7 @@ class SignUp4 extends StatelessWidget {
                             ),
                             //ConstructorBody()
                           ]),
-                      Timeline(currentPage: 0)
+                      Timeline(currentPage: 2)
                     ],
                   ),
                 ),

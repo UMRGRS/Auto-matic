@@ -29,7 +29,7 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
                   child: ListTile(
                     leading: const Text("Codigo:"),
                     title: const Text("P02345"),
-                    trailing: IconButton(icon: Icon(Icons.search), onPressed: () {  },),
+                    trailing: IconButton(icon: const Icon(Icons.search), onPressed: () {  },),
                   ),
                 );
               },

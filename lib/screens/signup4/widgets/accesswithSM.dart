@@ -19,7 +19,7 @@ class AccessWithSM extends StatelessWidget {
           buttonType: ButtonType.google,
           onPressed: () {},
           buttonSize: ButtonSize.large,
-          btnText: "Iniciar sesión con Google",
+          btnText: "Registrate con Google",
           width: 280,
         ),
       ],

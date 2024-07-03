@@ -32,3 +32,6 @@ export 'signup4/signup4.dart';
 export 'signup4/widgets/accesswithSM.dart';
 export 'signup4/widgets/createAccount.dart';
 
+//LogIn
+export 'logIn/logIn.dart';
+

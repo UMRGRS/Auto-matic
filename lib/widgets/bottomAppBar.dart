@@ -9,7 +9,7 @@ class CustomBottomAppBar extends StatelessWidget {
       child: Center(
         child: Text(
           "Auto-matic",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: "Lobster", fontSize: 20),
         ),
       ),
     );

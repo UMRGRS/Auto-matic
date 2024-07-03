@@ -6,7 +6,18 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+          actions: [
+            AppBarButton(
+              text: "Inicia sesión",
+              onPressed: () {},
+            ),
+            AppBarButton(
+              text: "Registrate",
+              onPressed: () {},
+            )
+          ],
+        ),
         body: Container(
           padding: const EdgeInsets.all(10),
           color: Config.firstColor,

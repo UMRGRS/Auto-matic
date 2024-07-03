@@ -7,7 +7,19 @@ class SignUp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(
+          actions: [
+            AppBarButton(
+              text: "Inicia sesión",
+              onPressed: () {},
+            ),
+            AppBarButton(
+              text: "Cancelar",
+              onPressed: () {},
+              color: Config.fifthColor,
+            ),
+          ],
+        ),
         body: Container(
           padding: const EdgeInsets.all(10),
           color: Config.firstColor,
@@ -28,7 +40,7 @@ class SignUp1 extends StatelessWidget {
                                 'Introduce el código único del producto',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 24,
+                                  fontSize: 30,
                                 ),
                               ),
                               InfoButton(),
@@ -49,7 +61,9 @@ class SignUp1 extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 10,),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           ElevatedButton(
                             onPressed: () {
                               // Lógica para el botón "Continuar"
@@ -60,7 +74,10 @@ class SignUp1 extends StatelessWidget {
                             child: const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text('Continuar',
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15)),
                             ),
                           ),
                         ],

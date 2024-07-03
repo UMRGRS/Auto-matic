@@ -66,6 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/icons/
     - assets/pages/vehiculeRD/icons/
     - assets/pages/profile/icons/
     - assets/pages/landing/icons/
@@ -87,6 +88,9 @@ flutter:
     - family: Helvetica
       fonts:
         - asset: assets/fonts/Helvetica.ttf
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
