@@ -5,6 +5,9 @@ class Landing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive.of(context);
+    bool isScreenWide = responsive.width >= 600;
+
     return Scaffold(
         appBar: const CustomAppBar(),
         body: Container(
@@ -84,8 +87,8 @@ class Landing extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const Row(
-                        children: [
+                      Flex(direction: isScreenWide ? Axis.horizontal : Axis.vertical,
+                        children: const [
                           Expanded(
                               child: Landingcard(
                             titulo: 'Temperatura',
@@ -103,8 +106,8 @@ class Landing extends StatelessWidget {
                           )),
                         ],
                       ),
-                      const Row(
-                        children: [
+                      Flex(direction: isScreenWide ? Axis.horizontal : Axis.vertical,
+                        children: const [
                           Expanded(
                               child: Landingcard(
                             titulo: 'Voltaje de la batería',
