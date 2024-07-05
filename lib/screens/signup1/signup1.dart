@@ -24,11 +24,19 @@ class SignUp1 extends StatelessWidget {
                         children: [
                           const Row(
                             children: [
-                              Text(
-                                'Introduce el código único del producto',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 30,
+                              Flexible(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Introduce el código único del producto',
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               InfoButton(),
@@ -38,7 +46,7 @@ class SignUp1 extends StatelessWidget {
                             decoration: const InputDecoration(
                               hintText: 'XXXX-XXXX-XXXX-XXXX',
                               border:
-                                  OutlineInputBorder(), // Agregamos borde al TextField
+                              OutlineInputBorder(), // Agregamos borde al TextField
                             ),
                             inputFormatters: [
                               MaskTextInputFormatter(
@@ -49,7 +57,9 @@ class SignUp1 extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 10,),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           ElevatedButton(
                             onPressed: () {
                               // Lógica para el botón "Continuar"
@@ -60,7 +70,10 @@ class SignUp1 extends StatelessWidget {
                             child: const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text('Continuar',
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15)),
                             ),
                           ),
                         ],

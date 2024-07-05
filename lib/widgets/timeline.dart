@@ -26,7 +26,7 @@ class Timeline extends StatelessWidget {
                         ? Colors.deepOrange
                         : Colors.grey,
                     radius: 28,
-                    child: const Text('1', style: TextStyle(fontSize: 15)),
+                    child: const Text('1', style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(width: 10,),
                   Text(
@@ -59,7 +59,7 @@ class Timeline extends StatelessWidget {
                         ? Colors.deepOrange
                         : Colors.grey,
                     radius: 28,
-                    child: const Text('2', style: TextStyle(fontSize: 15)),
+                    child: const Text('2', style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(width: 10,),
                   Text(
@@ -92,15 +92,22 @@ class Timeline extends StatelessWidget {
                         ? Colors.deepOrange
                         : Colors.grey,
                     radius: 28,
-                    child: const Text('3', style: TextStyle(fontSize: 15)),
+                    child: const Text('3',softWrap: false,
+                        maxLines: 1,
+                        overflow: TextOverflow.fade,
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(width: 10,),
                   Text(
                     'Datos del usuario',
+                    softWrap: false,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: currentPage == 2 ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
+
                     ),
                   ),
 

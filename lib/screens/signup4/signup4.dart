@@ -5,6 +5,8 @@ class SignUp4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Responsive responsive = Responsive.of(context);
+    bool isScreenWide = responsive.width >= 600;
     return Scaffold(
         appBar: const CustomAppBar(),
         body: Container(
@@ -15,24 +17,38 @@ class SignUp4 extends StatelessWidget {
               return SingleChildScrollView(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Sección de creación de cuenta
-                            Expanded(
-                              flex: 10,
-                              child: CreateAccount(),
-                            ),
-                            // Sección de acceso con redes sociales
-                            Expanded(
-                              flex: 3,
-                              child: AccessWithSM(),
-                            ),
-                            //ConstructorBody()
-                          ]),
+                      Builder(
+                        builder: (_) {
+                          if (isScreenWide) {
+                            return const Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // Sección de creación de cuenta
+                                  Expanded(
+                                    flex: 10,
+                                    child: CreateAccount(),
+                                  ),
+                                  // Sección de acceso con redes sociales
+                                  Expanded(
+                                    flex: 3,
+                                    child: AccessWithSM(),
+                                  ),
+                                  //ConstructorBody()
+                                ]);
+                          } else {
+                            return const Column(children: [
+                              // Sección de creación de cuenta
+                              CreateAccount(),
+                              // Sección de acceso con redes sociales
+                              AccessWithSM(),
+                              //ConstructorBody()
+                            ]);
+                          }
+                        },
+                      ),
                       Timeline(currentPage: 0)
                     ],
                   ),
