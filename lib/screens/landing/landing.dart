@@ -20,6 +20,7 @@ class Landing extends StatelessWidget {
     String velicon = 'assets/pages/landing/icons/velocidad.svg';
     String volticon = 'assets/pages/landing/icons/voltaje.svg';
     String revicon = 'assets/pages/landing/icons/rpm.svg';
+    String prototype = "assets/pages/landing/images/prototype.png";
 
     return Scaffold(
         appBar: const CustomAppBar(),
@@ -50,7 +51,7 @@ class Landing extends StatelessWidget {
                                       child: Container(
                                           padding: const EdgeInsets.all(10),
                                           child: Image.asset(
-                                            "assets/images/default.jpg",
+                                            prototype,
                                             width: 100,
                                           ))),
                                   Expanded(
@@ -103,7 +104,7 @@ class Landing extends StatelessWidget {
                                   Container(
                                       padding: const EdgeInsets.all(10),
                                       child: Image.asset(
-                                        "assets/images/default.jpg",
+                                        prototype,
                                         width: 200,
                                       )),
                                   Column(

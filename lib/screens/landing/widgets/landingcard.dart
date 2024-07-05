@@ -33,11 +33,11 @@ class _LandingcardState extends State<Landingcard> {
                 children: [
                   Text(
                     widget.titulo,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
                   ),
                   Text(
                     widget.texto,
-                    style: const TextStyle(fontSize: 15),
+                    style: const TextStyle(fontSize: 18 ),
                   ),
                 ],
               ),
