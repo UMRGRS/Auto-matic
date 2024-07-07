@@ -31,7 +31,23 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(
+        actions: [
+          AppBarButton(
+            text: "Perfil",
+            onPressed: () {},
+          ),
+          AppBarButton(
+            text: "Inicio",
+            onPressed: () {},
+          ),
+          AppBarButton(
+            text: "Cerrar sesión",
+            onPressed: () {},
+            color: Config.fifthColor,
+          ),
+        ],
+      ),
       body: Container(
         padding: const EdgeInsets.all(10),
         color: Config.firstColor,

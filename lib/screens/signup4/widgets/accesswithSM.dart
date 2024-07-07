@@ -1,5 +1,5 @@
 import 'package:auto_matic/config/config.dart';
-import 'package:sign_button/sign_button.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 // Sección de acceso con redes sociales
 class AccessWithSM extends StatelessWidget {
@@ -16,11 +16,9 @@ class AccessWithSM extends StatelessWidget {
             )),
         const SizedBox(height: 10),
         SignInButton(
-          buttonType: ButtonType.google,
+          Buttons.googleDark,
+          text: "Registrate con Google",
           onPressed: () {},
-          buttonSize: ButtonSize.large,
-          btnText: "Iniciar sesión con Google",
-          width: 280,
         ),
       ],
     );
