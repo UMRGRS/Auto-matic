@@ -34,15 +34,22 @@ class SignUp3 extends StatelessWidget {
                         children: [
                           const Row(
                             children: [
-                              Text(
-                                "Confirma los datos de tu vehículo",
-                                style: TextStyle(fontSize: 30),
-                                textAlign: TextAlign.left,
+                              Flexible(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Confirma los datos de tu vehículo',
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
-                          ),
-                          const SizedBox(
-                            height: 10,
                           ),
                           const Databox(),
                           const SizedBox(

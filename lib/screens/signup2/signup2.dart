@@ -36,10 +36,20 @@ class SignUp2 extends StatelessWidget {
                         children: [
                           const Row(
                             children: [
-                              Text(
-                                "Introduce el VIN del vehículo",
-                                style: TextStyle(fontSize: 30),
-                                textAlign: TextAlign.left,
+                              Flexible(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Introduce el VIN del vehículo",
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               InfoButton(),
                             ],

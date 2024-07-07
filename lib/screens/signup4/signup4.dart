@@ -45,7 +45,7 @@ class SignUp4 extends StatelessWidget {
                                   ),
                                   // Sección de acceso con redes sociales
                                   Expanded(
-                                    flex: 3,
+                                    flex: 2,
                                     child: AccessWithSM(),
                                   ),
                                   //ConstructorBody()
@@ -61,7 +61,7 @@ class SignUp4 extends StatelessWidget {
                           }
                         },
                       ),
-                      Timeline(currentPage: 0)
+                      const Timeline(currentPage: 0)
                     ],
                   ),
                 ),
