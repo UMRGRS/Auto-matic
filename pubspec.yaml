@@ -70,6 +70,7 @@ flutter:
     - assets/pages/vehiculeRD/icons/
     - assets/pages/profile/icons/
     - assets/pages/landing/icons/
+    - assets/pages/landing/images/
     - assets/pages/signup/icons/
     - assets/pages/login/icons/
   #   - images/a_dot_ham.jpeg
