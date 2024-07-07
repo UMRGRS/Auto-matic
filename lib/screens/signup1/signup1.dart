@@ -36,11 +36,19 @@ class SignUp1 extends StatelessWidget {
                         children: [
                           const Row(
                             children: [
-                              Text(
-                                'Introduce el código único del producto',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 30,
+                              Flexible(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Introduce el código único del producto',
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               InfoButton(),
@@ -50,7 +58,7 @@ class SignUp1 extends StatelessWidget {
                             decoration: const InputDecoration(
                               hintText: 'XXXX-XXXX-XXXX-XXXX',
                               border:
-                                  OutlineInputBorder(), // Agregamos borde al TextField
+                              OutlineInputBorder(), // Agregamos borde al TextField
                             ),
                             inputFormatters: [
                               MaskTextInputFormatter(
