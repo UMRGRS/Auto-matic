@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:auto_matic/config/config.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ServicesCard extends StatefulWidget {
   const ServicesCard({super.key});
@@ -20,38 +23,62 @@ class _ServiceCardState extends State<ServicesCard> {
           children: [
             const Text(
               "Servicios",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 5,),
+            const SizedBox(
+              height: 5,
+            ),
             const Text(
               "Progreso hasta el siguiente servicio (Días)",
               style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-              ),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black),
             ),
-            const SizedBox(height: 5,),
-            FAProgressBar(
-              maxValue: 100,
-              border: Border.all(width: 0.1),
-              currentValue: 69,
-              displayText: '%',
-              displayTextStyle: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
-                color: Colors.white,
-              ),
-              progressColor: Colors.green,
+            const SizedBox(
+              height: 10,
             ),
-            const SizedBox(height: 5,),
+            ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: SfLinearGauge(
+                  showTicks: false,
+                  animateAxis: true,
+                  onGenerateLabels: () {
+                    return <LinearAxisLabel>[
+                      const LinearAxisLabel(text: "50.4%", value: 50),
+                    ];
+                  },
+                  labelOffset: 10,
+                  axisLabelStyle: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                  axisTrackStyle: LinearAxisTrackStyle(
+                    thickness: 30,
+                    edgeStyle: LinearEdgeStyle.bothCurve,
+                    borderWidth: 1,
+                    borderColor: Colors.grey[350],
+                    color: Colors.grey[350],
+                  ),
+                  barPointers: const <LinearBarPointer>[
+                    LinearBarPointer(
+                        value: 50.4,
+                        thickness: 30,
+                        edgeStyle: LinearEdgeStyle.bothCurve,
+                        color: Colors.blue),
+                  ],
+                )),
+            const SizedBox(
+              height: 5,
+            ),
             const Text(
               "Restante: 84 dias",
               style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-              ),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black),
             ),
-            const SizedBox(height: 5,),
+            const SizedBox(
+              height: 5,
+            ),
             ImportantTextButton(
               text: "Reiniciar servicio",
               onPressed: () {},

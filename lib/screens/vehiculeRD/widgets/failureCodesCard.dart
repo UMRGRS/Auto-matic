@@ -22,7 +22,7 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 137,
+            height: 188,
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
