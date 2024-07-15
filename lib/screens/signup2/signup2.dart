@@ -10,7 +10,7 @@ class SignUp2 extends StatelessWidget {
         appBar: CustomAppBar(
           actions: [
             AppBarButton(
-              text: "Inicia sesión",
+              text: "Iniciar sesión",
               onPressed: () {},
             ),
             AppBarButton(
@@ -90,7 +90,7 @@ class SignUp2 extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Timeline(currentPage: 1)
+                      const TimeLine(value: 10,)
                     ],
                   ),
                 ),

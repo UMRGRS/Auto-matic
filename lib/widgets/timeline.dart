@@ -1,123 +1,90 @@
 import 'package:auto_matic/config/config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-class Timeline extends StatelessWidget {
-  final int currentPage;
-  const Timeline({super.key, required this.currentPage});
+class TimeLine extends StatefulWidget {
+  const TimeLine({super.key, required this.value});
+  final double value;
+  @override
+  State<TimeLine> createState() => _TimeLineState();
+}
 
+class _TimeLineState extends State<TimeLine> {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Flexible(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: currentPage == 0 ? Config.fifthColor : Colors.white,
-                borderRadius: BorderRadius.circular(9),
-              ),
-              padding: const EdgeInsets.all(4),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: currentPage == 0
-                        ? Colors.deepOrange
-                        : Colors.grey,
-                    radius: 28,
-                    child: const Text('1', style: TextStyle(fontWeight: FontWeight.bold)),
-                  ),
-                  const SizedBox(width: 10,),
-                  Text(
-                    'Código Único',
-                    style: TextStyle(
-                      color:
-                      currentPage == 0 ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
-          //...
-          Flexible(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: currentPage == 1 ? Config.fifthColor : Colors.white,
-                borderRadius: BorderRadius.circular(9),
-              ),
-              padding: const EdgeInsets.all(4),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: currentPage == 1
-                        ? Colors.deepOrange
-                        : Colors.grey,
-                    radius: 28,
-                    child: const Text('2', style: TextStyle(fontWeight: FontWeight.bold)),
-                  ),
-                  const SizedBox(width: 10,),
-                  Text(
-                    'Datos del vehiculo',
-                    style: TextStyle(
-                      color:
-                      currentPage == 1 ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SvgPicture.asset("assets/pages/signup/icons/arrow.svg",width: 20,height: 70,),
-
-          Flexible(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: currentPage == 2 ? Config.fifthColor : Colors.white,
-                borderRadius: BorderRadius.circular(9),
-              ),
-              padding: const EdgeInsets.all(4),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: currentPage == 2
-                        ? Colors.deepOrange
-                        : Colors.grey,
-                    radius: 28,
-                    child: const Text('3',softWrap: false,
-                        maxLines: 1,
-                        overflow: TextOverflow.fade,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                  ),
-                  const SizedBox(width: 10,),
-                  Text(
-                    'Datos del usuario',
-                    softWrap: false,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: currentPage == 2 ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-        ],
-      );
-      });
-    }
+    Responsive responsive = Responsive.of(context);
+    return SfLinearGauge(
+      showTicks: false,
+      minimum: 0,
+      maximum: 30,
+      labelOffset: 15,
+      axisTrackStyle: const LinearAxisTrackStyle(color: Colors.grey),
+      onGenerateLabels: () {
+        return <LinearAxisLabel>[
+          const LinearAxisLabel(text: 'Código único', value: 0),
+          const LinearAxisLabel(text: 'VIN', value: 10),
+          const LinearAxisLabel(text: 'Confirmar datos', value: 20),
+          const LinearAxisLabel(text: 'Crear cuenta', value: 30),
+        ];
+      },
+      axisLabelStyle:
+          TextStyle(fontSize: responsive.ip(1.35), color: Colors.black),
+      barPointers: <LinearBarPointer>[
+        LinearBarPointer(
+          //Modify this to change the value
+          value: widget.value,
+          color: Config.secondColor,
+          enableAnimation: false,
+        ),
+      ],
+      markerPointers: [
+        const LinearShapePointer(
+          value: 0,
+          enableAnimation: false,
+          color: Config.secondColor,
+          width: 24,
+          height: 24,
+          position: LinearElementPosition.cross,
+          shapeType: LinearShapePointerType.circle,
+        ),
+        LinearShapePointer(
+          value: 10,
+          enableAnimation: false,
+          color: widget.value >= 10 ? Config.secondColor : Colors.grey,
+          width: 24,
+          height: 24,
+          position: LinearElementPosition.cross,
+          shapeType: LinearShapePointerType.circle,
+        ),
+        LinearShapePointer(
+          value: 20,
+          enableAnimation: false,
+          color: widget.value >= 20 ? Config.secondColor : Colors.grey,
+          width: 24,
+          height: 24,
+          position: LinearElementPosition.cross,
+          shapeType: LinearShapePointerType.circle,
+        ),
+        LinearShapePointer(
+          value: 30,
+          enableAnimation: false,
+          color: widget.value >= 30 ? Config.secondColor : Colors.grey,
+          width: 24,
+          height: 24,
+          position: LinearElementPosition.cross,
+          shapeType: LinearShapePointerType.circle,
+        ),
+        LinearWidgetPointer(
+            enableAnimation: false,
+            value: widget.value,
+            position: LinearElementPosition.outside,
+            offset: 10,
+            child: SizedBox(
+              height: 40,
+              width: 40,
+              child: SvgPicture.asset("assets/pages/vehiculeRD/icons/car.svg",),
+            )),
+      ],
+    );
+  }
 }
