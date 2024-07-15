@@ -26,7 +26,7 @@ class Landing extends StatelessWidget {
         appBar: CustomAppBar(
           actions: [
             AppBarButton(
-              text: "Inicia sesión",
+              text: "Iniciar sesión",
               onPressed: () {},
             ),
             AppBarButton(
