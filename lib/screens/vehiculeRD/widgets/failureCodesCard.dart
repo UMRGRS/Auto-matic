@@ -11,9 +11,10 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+
         child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
@@ -21,7 +22,7 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 300,
+            height: 115,
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
@@ -36,7 +37,7 @@ class _FailureCodesCardState extends State<FailureCodesCard> {
             ),
           )
         ],
-      ),
-    ));
+              ),
+            ));
   }
 }

@@ -18,7 +18,7 @@ class _TimeLineState extends State<TimeLine> {
       minimum: 0,
       maximum: 30,
       labelOffset: 15,
-      axisTrackStyle: const LinearAxisTrackStyle(color: Colors.grey),
+      axisTrackStyle: const LinearAxisTrackStyle(color: Colors.grey, thickness: 10),
       onGenerateLabels: () {
         return <LinearAxisLabel>[
           const LinearAxisLabel(text: 'Código único', value: 0),
@@ -35,6 +35,7 @@ class _TimeLineState extends State<TimeLine> {
           value: widget.value,
           color: Config.secondColor,
           enableAnimation: false,
+          thickness: 10,
         ),
       ],
       markerPointers: [

@@ -1,6 +1,6 @@
 import 'package:auto_matic/config/config.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class TempBattery extends StatefulWidget {
   const TempBattery({super.key});
@@ -17,24 +17,61 @@ class _TempBatteryState extends State<TempBattery> {
       child: Column(
         children: [
           Card(
-            child: ListTile(
-              leading: SvgPicture.asset(
-                  "assets/pages/vehiculeRD/icons/temperature.svg"),
-              title: const Text(
-                "Temperatura",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              subtitle: FAProgressBar(
-                maxValue: 150,
-                border: Border.all(width: 0.1),
-                currentValue: 100,
-                displayText: ' °C',
-                displayTextStyle: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: SvgPicture.asset(
+                  "assets/pages/vehiculeRD/icons/temperature.svg",
+                  height: 50,
                 ),
-                progressColor: Colors.green,
+                title: const Text(
+                  "Temperatura",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                ),
+                subtitle: SfLinearGauge(
+                  minimum: 0,
+                  maximum: 150,
+                  minorTicksPerInterval: 4,
+                  labelOffset: 10,
+                  axisTrackStyle: const LinearAxisTrackStyle(thickness: 0),
+                  markerPointers: const [
+                    LinearWidgetPointer(
+                        position: LinearElementPosition.outside,
+                        value: 30,
+                        child: SizedBox(
+                          height: 45,
+                          child: Column(children: [
+                            Text("30°C", style: TextStyle(fontSize: 18),),
+                            LinearShapePointer(
+                              value: 0,
+                            ),
+                          ]),
+                        )),
+                  ],
+                  ranges: const <LinearGaugeRange>[
+                    LinearGaugeRange(
+                        startWidth: 8,
+                        endWidth: 8,
+                        startValue: 0,
+                        endValue: 80,
+                        position: LinearElementPosition.outside,
+                        color: Colors.blue),
+                    LinearGaugeRange(
+                        startWidth: 8,
+                        endWidth: 8,
+                        startValue: 80,
+                        endValue: 110,
+                        position: LinearElementPosition.outside,
+                        color: Colors.green),
+                    LinearGaugeRange(
+                        startWidth: 8,
+                        endWidth: 8,
+                        startValue: 110,
+                        endValue: 150,
+                        position: LinearElementPosition.outside,
+                        color: Colors.red),
+                  ],
+                ),
               ),
             ),
           ),
@@ -44,22 +81,64 @@ class _TempBatteryState extends State<TempBattery> {
           Card(
             child: ListTile(
               leading: SvgPicture.asset(
-                  "assets/pages/vehiculeRD/icons/carBattery.svg"),
+                "assets/pages/vehiculeRD/icons/carBattery.svg",
+                height: 50,
+              ),
               title: const Text(
                 "Bateria",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
-              subtitle: FAProgressBar(
-                maxValue: 14,
-                border: Border.all(width: 0.1),
-                currentValue: 13.1,
-                displayText: ' V',
-                displayTextStyle: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.white,
-                ),
-                progressColor: Colors.green,
+              subtitle: SfLinearGauge(
+                minimum: 10,
+                maximum: 16,
+                showTicks: false,
+                labelOffset: 10,
+                axisTrackStyle: const LinearAxisTrackStyle(thickness: 0),
+                onGenerateLabels: () {
+                  return <LinearAxisLabel>[
+                    const LinearAxisLabel(text: '10', value: 10),
+                    const LinearAxisLabel(text: '12.6', value: 12.6),
+                    const LinearAxisLabel(text: '13.6', value: 13.6),
+                    const LinearAxisLabel(text: '16', value: 16),
+                  ];
+                },
+                markerPointers: const [
+                  LinearWidgetPointer(
+                      position: LinearElementPosition.outside,
+                      value: 13.7,
+                      child: SizedBox(
+                        height: 45,
+                        child: Column(children: [
+                          Text("13.7V", style: TextStyle(fontSize: 18)),
+                          LinearShapePointer(
+                            value: 0,
+                          ),
+                        ]),
+                      )),
+                ],
+                ranges: const <LinearGaugeRange>[
+                  LinearGaugeRange(
+                      startWidth: 8,
+                      endWidth: 8,
+                      startValue: 10,
+                      endValue: 12.6,
+                      position: LinearElementPosition.outside,
+                      color: Colors.red),
+                  LinearGaugeRange(
+                      startWidth: 8,
+                      endWidth: 8,
+                      startValue: 12.6,
+                      endValue: 13.6,
+                      position: LinearElementPosition.outside,
+                      color: Colors.orange),
+                  LinearGaugeRange(
+                      startWidth: 8,
+                      endWidth: 8,
+                      startValue: 13.6,
+                      endValue: 16,
+                      position: LinearElementPosition.outside,
+                      color: Colors.green),
+                ],
               ),
             ),
           ),
