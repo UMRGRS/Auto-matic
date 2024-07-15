@@ -70,14 +70,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_animation_progress_bar:
-    dependency: "direct main"
-    description:
-      name: flutter_animation_progress_bar
-      sha256: "85f05404faeef7141b1c5b53571293fc19359c120c4aea4430b2b7d808461d09"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -96,11 +88,6 @@ packages:
     version: "2.0.10+1"
   flutter_test:
     dependency: "direct dev"
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -224,14 +211,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
-  plugin_platform_interface:
-    dependency: transitive
-    description:
-      name: plugin_platform_interface
-      sha256: "4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.8"
   sign_in_button:
     dependency: "direct main"
     description:
@@ -253,14 +232,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  speedometer_chart:
-    dependency: "direct main"
-    description:
-      name: speedometer_chart
-      sha256: d433a48431c4ed45df04a3328628c93b2d39dac2b2eb0dacc0ee647206ed9595
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
   stack_trace:
     dependency: transitive
     description:

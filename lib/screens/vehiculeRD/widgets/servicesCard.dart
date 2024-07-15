@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:auto_matic/config/config.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ServicesCard extends StatefulWidget {

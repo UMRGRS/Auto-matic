@@ -37,8 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   mask_text_input_formatter: ^2.0.0
   flutter_svg: ^2.0.10+1
-  speedometer_chart: ^1.0.8
-  flutter_animation_progress_bar: ^2.3.1
   sign_in_button: ^3.0.0
   syncfusion_flutter_gauges: ^26.1.41
 
