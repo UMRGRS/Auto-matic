@@ -1,6 +1,5 @@
 import 'package:auto_matic/config/config.dart';
-
-import 'package:speedometer_chart/speedometer_chart.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class RPMKPM extends StatefulWidget {
   const RPMKPM({super.key});
@@ -15,42 +14,106 @@ class _RPMKPMState extends State<RPMKPM> {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
     return Flex(
-      direction: isScreenWide ? Axis.horizontal:Axis.vertical,
+      direction: isScreenWide ? Axis.horizontal : Axis.vertical,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
+      children: [
         Card(
           child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: SpeedometerChart(
-              title: Text("KPM", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              valueWidget: Text("75", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              minWidget: Text("0", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              maxWidget: Text("200", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              dimension: 230,
-              minValue: 0,
-              maxValue: 200,
-              value: 75,
-              graphColor: [Colors.green, Colors.green, Colors.yellow, Colors.yellow, Colors.red, Colors.red],
-              pointerColor: Colors.black,
-            ),
+            padding: const EdgeInsets.all(8.0),
+            child: SfRadialGauge(
+                title: const GaugeTitle(
+                    text: "KPM",
+                    textStyle:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                axes: [
+                  RadialAxis(
+                    minimum: 0,
+                    maximum: 200,
+                    canRotateLabels: true,
+                    showLastLabel: true,
+                    pointers: const <GaugePointer>[
+                      NeedlePointer(
+                        value: 80,
+                        enableAnimation: true,
+                      )
+                    ],
+                    annotations: const <GaugeAnnotation>[
+                      GaugeAnnotation(
+                          widget: Text('80.0',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold)),
+                          angle: 90,
+                          positionFactor: 0.8)
+                    ],
+                    ranges: [
+                      GaugeRange(
+                        startValue: 0,
+                        endValue: 70,
+                        color: Colors.blue,
+                      ),
+                      GaugeRange(
+                        startValue: 70,
+                        endValue: 100,
+                        color: Colors.green,
+                      ),
+                      GaugeRange(
+                        startValue: 100,
+                        endValue: 200,
+                        color: Colors.red,
+                      )
+                    ],
+                  )
+                ]),
           ),
         ),
-        SizedBox(width: 50,height: 10),
+        const SizedBox(width: 50, height: 10),
         Card(
           child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: SpeedometerChart(
-              title: Text("RPM", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              valueWidget: Text("1500", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              minWidget: Text("0", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              maxWidget: Text("10000", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
-              dimension: 230,
-              minValue: 0,
-              maxValue: 10000,
-              value: 1500,
-              graphColor: [Colors.green, Colors.green, Colors.yellow, Colors.yellow, Colors.red, Colors.red],
-              pointerColor: Colors.black,
-            ),
+            padding: const EdgeInsets.all(8.0),
+            child: SfRadialGauge(
+                title: const GaugeTitle(
+                    text: "RPM",
+                    textStyle:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                axes: [
+                  RadialAxis(
+                    minimum: 0,
+                    maximum: 8000,
+                    canRotateLabels: true,
+                    showLastLabel: true,
+                    pointers: const <GaugePointer>[
+                      NeedlePointer(
+                        value: 1100,
+                        enableAnimation: true,
+                      )
+                    ],
+                    annotations: const <GaugeAnnotation>[
+                      GaugeAnnotation(
+                          widget: Text('1100.0',
+                              style: TextStyle(
+                                  fontSize: 25, fontWeight: FontWeight.bold)),
+                          angle: 90,
+                          positionFactor: 0.8)
+                    ],
+                    ranges: [
+                      GaugeRange(
+                        startValue: 0,
+                        endValue: 5000,
+                        color: Colors.green,
+                      ),
+                      GaugeRange(
+                        startValue: 5000,
+                        endValue: 6000,
+                        color: Colors.orange,
+                      ),
+                      GaugeRange(
+                        startValue: 6000,
+                        endValue: 8000,
+                        color: Colors.red,
+                      )
+                    ],
+                  )
+                ]),
           ),
         ),
       ],

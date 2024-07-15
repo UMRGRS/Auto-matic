@@ -22,6 +22,7 @@ class _ServiceCardState extends State<ServicesCard> {
               "Servicios",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 5,),
             const Text(
               "Progreso hasta el siguiente servicio (Días)",
               style: TextStyle(
@@ -29,6 +30,7 @@ class _ServiceCardState extends State<ServicesCard> {
                 fontSize: 15,
               ),
             ),
+            const SizedBox(height: 5,),
             FAProgressBar(
               maxValue: 100,
               border: Border.all(width: 0.1),
@@ -41,6 +43,7 @@ class _ServiceCardState extends State<ServicesCard> {
               ),
               progressColor: Colors.green,
             ),
+            const SizedBox(height: 5,),
             const Text(
               "Restante: 84 dias",
               style: TextStyle(
@@ -48,6 +51,7 @@ class _ServiceCardState extends State<ServicesCard> {
                 fontSize: 15,
               ),
             ),
+            const SizedBox(height: 5,),
             ImportantTextButton(
               text: "Reiniciar servicio",
               onPressed: () {},
