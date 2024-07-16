@@ -18,8 +18,9 @@ class AccessWithSM extends StatelessWidget {
         SignInButton(
           Buttons.googleDark,
           text: "Registrate con Google",
-          onPressed: () {},
-          clipBehavior: Clip.hardEdge,
+          onPressed: () {
+            context.pushReplacementNamed('profile');
+          },
         ),
       ],
     );

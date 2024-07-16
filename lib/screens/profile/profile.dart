@@ -34,16 +34,10 @@ class Profile extends StatelessWidget {
       appBar: CustomAppBar(
         actions: [
           AppBarButton(
-            text: "Perfil",
-            onPressed: () {},
-          ),
-          AppBarButton(
-            text: "Inicio",
-            onPressed: () {},
-          ),
-          AppBarButton(
             text: "Cerrar sesión",
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed('landing');
+            },
             color: Config.fifthColor,
           ),
         ],

@@ -13,7 +13,9 @@ class LogIn extends StatelessWidget {
           actions: [
             AppBarButton(
               text: "Cancelar",
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed('landing');
+              },
               color: Config.fifthColor,
             ),
           ],

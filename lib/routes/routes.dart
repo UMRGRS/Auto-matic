@@ -8,5 +8,5 @@ class Routes{
   static const signup2 = 'sign-up-II';
   static const signup3 = 'sign-up-III';
   static const signup4 = 'sign-up-IV';
-  static const vehiculeRD = 'vehicule-real-time';
+  static const vehicleRD = 'vehicle-real-time';
 }

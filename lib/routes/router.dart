@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 mixin RouterMixin on State<App> {
   //add error page
   final _router = GoRouter(
+    initialLocation: '/',
     routes: [
       GoRoute(
         name: Routes.landing,
@@ -12,38 +13,44 @@ mixin RouterMixin on State<App> {
       ),
       GoRoute(
         name: Routes.login,
-        path: '/',
+        path: '/login',
         builder: (_, __) => const LogIn(),
       ),
+      //--------------------
+      //we will need user id
+      //--------------------
       GoRoute(
         name: Routes.profile,
-        path: '/',
+        path: '/profile',
         builder: (_, __) => Profile(),
       ),
       GoRoute(
         name: Routes.signup1,
-        path: '/signup',
+        path: '/sign-up-1',
         builder: (_, __) => const SignUp1(),
       ),
       GoRoute(
         name: Routes.signup2,
-        path: '/signup',
+        path: '/sign-up-2',
         builder: (_, __) => const SignUp2(),
       ),
       GoRoute(
         name: Routes.signup3,
-        path: '/signup',
+        path: '/sign-up-3',
         builder: (_, __) => const SignUp3(),
       ),
       GoRoute(
         name: Routes.signup4,
-        path: '/signup',
+        path: '/sign-up-4',
         builder: (_, __) => const SignUp4(),
       ),
+      //--------------------
+      //we will need vehicle id
+      //--------------------
       GoRoute(
-        name: Routes.vehiculeRD,
-        path: '/signup',
-        builder: (_, __) => const VehiculeRD(),
+        name: Routes.vehicleRD,
+        path: '/vehicle-realtime',
+        builder: (_, __) => const VehicleRD(),
       ),
     ],
   );

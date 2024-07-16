@@ -1,7 +1,7 @@
 import 'package:auto_matic/config/config.dart';
 
-class VehiculeRD extends StatelessWidget {
-  const VehiculeRD({super.key});
+class VehicleRD extends StatelessWidget {
+  const VehicleRD({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,15 +10,15 @@ class VehiculeRD extends StatelessWidget {
         actions: [
           AppBarButton(
             text: "Perfil",
-            onPressed: () {},
-          ),
-          AppBarButton(
-            text: "Inicio",
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed('profile');
+            },
           ),
           AppBarButton(
               text: "Cerrar sesión",
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed('landing');
+              },
               color: Config.fifthColor),
         ],
       ),
@@ -29,7 +29,7 @@ class VehiculeRD extends StatelessWidget {
             return SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: const VehiculeIndicators(),
+                child: const VehicleIndicators(),
               ),
             );
           },
@@ -42,7 +42,7 @@ class VehiculeRD extends StatelessWidget {
             SizedBox(
               height: 100,
             ),
-            VehiculeDataCard(),
+            VehicleDataCard(),
             SizedBox(
               height: 50,
             )

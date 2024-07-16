@@ -1,7 +1,7 @@
 import 'package:auto_matic/config/config.dart';
 
-class VehiculeIndicators extends StatelessWidget {
-  const VehiculeIndicators({super.key});
+class VehicleIndicators extends StatelessWidget {
+  const VehicleIndicators({super.key});
 
   @override
   Widget build(BuildContext context) {

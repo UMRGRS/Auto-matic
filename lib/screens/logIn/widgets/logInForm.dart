@@ -51,7 +51,9 @@ class LogInForm extends StatelessWidget {
                     height: 15,
                   ),
                   CupertinoButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed('profile');
+                    },
                     padding: EdgeInsets.zero,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -98,7 +100,9 @@ class LogInForm extends StatelessWidget {
                     SignInButton(
                       Buttons.googleDark,
                       text: "Inicia sesión con Google",
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pushNamed('profile');
+                      },
                     ),
                     const SizedBox(
                       height: 10,
@@ -109,7 +113,9 @@ class LogInForm extends StatelessWidget {
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     CupertinoButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pushNamed('sign-up-I');
+                      },
                       padding: EdgeInsets.zero,
                       child: Container(
                         padding: const EdgeInsets.symmetric(

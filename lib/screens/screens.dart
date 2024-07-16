@@ -8,13 +8,13 @@ export 'profile/widgets/vehiculeList.dart';
 export 'profile/widgets/stateIndicator.dart';
 
 //Vehicule realtime data
-export 'vehiculeRD/vehiculeRD.dart';
-export 'vehiculeRD/widgets/vehiculeDataCard.dart';
-export 'vehiculeRD/widgets/vehiculeIndicators.dart';
-export 'vehiculeRD/widgets/RPM_KPM.dart';
-export 'vehiculeRD/widgets/tempBattery.dart';
-export 'vehiculeRD/widgets/servicesCard.dart';
-export 'vehiculeRD/widgets/failureCodesCard.dart';
+export 'vehicleRD/vehicleRD.dart';
+export 'vehicleRD/widgets/vehicleDataCard.dart';
+export 'vehicleRD/widgets/vehicleIndicators.dart';
+export 'vehicleRD/widgets/RPM_KPM.dart';
+export 'vehicleRD/widgets/tempBattery.dart';
+export 'vehicleRD/widgets/servicesCard.dart';
+export 'vehicleRD/widgets/failureCodesCard.dart';
 
 //Landing
 export 'landing/widgets/landingcard.dart';

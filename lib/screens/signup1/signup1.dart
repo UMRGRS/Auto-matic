@@ -11,11 +11,15 @@ class SignUp1 extends StatelessWidget {
           actions: [
             AppBarButton(
               text: "Iniciar sesión",
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed('login');
+              },
             ),
             AppBarButton(
               text: "Cancelar",
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed('landing');
+              },
               color: Config.fifthColor,
             ),
           ],
@@ -74,7 +78,7 @@ class SignUp1 extends StatelessWidget {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              // Lógica para el botón "Continuar"
+                              context.pushNamed('sign-up-II');
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Config.confirmGreen,

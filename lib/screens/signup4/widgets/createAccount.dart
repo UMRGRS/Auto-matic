@@ -61,7 +61,7 @@ class CreateAccount extends StatelessWidget {
                       child:
                         ElevatedButton(
                           onPressed: () {
-                            // Tu lógica aquí
+                            context.pushNamed('profile');
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Config.confirmGreen,
@@ -72,7 +72,7 @@ class CreateAccount extends StatelessWidget {
                           child: const Text(
                             'Continuar',
                             style: TextStyle(
-                              color: Config.firstColor, // Cambia el valor hexadecimal aquí
+                              color: Colors.white, // Cambia el valor hexadecimal aquí
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),

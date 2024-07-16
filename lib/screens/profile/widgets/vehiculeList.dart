@@ -11,7 +11,9 @@ class VehiculeList extends StatelessWidget {
         itemBuilder: (BuildContext context, index) {
           return CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed('vehicle-real-time');
+            },
             child: SizedBox(
               height: 110,
               child: Card(

@@ -1,8 +1,8 @@
 import 'package:auto_matic/config/config.dart';
 import 'package:flutter_svg/svg.dart';
 
-class VehiculeDataCard extends StatelessWidget {
-  const VehiculeDataCard({super.key});
+class VehicleDataCard extends StatelessWidget {
+  const VehicleDataCard({super.key});
 
   @override
   Widget build(BuildContext context) {

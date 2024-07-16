@@ -18,6 +18,12 @@ export 'package:auto_matic/utils/utils.dart';
 import 'package:auto_matic/routes/routes.dart';
 export 'package:auto_matic/routes/routes.dart';
 
+import 'session_controller.dart';
+export 'session_controller.dart';
+
+import 'package:go_router/go_router.dart';
+export 'package:go_router/go_router.dart';
+
 enum vehiculeState { OK, Danger, Urgent }
 
 class Config {
