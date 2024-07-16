@@ -1,10 +1,12 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Landing extends StatelessWidget {
   const Landing({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     final Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
 
@@ -27,9 +29,7 @@ class Landing extends StatelessWidget {
           actions: [
             AppBarButton(
               text: "Iniciar sesión",
-              onPressed: () {
-                context.pushNamed('login');
-              },
+              onPressed: () {},
             ),
             AppBarButton(
               text: "Registrate",
@@ -105,40 +105,23 @@ class Landing extends StatelessWidget {
                                         prototype,
                                         width: 200,
                                       )),
-                                  Column(
+                                  const Column(
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
+                                      Text(
                                         "Auto-matic",
                                         style: TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      const Text(
+                                      Text(
                                         "Auto-matic transforma tu experiencia de mantenimiento vehicular con una innovadora "
                                             "solución de monitoreo en tiempo real. A través de una aplicación web y móvil, "
                                             "captura datos cruciales de tu automóvil, permitiéndote anticipar servicios "
                                             "necesarios y mejorar la seguridad y eficiencia.",
                                         style: TextStyle(fontSize: 16),
-                                      ),
-                                      TextButton(
-                                        style: TextButton.styleFrom(
-                                          backgroundColor:
-                                          const Color(0xFFBA2D0B),
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10, horizontal: 50),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                        onPressed: () {},
-                                        child: const Text(
-                                          "Comprar",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
                                       ),
                                     ],
                                   ),
