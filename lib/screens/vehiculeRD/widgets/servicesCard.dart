@@ -26,7 +26,7 @@ class _ServiceCardState extends State<ServicesCard> {
               height: 5,
             ),
             const Text(
-              "Progreso hasta el siguiente servicio (Días)",
+              "Progreso hasta el siguiente servicio",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,

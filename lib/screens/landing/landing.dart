@@ -31,7 +31,10 @@ class Landing extends StatelessWidget {
             ),
             AppBarButton(
               text: "Registrate",
-              onPressed: () {},
+              onPressed: () {
+                final myAppState = context.findAncestorStateOfType<AppState>();
+                myAppState?.delegate.setNewRoutePath(Uri.parse('/signup'));
+              },
             )
           ],
         ),
