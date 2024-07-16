@@ -1,4 +1,5 @@
 import 'package:auto_matic/config/config.dart';
+import 'package:go_router/go_router.dart';
 
 class Landing extends StatelessWidget {
   const Landing({super.key});
@@ -32,8 +33,7 @@ class Landing extends StatelessWidget {
             AppBarButton(
               text: "Registrate",
               onPressed: () {
-                final myAppState = context.findAncestorStateOfType<AppState>();
-                myAppState?.delegate.setNewRoutePath(Uri.parse('/signup'));
+                context.pushNamed('sign-up-I');
               },
             )
           ],

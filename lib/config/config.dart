@@ -12,11 +12,11 @@ export 'package:auto_matic/screens/screens.dart';
 import 'package:auto_matic/widgets/widgets.dart';
 export 'package:auto_matic/widgets/widgets.dart';
 
-import 'package:auto_matic/widgets/widgets.dart';
-export 'package:auto_matic/widgets/widgets.dart';
-
 import 'package:auto_matic/utils/utils.dart';
 export 'package:auto_matic/utils/utils.dart';
+
+import 'package:auto_matic/routes/routes.dart';
+export 'package:auto_matic/routes/routes.dart';
 
 enum vehiculeState { OK, Danger, Urgent }
 
