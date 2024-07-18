@@ -24,82 +24,85 @@ class SignUp2 extends StatelessWidget {
             ),
           ],
         ),
-        body: Container(
-          padding: const EdgeInsets.all(10),
-          color: Config.firstColor,
-          child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              return SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Row(
-                            children: [
-                              Flexible(
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "Introduce el VIN del vehículo",
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 30,
+        body: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            color: Config.firstColor,
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Row(
+                              children: [
+                                Flexible(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "Introduce el VIN del vehículo",
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 30,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
+                                InfoButton(),
+                              ],
+                            ),
+                            TextField(
+                              decoration: const InputDecoration(
+                                hintText: 'ZPBUA1ZL9KLA00848',
+                                border:
+                                    OutlineInputBorder(), // Agregamos borde al TextField
                               ),
-                              InfoButton(),
-                            ],
-                          ),
-                          TextField(
-                            decoration: const InputDecoration(
-                              hintText: 'ZPBUA1ZL9KLA00848',
-                              border:
-                                  OutlineInputBorder(), // Agregamos borde al TextField
+                              inputFormatters: [
+                                MaskTextInputFormatter(
+                                  mask: 'xxxxxxxxxxxxxxxxx',
+                                  filter: {
+                                    'x': RegExp(r'[(A-H|J-N|P|R-Z|0-9)]'),
+                                  },
+                                ),
+                              ],
                             ),
-                            inputFormatters: [
-                              MaskTextInputFormatter(
-                                mask: 'xxxxxxxxxxxxxxxxx',
-                                filter: {
-                                  'x': RegExp(r'[(A-H|J-N|P|R-Z|0-9)]'),
-                                },
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                context.pushNamed('sign-up-III');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Config.confirmGreen,
                               ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              context.pushNamed('sign-up-III');
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Config.confirmGreen,
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text('Continuar',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15)),
+                              ),
                             ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text('Continuar',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15)),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const TimeLine(value: 10,)
-                    ],
+                          ],
+                        ),
+                        const TimeLine(value: 10,)
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
         bottomNavigationBar: const CustomBottomAppBar());

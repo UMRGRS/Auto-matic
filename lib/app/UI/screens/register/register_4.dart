@@ -5,8 +5,6 @@ class SignUp4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Responsive responsive = Responsive.of(context);
-    bool isScreenWide = responsive.width >= 600;
     return Scaffold(
         appBar: CustomAppBar(
           actions: [
@@ -26,7 +24,7 @@ class SignUp4 extends StatelessWidget {
           ],
         ),
         body: GestureDetector(
-          onTap: ()=>FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Container(
             padding: const EdgeInsets.all(10),
             color: Config.firstColor,
@@ -34,18 +32,19 @@ class SignUp4 extends StatelessWidget {
               builder: (BuildContext context, BoxConstraints constraints) {
                 return SingleChildScrollView(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                    constraints:
+                        BoxConstraints(minHeight: constraints.maxHeight),
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                            children: [
+                        Column(children: [
                           // Sección de creación de cuenta
                           CreateAccount(),
-                          SizedBox(height: 8,),
+                          SizedBox(
+                            height: 8,
+                          ),
                           // Sección de acceso con redes sociales
                           AccessWithSM(),
-                          //ConstructorBody()
                         ]),
                         TimeLine(
                           value: 30,

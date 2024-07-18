@@ -8,9 +8,6 @@ import 'package:auto_matic/app/global_utils/name_validator.dart';
 import '../../../../global_utils/password_validator.dart';
 import '../utils/send_register_form.dart';
 
-final registerProvider = StateProvider<RegisterController, RegisterState>(
-    (_) => RegisterController());
-
 class CreateAccount extends StatelessWidget {
   const CreateAccount({super.key});
   @override

@@ -6,6 +6,7 @@ class CustomInputField extends StatefulWidget {
   final TextInputType? inputType;
   final bool isPassword;
   final String? Function(String?)? validator;
+  final int? maxLength;
   const CustomInputField({
     super.key,
     this.onChanged,
@@ -13,6 +14,7 @@ class CustomInputField extends StatefulWidget {
     this.inputType,
     this.isPassword = false,
     this.validator,
+    this.maxLength,
   });
 
   @override
@@ -38,6 +40,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
+                maxLength: widget.maxLength,
                 keyboardType: widget.inputType,
                 obscureText: _obscureText,
                 onChanged: (text) {

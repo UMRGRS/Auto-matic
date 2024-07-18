@@ -4,16 +4,16 @@ import 'package:auto_matic/app/domain/responses/sign_up_response.dart';
 
 import '../../../global_widgets/dialogs/dialogs.dart';
 
-Future<void> sendRegisterForm(BuildContext context) async{
+Future<void> sendRegisterForm(BuildContext context) async {
   final controller = registerProvider.read;
   final isValidForm = controller.formKey.currentState!.validate();
-  if(isValidForm){
+  if (isValidForm) {
     ProgressDialog.show(context);
     final response = await controller.submit();
     context.pop();
-    if(response.error!=null){
+    if (response.error != null) {
       String content = "";
-      switch(response.error!){
+      switch (response.error!) {
         case SignUpError.emailAlreadyInUse:
           content = "Ya existe una cuenta con ese correo";
         case SignUpError.weakPassword:
@@ -22,11 +22,11 @@ Future<void> sendRegisterForm(BuildContext context) async{
           content = "Error desconocido";
       }
       Dialogs.showAlert(context, title: "Error", content: content);
-    }else{
+    } else {
+      await controller.submitCar();
       context.pushReplacementNamed("profile");
     }
-  }
-  else{
+  } else {
     Dialogs.showAlert(context, title: "Error", content: "Campos invalidos");
   }
 }

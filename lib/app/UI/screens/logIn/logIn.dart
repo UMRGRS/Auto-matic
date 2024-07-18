@@ -1,4 +1,5 @@
 import 'package:auto_matic/app/config/config.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LogIn extends StatelessWidget {
@@ -11,13 +12,17 @@ class LogIn extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar(
           actions: [
-            AppBarButton(
-              text: "Cancelar",
-              onPressed: () {
-                context.pushNamed('landing');
-              },
-              color: Config.fifthColor,
-            ),
+            kIsWeb
+                ? AppBarButton(
+                    text: "Cancelar",
+                    onPressed: () {
+                      context.pushNamed('landing');
+                    },
+                    color: Config.fifthColor,
+                  )
+                : Container(
+                    width: 0,
+                  ),
           ],
         ),
         body: Container(

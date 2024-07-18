@@ -1,4 +1,5 @@
 import 'package:auto_matic/app/config/config.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_meedu/router.dart' as meedu_router;
 
 mixin RouterMixin on State<App>{
@@ -9,6 +10,7 @@ mixin RouterMixin on State<App>{
     ],
     initialLocation: '/splash',
     routes: [
+      //We'll make splash redirect to login
       GoRoute(
         name: Routes.splash,
         path: '/splash',
