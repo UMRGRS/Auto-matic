@@ -1,6 +1,5 @@
 //Base screens
 export 'app.dart';
-export 'splash/splash_page.dart';
 
 //Profile
 export 'profile/profile.dart';

@@ -1,3 +1,4 @@
+import 'package:auto_matic/app/UI/screens/register/utils/clean_vin.dart';
 import 'package:auto_matic/app/config/config.dart';
 
 class SignUp3 extends StatelessWidget {
@@ -11,13 +12,13 @@ class SignUp3 extends StatelessWidget {
             AppBarButton(
               text: "Iniciar sesión",
               onPressed: () {
-                context.pushNamed('login');
+                context.go('/login');
               },
             ),
             AppBarButton(
               text: "Cancelar",
               onPressed: () {
-                context.pushNamed('landing');
+                context.go('/landing');
               },
               color: Config.fifthColor,
             ),
@@ -55,7 +56,7 @@ class SignUp3 extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const Databox(),
+                          const DataBox(),
                           const SizedBox(
                             height: 10,
                           ),
@@ -63,7 +64,7 @@ class SignUp3 extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  context.pushNamed('sign-up-IV');
+                                  cleanVIN(context);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Config.confirmGreen,
@@ -82,7 +83,7 @@ class SignUp3 extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  // Lógica para el botón "Corregir VIN"
+                                  context.pushReplacementNamed('sign-up-II');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.grey,

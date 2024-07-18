@@ -40,7 +40,7 @@ class Profile extends StatelessWidget {
             text: "Cerrar sesión",
             onPressed: () async{
               await Get.i.find<AuthenticationRepository>().signOut();
-              context.pushReplacementNamed("sign-up-IV");
+              context.pushReplacementNamed("login");
             },
             color: Config.fifthColor,
           ),

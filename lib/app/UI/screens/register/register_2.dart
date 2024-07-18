@@ -1,5 +1,7 @@
+import 'package:auto_matic/app/UI/screens/register/utils/confirm_vin.dart';
+import 'package:auto_matic/app/UI/screens/register/utils/vin_validator.dart';
 import 'package:auto_matic/app/config/config.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:flutter_meedu/flutter_meedu.dart';
 
 class SignUp2 extends StatelessWidget {
   const SignUp2({super.key});
@@ -33,70 +35,80 @@ class SignUp2 extends StatelessWidget {
               builder: (BuildContext context, BoxConstraints constraints) {
                 return SingleChildScrollView(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                    constraints:
+                        BoxConstraints(minHeight: constraints.maxHeight),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Row(
-                              children: [
-                                Flexible(
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        "Introduce el VIN del vehículo",
-                                        maxLines: 3,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 30,
+                        ProviderListener(
+                            provider: registerProvider,
+                            builder: (_, controller) {
+                              return Form(
+                                key: controller.keyVIN,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Row(
+                                      children: [
+                                        Flexible(
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                "Introduce el VIN del vehículo",
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 30,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
+                                        InfoButton(),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    CustomInputField(
+                                      onChanged: controller.onCarVINChanged,
+                                      label: "VIN del vehículo (17 caracteres)",
+                                      maxLength: 17,
+                                      validator: (text) {
+                                        if (text == null) {
+                                          return "El VIN no puede estar vacío";
+                                        }
+                                        if (text.trim().length < 17) {
+                                          return "No puede contener caracteres vacíos";
+                                        }
+                                        return isValidVIN(text);
+                                      },
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    ElevatedButton(
+                                      onPressed: () => confirmVIN(context),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Config.confirmGreen,
                                       ),
-                                    ],
-                                  ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Text('Continuar',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15)),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                InfoButton(),
-                              ],
-                            ),
-                            TextField(
-                              decoration: const InputDecoration(
-                                hintText: 'ZPBUA1ZL9KLA00848',
-                                border:
-                                    OutlineInputBorder(), // Agregamos borde al TextField
-                              ),
-                              inputFormatters: [
-                                MaskTextInputFormatter(
-                                  mask: 'xxxxxxxxxxxxxxxxx',
-                                  filter: {
-                                    'x': RegExp(r'[(A-H|J-N|P|R-Z|0-9)]'),
-                                  },
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                context.pushNamed('sign-up-III');
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Config.confirmGreen,
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text('Continuar',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15)),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const TimeLine(value: 10,)
+                              );
+                            }),
+                        const TimeLine(
+                          value: 10,
+                        )
                       ],
                     ),
                   ),

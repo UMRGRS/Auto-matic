@@ -1,12 +1,11 @@
 import 'package:auto_matic/app/UI/screens/register/controller/register_controller.dart';
-import 'package:auto_matic/app/UI/screens/register/controller/register_state.dart';
+import 'package:auto_matic/app/UI/screens/register/utils/send_register_form.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:auto_matic/app/global_utils/password_validator.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
 
 import 'package:auto_matic/app/global_utils/email_validator.dart';
 import 'package:auto_matic/app/global_utils/name_validator.dart';
-import '../../../../global_utils/password_validator.dart';
-import '../utils/send_register_form.dart';
 
 class CreateAccount extends StatelessWidget {
   const CreateAccount({super.key});
@@ -44,7 +43,9 @@ class CreateAccount extends StatelessWidget {
                           onChanged: controller.onLastNameChanged,
                           validator: (text) {
                             if (text == null) return "Apellido invalido";
-                            return isValidName(text) ? null : "Apellido invalido";
+                            return isValidName(text)
+                                ? null
+                                : "Apellido invalido";
                           },
                         ),
                         const SizedBox(height: 20),
@@ -53,7 +54,9 @@ class CreateAccount extends StatelessWidget {
                           inputType: TextInputType.emailAddress,
                           onChanged: controller.onEmailChanged,
                           validator: (text) {
-                            if (text == null) return "Correo electronico invalido";
+                            if (text == null) {
+                              return "Correo electronico invalido";
+                            }
                             return isValidEmail(text)
                                 ? null
                                 : "Correo electronico invalido";
@@ -64,25 +67,25 @@ class CreateAccount extends StatelessWidget {
                           label: 'Contraseña',
                           onChanged: controller.onPasswordChanged,
                           isPassword: true,
-                          validator: (text){
-                            if(text==null) return "Contraseña invalida";
+                          validator: (text) {
+                            if (text == null) return "Contraseña invalida";
                             return isValidPassword(text);
-                            return "Contraseña invalida";
                           },
                         ),
                         const SizedBox(height: 20),
-                        Consumer(builder: (_,watch,__){
-                          watch(registerProvider.select((state)=>state.password));
+                        Consumer(builder: (_, watch, __) {
+                          watch(registerProvider
+                              .select((state) => state.password));
                           return CustomInputField(
                             label: 'Verfica tu contraseña',
                             onChanged: controller.onVPasswordChanged,
                             isPassword: true,
-                            validator: (text){
-                              if(text==null) return "Contraseña invalida";
-                              if(controller.state.password!=text){
+                            validator: (text) {
+                              if (text == null) return "Contraseña invalida";
+                              if (controller.state.password != text) {
                                 return "Las contraseñas no coinciden";
                               }
-                              if(text.trim().length>=8){
+                              if (text.trim().length >= 8) {
                                 return null;
                               }
                               return "Contraseña invalida";
@@ -94,7 +97,7 @@ class CreateAccount extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                onPressed: () =>sendRegisterForm(context),
+                                onPressed: () => sendRegisterForm(context),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Config.confirmGreen,
                                   shape: RoundedRectangleBorder(

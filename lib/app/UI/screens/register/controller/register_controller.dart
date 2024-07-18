@@ -18,11 +18,10 @@ class RegisterController extends StateNotifier<RegisterState> {
   final GlobalKey<FormState> uniqueCodeKey = GlobalKey();
   final GlobalKey<FormState> keyVIN = GlobalKey();
 
-  final _signUpRepository = Get.i.find<SignUpRepository>();
-  final _authRepository = Get.i.find<AuthenticationRepository>();
-
   Future<SignUpResponse> submit() {
-    return _signUpRepository.registerUser(SignUpData(
+    final signUpRepository = Get.i.find<SignUpRepository>();
+
+    return signUpRepository.registerUser(SignUpData(
         name: state.name,
         lastname: state.lastName,
         email: state.email,
@@ -30,12 +29,16 @@ class RegisterController extends StateNotifier<RegisterState> {
   }
 
   Future<RegisterCarResponse> submitCar() async {
-    final user = await _authRepository.user;
-    final response = await _signUpRepository.createRealTime(state.uniqueCode);
+    final signUpRepository = Get.i.find<SignUpRepository>();
+    final authRepository = Get.i.find<AuthenticationRepository>();
+
+    final user = await authRepository.user;
+    final response = await signUpRepository.createRealTime(state.uniqueCode);
+
     if (response.error != null) {
       return RegisterCarResponse(response.error);
     }
-    return _signUpRepository.registerCar(CarData(
+    return signUpRepository.registerCar(CarData(
         alias: "Tu carrito",
         reference: response.ref!,
         userUID: user!.uid,

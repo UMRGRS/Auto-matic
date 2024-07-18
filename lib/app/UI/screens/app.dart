@@ -8,8 +8,7 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> with RouterMixin{
-
+class _AppState extends State<App> with RouterMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -17,12 +16,19 @@ class _AppState extends State<App> with RouterMixin{
       theme: ThemeData(
           useMaterial3: true,
           appBarTheme: const AppBarTheme(
-              iconTheme: IconThemeData(color: Colors.white),
-              color: Config.secondColor,
-              elevation: 3,
-              titleTextStyle: TextStyle(color: Colors.white, fontSize: 25)),
+            iconTheme: IconThemeData(color: Colors.white),
+            color: Config.secondColor,
+            elevation: 3,
+            titleTextStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+            ),
+          ),
           bottomAppBarTheme: const BottomAppBarTheme(
-              color: Config.secondColor, elevation: 3, height: 50),
+            color: Config.secondColor,
+            elevation: 3,
+            height: 50,
+          ),
           fontFamily: 'Helvetica'),
       debugShowCheckedModeBanner: false,
       routerConfig: router,

@@ -1,8 +1,7 @@
+import 'package:auto_matic/app/UI/global_widgets/dialogs/dialogs.dart';
 import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/domain/responses/sign_up_response.dart';
-
-import '../../../global_widgets/dialogs/dialogs.dart';
 
 Future<void> sendRegisterForm(BuildContext context) async {
   final controller = registerProvider.read;

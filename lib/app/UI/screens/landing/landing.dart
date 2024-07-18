@@ -29,6 +29,7 @@ class Landing extends StatelessWidget {
             AppBarButton(
               text: "Iniciar sesión",
               onPressed: () {
+                context.pushNamed('login');
               },
             ),
             AppBarButton(

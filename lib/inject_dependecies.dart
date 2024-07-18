@@ -13,7 +13,8 @@ void injectDependencies() {
   Get.i.lazyPut<AuthenticationRepository>(
     () => AuthenticationRepositoryImpl(FirebaseAuth.instance),
   );
-  Get.i.put<SignUpRepository>(
-    SignUpRepositoryImpl(FirebaseAuth.instance, FirebaseFirestore.instance),
+  Get.i.lazyPut<SignUpRepository>(
+    () =>
+        SignUpRepositoryImpl(FirebaseAuth.instance, FirebaseFirestore.instance),
   );
 }

@@ -6,7 +6,7 @@ import 'controller/register_controller.dart';
 import 'controller/register_state.dart';
 
 final registerProvider = StateProvider<RegisterController, RegisterState>(
-    (_) => RegisterController());
+        (_) => RegisterController());
 
 class SignUp1 extends StatelessWidget {
   const SignUp1({super.key});
@@ -19,13 +19,13 @@ class SignUp1 extends StatelessWidget {
             AppBarButton(
               text: "Iniciar sesión",
               onPressed: () {
-                context.pushReplacementNamed('login');
+                context.pushNamed('login');
               },
             ),
             AppBarButton(
               text: "Cancelar",
               onPressed: () {
-                context.pushReplacementNamed('landing');
+                context.pushNamed('landing');
               },
               color: Config.fifthColor,
             ),
@@ -73,16 +73,19 @@ class SignUp1 extends StatelessWidget {
                                         InfoButton(),
                                       ],
                                     ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
                                     CustomInputField(
                                       label: "Código unico (16 caracteres)",
                                       onChanged: controller.onUniqueCodeChanged,
                                       maxLength: 16,
                                       validator: (text) {
                                         if (text == null) {
-                                          return "El codigo no puede estar vacio";
+                                          return "El codigo no puede estar vacío";
                                         }
                                         if (text.trim().length < 16) {
-                                          return "El codigo tiene que ser de 16 caracteres y no contener espacios vacios";
+                                          return "El codigo tiene que ser de 16 caracteres y no contener espacios vacíos";
                                         }
                                         return null;
                                       },
@@ -98,11 +101,13 @@ class SignUp1 extends StatelessWidget {
                                       ),
                                       child: const Padding(
                                         padding: EdgeInsets.all(8.0),
-                                        child: Text('Continuar',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15)),
+                                        child: Text(
+                                          'Continuar',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                        ),
                                       ),
                                     ),
                                   ],
