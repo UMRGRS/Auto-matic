@@ -1,11 +1,12 @@
+import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/UI/screens/logIn/controller/log_in_controller.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_meedu/flutter_meedu.dart';
+import 'package:flutter_meedu/meedu.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 final loginProvider = SimpleProvider(
-  (_) => LogInController(),
+      (_) => LogInController(sessionProvider.read), autoDispose: false,
 );
 
 class LogIn extends StatelessWidget {

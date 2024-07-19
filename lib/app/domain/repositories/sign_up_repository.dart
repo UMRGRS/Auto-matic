@@ -1,11 +1,6 @@
-import 'package:auto_matic/app/domain/inputs/car_data.dart';
 import 'package:auto_matic/app/domain/inputs/sign_up_data.dart';
-import 'package:auto_matic/app/domain/responses/create_realtime_response.dart';
-import 'package:auto_matic/app/domain/responses/register_car_response.dart';
 import 'package:auto_matic/app/domain/responses/sign_up_response.dart';
 
-abstract class SignUpRepository {
+abstract class SignUpRepository{
   Future<SignUpResponse> registerUser(SignUpData data);
-  Future<RegisterCarResponse> registerCar(CarData data);
-  Future<CreateRealtimeResponse> createRealTime(String name);
 }

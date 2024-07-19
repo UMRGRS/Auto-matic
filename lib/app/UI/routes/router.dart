@@ -1,5 +1,4 @@
 import 'package:auto_matic/app/UI/routes/utils/check_auth.dart';
-import 'package:auto_matic/app/UI/screens/vehicle_RD/vehicle_RD.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter/foundation.dart';
 

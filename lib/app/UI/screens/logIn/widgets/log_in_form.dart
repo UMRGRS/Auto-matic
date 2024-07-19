@@ -133,7 +133,7 @@ class LogInForm extends StatelessWidget {
                         SignInButton(
                           Buttons.googleDark,
                           text: "Inicia sesión con Google",
-                          onPressed: () {},
+                          onPressed: () =>controller.signInWithGoogle(),
                         ),
                         const SizedBox(
                           height: 10,
