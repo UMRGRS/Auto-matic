@@ -1,4 +1,5 @@
 import 'package:auto_matic/app/UI/routes/utils/check_auth.dart';
+import 'package:auto_matic/app/UI/screens/vehicle_RD/vehicle_RD.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter/foundation.dart';
 
@@ -37,40 +38,40 @@ mixin RouterMixin on State<App> {
         builder: (_, __) => Profile(),
       ),
       GoRoute(
-        name: Routes.signup1,
-        path: '/sign-up-1',
+        name: Routes.registerCar1,
+        path: '/register-car-1',
         redirect: (_, __) async {
           bool auth = await isAuth();
-          return auth ? '/profile' : null;
+          return auth ? null : '/login';
         },
         builder: (_, __) => const SignUp1(),
       ),
       GoRoute(
-        name: Routes.signup2,
-        path: '/sign-up-2',
+        name: Routes.registerCar2,
+        path: '/register-car-2',
         redirect: (_, __) async {
           bool auth = await isAuth();
-          return auth ? '/profile' : null;
+          return auth ? null : '/login';
         },
         builder: (_, __) => const SignUp2(),
       ),
       GoRoute(
-        name: Routes.signup3,
-        path: '/sign-up-3',
+        name: Routes.registerCar3,
+        path: '/register-car-3',
         redirect: (_, __) async {
           bool auth = await isAuth();
-          return auth ? '/profile' : null;
+          return auth ? null : '/login';
         },
         builder: (_, __) => const SignUp3(),
       ),
       GoRoute(
-        name: Routes.signup4,
-        path: '/sign-up-4',
+        name: Routes.register,
+        path: '/Register',
         redirect: (_, __) async {
           bool auth = await isAuth();
           return auth ? '/profile' : null;
         },
-        builder: (_, __) => const SignUp4(),
+        builder: (_, __) => const Register(),
       ),
       GoRoute(
         name: Routes.vehicleRD,

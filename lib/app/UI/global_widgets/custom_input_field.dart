@@ -61,7 +61,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
                       ? CupertinoButton(
                           child: Icon(_obscureText
                               ? Icons.visibility
-                              : Icons.visibility_off),
+                              : Icons.visibility_off, size: 18,),
                           onPressed: () {
                             _obscureText = !_obscureText;
                             setState(() {});

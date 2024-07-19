@@ -1,14 +1,14 @@
 import 'package:auto_matic/app/domain/inputs/car_data.dart';
 import 'package:auto_matic/app/domain/inputs/sign_up_data.dart';
 import 'package:auto_matic/app/domain/models/realtime_template.dart';
+import 'package:auto_matic/app/domain/repositories/sign_up_repository.dart';
 import 'package:auto_matic/app/domain/responses/create_realtime_response.dart';
 import 'package:auto_matic/app/domain/responses/register_car_response.dart';
+import 'package:auto_matic/app/domain/responses/sign_in_response.dart';
 
 import 'package:auto_matic/app/domain/responses/sign_up_response.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-import '../../domain/repositories/sign_up_repository.dart';
 
 class SignUpRepositoryImpl implements SignUpRepository {
   final FirebaseAuth _auth;

@@ -35,7 +35,7 @@ class Landing extends StatelessWidget {
             AppBarButton(
               text: "Registrate",
               onPressed: () {
-                context.pushNamed('sign-up-I');
+                context.pushNamed('register');
               },
             )
           ],

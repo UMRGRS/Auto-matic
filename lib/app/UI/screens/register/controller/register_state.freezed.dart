@@ -21,11 +21,6 @@ mixin _$RegisterState {
   String get vPassword => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
-  String get uniqueCode => throw _privateConstructorUsedError;
-  String get carVIN => throw _privateConstructorUsedError;
-  String get carModel => throw _privateConstructorUsedError;
-  String get carMade => throw _privateConstructorUsedError;
-  String get carYear => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RegisterStateCopyWith<RegisterState> get copyWith =>
@@ -43,12 +38,7 @@ abstract class $RegisterStateCopyWith<$Res> {
       String password,
       String vPassword,
       String name,
-      String lastName,
-      String uniqueCode,
-      String carVIN,
-      String carModel,
-      String carMade,
-      String carYear});
+      String lastName});
 }
 
 /// @nodoc
@@ -69,11 +59,6 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
     Object? vPassword = null,
     Object? name = null,
     Object? lastName = null,
-    Object? uniqueCode = null,
-    Object? carVIN = null,
-    Object? carModel = null,
-    Object? carMade = null,
-    Object? carYear = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -96,26 +81,6 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      uniqueCode: null == uniqueCode
-          ? _value.uniqueCode
-          : uniqueCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      carVIN: null == carVIN
-          ? _value.carVIN
-          : carVIN // ignore: cast_nullable_to_non_nullable
-              as String,
-      carModel: null == carModel
-          ? _value.carModel
-          : carModel // ignore: cast_nullable_to_non_nullable
-              as String,
-      carMade: null == carMade
-          ? _value.carMade
-          : carMade // ignore: cast_nullable_to_non_nullable
-              as String,
-      carYear: null == carYear
-          ? _value.carYear
-          : carYear // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -133,12 +98,7 @@ abstract class _$$RegisterStateImplCopyWith<$Res>
       String password,
       String vPassword,
       String name,
-      String lastName,
-      String uniqueCode,
-      String carVIN,
-      String carModel,
-      String carMade,
-      String carYear});
+      String lastName});
 }
 
 /// @nodoc
@@ -157,11 +117,6 @@ class __$$RegisterStateImplCopyWithImpl<$Res>
     Object? vPassword = null,
     Object? name = null,
     Object? lastName = null,
-    Object? uniqueCode = null,
-    Object? carVIN = null,
-    Object? carModel = null,
-    Object? carMade = null,
-    Object? carYear = null,
   }) {
     return _then(_$RegisterStateImpl(
       email: null == email
@@ -184,26 +139,6 @@ class __$$RegisterStateImplCopyWithImpl<$Res>
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      uniqueCode: null == uniqueCode
-          ? _value.uniqueCode
-          : uniqueCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      carVIN: null == carVIN
-          ? _value.carVIN
-          : carVIN // ignore: cast_nullable_to_non_nullable
-              as String,
-      carModel: null == carModel
-          ? _value.carModel
-          : carModel // ignore: cast_nullable_to_non_nullable
-              as String,
-      carMade: null == carMade
-          ? _value.carMade
-          : carMade // ignore: cast_nullable_to_non_nullable
-              as String,
-      carYear: null == carYear
-          ? _value.carYear
-          : carYear // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -216,12 +151,7 @@ class _$RegisterStateImpl implements _RegisterState {
       this.password = '',
       this.vPassword = '',
       this.name = '',
-      this.lastName = '',
-      this.uniqueCode = '',
-      this.carVIN = '',
-      this.carModel = '',
-      this.carMade = '',
-      this.carYear = ''});
+      this.lastName = ''});
 
   @override
   @JsonKey()
@@ -238,25 +168,10 @@ class _$RegisterStateImpl implements _RegisterState {
   @override
   @JsonKey()
   final String lastName;
-  @override
-  @JsonKey()
-  final String uniqueCode;
-  @override
-  @JsonKey()
-  final String carVIN;
-  @override
-  @JsonKey()
-  final String carModel;
-  @override
-  @JsonKey()
-  final String carMade;
-  @override
-  @JsonKey()
-  final String carYear;
 
   @override
   String toString() {
-    return 'RegisterState(email: $email, password: $password, vPassword: $vPassword, name: $name, lastName: $lastName, uniqueCode: $uniqueCode, carVIN: $carVIN, carModel: $carModel, carMade: $carMade, carYear: $carYear)';
+    return 'RegisterState(email: $email, password: $password, vPassword: $vPassword, name: $name, lastName: $lastName)';
   }
 
   @override
@@ -271,19 +186,12 @@ class _$RegisterStateImpl implements _RegisterState {
                 other.vPassword == vPassword) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.uniqueCode, uniqueCode) ||
-                other.uniqueCode == uniqueCode) &&
-            (identical(other.carVIN, carVIN) || other.carVIN == carVIN) &&
-            (identical(other.carModel, carModel) ||
-                other.carModel == carModel) &&
-            (identical(other.carMade, carMade) || other.carMade == carMade) &&
-            (identical(other.carYear, carYear) || other.carYear == carYear));
+                other.lastName == lastName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, vPassword, name,
-      lastName, uniqueCode, carVIN, carModel, carMade, carYear);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, vPassword, name, lastName);
 
   @JsonKey(ignore: true)
   @override
@@ -298,12 +206,7 @@ abstract class _RegisterState implements RegisterState {
       final String password,
       final String vPassword,
       final String name,
-      final String lastName,
-      final String uniqueCode,
-      final String carVIN,
-      final String carModel,
-      final String carMade,
-      final String carYear}) = _$RegisterStateImpl;
+      final String lastName}) = _$RegisterStateImpl;
 
   @override
   String get email;
@@ -315,16 +218,6 @@ abstract class _RegisterState implements RegisterState {
   String get name;
   @override
   String get lastName;
-  @override
-  String get uniqueCode;
-  @override
-  String get carVIN;
-  @override
-  String get carModel;
-  @override
-  String get carMade;
-  @override
-  String get carYear;
   @override
   @JsonKey(ignore: true)
   _$$RegisterStateImplCopyWith<_$RegisterStateImpl> get copyWith =>

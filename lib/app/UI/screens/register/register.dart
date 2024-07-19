@@ -1,28 +1,29 @@
+import 'package:auto_matic/app/UI/screens/register/controller/register_controller.dart';
+import 'package:auto_matic/app/UI/screens/register/controller/register_state.dart';
 import 'package:auto_matic/app/config/config.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter_meedu/meedu.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class LogIn extends StatelessWidget {
-  const LogIn({super.key});
+final registerProvider = StateProvider<RegisterController, RegisterState>(
+    (_) => RegisterController());
+
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
-    bool isScreenWide = responsive.width >= 600;
+    bool isScreenWide = responsive.width >= 650;
     return Scaffold(
         appBar: CustomAppBar(
           actions: [
-            kIsWeb
-                ? AppBarButton(
-                    text: "Cancelar",
-                    onPressed: () {
-                      context.pushNamed('landing');
-                    },
-                    color: Config.fifthColor,
-                  )
-                : Container(
-                    width: 0,
-                  ),
+            AppBarButton(
+              text: "Cancelar",
+              onPressed: () {
+                context.pushNamed('landing');
+              },
+              color: Config.fifthColor,
+            ),
           ],
         ),
         body: Container(
@@ -40,7 +41,6 @@ class LogIn extends StatelessWidget {
                             Expanded(
                               flex: 6,
                               child: Container(
-                                height: constraints.maxHeight,
                                 decoration: const BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
@@ -52,30 +52,33 @@ class LogIn extends StatelessWidget {
                                     end: Alignment.bottomRight,
                                   ),
                                 ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    const Text(
-                                      "Bienvenido",
-                                      style: TextStyle(
-                                          fontFamily: "Lobster",
-                                          fontSize: 50,
-                                          color: Colors.white),
-                                    ),
-                                    SvgPicture.asset(
-                                        "assets/pages/login/icons/city.svg",
-                                        height: constraints.maxHeight * 0.8),
-                                  ],
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 67.0),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text(
+                                        "Bienvenido",
+                                        style: TextStyle(
+                                            fontFamily: "Lobster",
+                                            fontSize: 50,
+                                            color: Colors.white),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(16.0),
+                                        child: SvgPicture.asset(
+                                          "assets/pages/register/icons/driver.svg",
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               flex: 6,
-                              child: SizedBox(
-                                height: constraints.maxHeight,
-                                child: const LogInForm(),
-                              ),
+                              child: CreateAccount(),
                             ),
                           ],
                         );
@@ -109,7 +112,7 @@ class LogIn extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            const LogInForm()
+                            const CreateAccount()
                           ],
                         );
                       }

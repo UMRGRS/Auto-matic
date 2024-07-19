@@ -1,15 +1,11 @@
-import 'package:auto_matic/app/UI/screens/register/utils/confirm_unique_code.dart';
+import 'package:auto_matic/app/UI/screens/register_car/utils/confirm_vin.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
 
-import 'controller/register_controller.dart';
-import 'controller/register_state.dart';
+import 'utils/vin_validator.dart';
 
-final registerProvider = StateProvider<RegisterController, RegisterState>(
-        (_) => RegisterController());
-
-class SignUp1 extends StatelessWidget {
-  const SignUp1({super.key});
+class SignUp2 extends StatelessWidget {
+  const SignUp2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +41,11 @@ class SignUp1 extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ProviderListener<RegisterController>(
-                            provider: registerProvider,
+                        ProviderListener(
+                            provider: registerCarProvider,
                             builder: (_, controller) {
                               return Form(
-                                key: controller.uniqueCodeKey,
+                                key: controller.keyVIN,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -59,7 +55,7 @@ class SignUp1 extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Text(
-                                                'Introduce el código único del producto',
+                                                "Introduce el VIN del vehículo",
                                                 maxLines: 3,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: TextStyle(
@@ -77,37 +73,34 @@ class SignUp1 extends StatelessWidget {
                                       height: 15,
                                     ),
                                     CustomInputField(
-                                      label: "Código unico (16 caracteres)",
-                                      onChanged: controller.onUniqueCodeChanged,
-                                      maxLength: 16,
+                                      onChanged: controller.onCarVINChanged,
+                                      label: "VIN del vehículo (17 caracteres)",
+                                      maxLength: 17,
                                       validator: (text) {
                                         if (text == null) {
-                                          return "El codigo no puede estar vacío";
+                                          return "El VIN no puede estar vacío";
                                         }
-                                        if (text.trim().length < 16) {
-                                          return "El codigo tiene que ser de 16 caracteres y no contener espacios vacíos";
+                                        if (text.trim().length < 17) {
+                                          return "No puede contener caracteres vacíos";
                                         }
-                                        return null;
+                                        return isValidVIN(text);
                                       },
                                     ),
                                     const SizedBox(
                                       height: 10,
                                     ),
                                     ElevatedButton(
-                                      onPressed: () =>
-                                          confirmUniqueCode(context),
+                                      onPressed: () => confirmVIN(context),
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Config.confirmGreen,
                                       ),
                                       child: const Padding(
                                         padding: EdgeInsets.all(8.0),
-                                        child: Text(
-                                          'Continuar',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15),
-                                        ),
+                                        child: Text('Continuar',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15)),
                                       ),
                                     ),
                                   ],
@@ -115,8 +108,8 @@ class SignUp1 extends StatelessWidget {
                               );
                             }),
                         const TimeLine(
-                          value: 0,
-                        ), // Línea de tiempo
+                          value: 10,
+                        )
                       ],
                     ),
                   ),

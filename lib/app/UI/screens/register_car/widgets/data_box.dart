@@ -12,7 +12,7 @@ class DataBoxState extends State<DataBox> {
   @override
   Widget build(BuildContext context) {
     return ProviderListener(
-        provider: registerProvider,
+        provider: registerCarProvider,
         builder: (_, controller) {
           return Card(
             child: Padding(

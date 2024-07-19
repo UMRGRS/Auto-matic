@@ -1,4 +1,4 @@
-import 'package:auto_matic/app/UI/screens/register/utils/clean_vin.dart';
+import 'package:auto_matic/app/UI/screens/register_car/utils/clean_vin.dart';
 import 'package:auto_matic/app/config/config.dart';
 
 class SignUp3 extends StatelessWidget {

@@ -5,7 +5,7 @@ import 'package:auto_matic/app/data/data_source/remote/vin_api_call.dart';
 import 'package:auto_matic/app/domain/responses/api_vin_response.dart';
 
 void confirmVIN(BuildContext context) async {
-  final controller = registerProvider.read;
+  final controller = registerCarProvider.read;
   final isValidForm = controller.keyVIN.currentState!.validate();
   if (isValidForm) {
     ProgressDialog.show(context);

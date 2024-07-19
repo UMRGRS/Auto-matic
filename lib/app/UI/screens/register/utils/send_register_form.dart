@@ -17,12 +17,13 @@ Future<void> sendRegisterForm(BuildContext context) async {
           content = "Ya existe una cuenta con ese correo";
         case SignUpError.weakPassword:
           content = "Tu contraseña es muy debil";
-        case SignUpError.unknow:
+        case SignUpError.networkRequestFailed:
+          content = "Sin conexión a internet";
+        case SignUpError.unknown:
           content = "Error desconocido";
       }
       Dialogs.showAlert(context, title: "Error", content: content);
     } else {
-      await controller.submitCar();
       context.pushReplacementNamed("profile");
     }
   } else {

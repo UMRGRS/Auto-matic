@@ -12,9 +12,11 @@ parseStringToSignUpError(String text){
       return SignUpError.emailAlreadyInUse;
     case 'weak-password':
       return SignUpError.weakPassword;
+    case 'network-request-failed':
+      return SignUpError.networkRequestFailed;
     default:
-      return SignUpError.unknow;
+      return SignUpError.unknown;
   }
 }
 
-enum SignUpError{emailAlreadyInUse, weakPassword, unknow}
+enum SignUpError{emailAlreadyInUse, weakPassword, networkRequestFailed, unknown}
