@@ -13,9 +13,14 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import 'app/data/repositories_impl/sign_up_respository_impl.dart';
 
+const List<String> scopes = <String>[
+  'email',
+  'https://www.googleapis.com/auth/cloud-platform.read-only',
+];
+
 void injectDependencies() {
   Get.i.lazyPut<AuthenticationRepository>(
-    () => AuthenticationRepositoryImpl(FirebaseAuth.instance, GoogleSignIn()),
+    () => AuthenticationRepositoryImpl(FirebaseAuth.instance, GoogleSignIn(scopes: scopes), GoogleAuthProvider()),
   );
   Get.i.lazyPut<RegisterCarRepository>(
     () => RegisterCarRepositoryImpl(FirebaseFirestore.instance),

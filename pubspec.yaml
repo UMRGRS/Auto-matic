@@ -82,6 +82,7 @@ flutter:
     - assets/pages/landing/images/
     - assets/pages/login/icons/
     - assets/pages/register/icons/
+    - assets/pages/vehicle_RD/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

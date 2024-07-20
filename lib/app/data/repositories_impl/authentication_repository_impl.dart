@@ -8,11 +8,12 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
+  final GoogleAuthProvider _googleAuthProvider;
   User? _user;
 
   final Completer<void> _completer = Completer();
 
-  AuthenticationRepositoryImpl(this._auth, this._googleSignIn) {
+  AuthenticationRepositoryImpl(this._auth, this._googleSignIn, this._googleAuthProvider) {
     _init();
   }
 
@@ -55,7 +56,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<SignInResponse> signInWithGoogle() async {
+  Future<SignInResponse> signInWithGoogleMobile() async {
     try {
       final account = await _googleSignIn.signIn();
       if (account == null) {
@@ -71,5 +72,20 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     } on FirebaseAuthException catch (e) {
       return getSignInError(e);
     }
+  }
+
+  @override
+  Future<SignInResponse> signInWithGoogleWeb() async{
+    _googleAuthProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    _googleAuthProvider.setCustomParameters({
+      'prompt': 'select_account'
+    });
+    try{
+      final credential  = await _auth.signInWithPopup(_googleAuthProvider);
+      return SignInResponse(error: null, user: credential.user, providerId: null);
+    } on FirebaseAuthException catch (e){
+      return getSignInError(e);
+    }
+
   }
 }

@@ -6,5 +6,6 @@ abstract class AuthenticationRepository {
   Future<void> signOut();
   Future<SignInResponse> signInWithEmailAndPassword(
       String email, String password);
-  Future<SignInResponse> signInWithGoogle();
+  Future<SignInResponse> signInWithGoogleMobile();
+  Future<SignInResponse> signInWithGoogleWeb();
 }

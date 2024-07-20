@@ -2,6 +2,7 @@ import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/domain/repositories/authentication_repository.dart';
 import 'package:auto_matic/app/domain/responses/sign_in_response.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
 
 class LogInController extends SimpleNotifier {
@@ -22,14 +23,17 @@ class LogInController extends SimpleNotifier {
     _password = text;
   }
 
-  Future<SignInResponse> signInWithEmailAndPassword() async{
+  Future<SignInResponse> signInWithEmailAndPassword() async {
     final response = await _auth.signInWithEmailAndPassword(_email, _password);
-    if(response.user!=null){
+    if (response.user != null) {
       _sessionController.setUser(response.user!);
     }
     return response;
   }
-  Future<SignInResponse> signInWithGoogle(){
-     return _auth.signInWithGoogle();
+
+  Future<SignInResponse> signInWithGoogle() {
+    return kIsWeb
+        ? _auth.signInWithGoogleWeb()
+        : _auth.signInWithGoogleMobile();
   }
 }

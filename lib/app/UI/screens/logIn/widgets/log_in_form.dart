@@ -187,6 +187,7 @@ class LogInForm extends StatelessWidget {
                                 width: 0,
                                 height: 0,
                               ),
+
                       ],
                     ),
                   ),
