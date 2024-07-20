@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_matic/app/domain/repositories/authentication_repository.dart';
 import 'package:auto_matic/app/domain/responses/sign_in_response.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
@@ -35,7 +36,18 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<void> signOut() {
+  Future<void> signOut() async {
+    final data = _user?.providerData ?? [];
+    String providerId = 'firebase';
+    for(final provider in data){
+      if(provider.providerId != 'firebase'){
+        providerId = provider.providerId;
+        break;
+      }
+    }
+    if(providerId == 'google.com' && !kIsWeb){
+      _googleSignIn.signOut();
+    }
     return _auth.signOut();
   }
 
@@ -76,12 +88,16 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
   @override
   Future<SignInResponse> signInWithGoogleWeb() async{
-    _googleAuthProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    _googleAuthProvider.addScope('https://www.googleapis.com/auth/cloud-platform.read-only');
     _googleAuthProvider.setCustomParameters({
       'prompt': 'select_account'
     });
     try{
-      final credential  = await _auth.signInWithPopup(_googleAuthProvider);
+      final credential = await _auth.signInWithPopup(_googleAuthProvider);
+      if(credential.user == null){
+        return SignInResponse(
+            error: SignInError.cancelled, user: null, providerId: null);
+      }
       return SignInResponse(error: null, user: credential.user, providerId: null);
     } on FirebaseAuthException catch (e){
       return getSignInError(e);

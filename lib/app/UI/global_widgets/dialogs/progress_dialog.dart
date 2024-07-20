@@ -4,7 +4,8 @@ abstract class ProgressDialog {
   static void show(BuildContext context) {
     showCupertinoModalPopup(
         context: context,
-        builder: (_) => WillPopScope(
+        builder: (_) => PopScope(
+            canPop: false,
             child: Container(
               width: double.infinity,
               height: double.infinity,
@@ -13,7 +14,6 @@ abstract class ProgressDialog {
                   child: CircularProgressIndicator(
                 color: Config.secondColor,
               )),
-            ),
-            onWillPop: () async => false));
+            ),));
   }
 }

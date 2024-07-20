@@ -6,6 +6,6 @@ void signInWithGoogle(BuildContext context) async {
   ProgressDialog.show(context);
   final controller = loginProvider.read;
   final response = await controller.signInWithGoogle();
-  context.pop();
+  Navigator.pop(context);
   handleLogInResponse(context, response);
 }

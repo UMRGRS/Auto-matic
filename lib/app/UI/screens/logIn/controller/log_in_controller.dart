@@ -31,9 +31,17 @@ class LogInController extends SimpleNotifier {
     return response;
   }
 
-  Future<SignInResponse> signInWithGoogle() {
-    return kIsWeb
-        ? _auth.signInWithGoogleWeb()
-        : _auth.signInWithGoogleMobile();
+  Future<SignInResponse> signInWithGoogle() async{
+    late final SignInResponse response;
+    if(kIsWeb){
+      response = await _auth.signInWithGoogleWeb();
+
+    }else{
+      response = await _auth.signInWithGoogleMobile();
+    }
+    if(response.user !=null){
+      _sessionController.setUser(response.user!);
+    }
+    return response;
   }
 }

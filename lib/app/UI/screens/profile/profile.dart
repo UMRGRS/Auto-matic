@@ -1,7 +1,6 @@
+import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
+import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
 import 'package:auto_matic/app/config/config.dart';
-import 'package:flutter_meedu/flutter_meedu.dart';
-
-import '../../../domain/repositories/authentication_repository.dart';
 
 class Profile extends StatelessWidget {
   Profile({super.key});
@@ -39,8 +38,10 @@ class Profile extends StatelessWidget {
           AppBarButton(
             text: "Cerrar sesión",
             onPressed: () async{
-              await Get.i.find<AuthenticationRepository>().signOut();
-              context.pushReplacementNamed("login");
+              ProgressDialog.show(context);
+              await sessionProvider.read.signOut();
+              Navigator.pop(context);
+              context.go("/login");
             },
             color: Config.fifthColor,
           ),

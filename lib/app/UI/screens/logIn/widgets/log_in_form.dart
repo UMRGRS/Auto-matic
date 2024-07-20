@@ -1,4 +1,5 @@
 import 'package:auto_matic/app/UI/screens/logIn/utils/send_log_in_form.dart';
+import 'package:auto_matic/app/UI/screens/logIn/utils/sign_in_with_google.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/global_utils/email_validator.dart';
 import 'package:flutter/foundation.dart';
@@ -133,7 +134,7 @@ class LogInForm extends StatelessWidget {
                         SignInButton(
                           Buttons.googleDark,
                           text: "Inicia sesión con Google",
-                          onPressed: () =>controller.signInWithGoogle(),
+                          onPressed: () => signInWithGoogle(context),
                         ),
                         const SizedBox(
                           height: 10,
