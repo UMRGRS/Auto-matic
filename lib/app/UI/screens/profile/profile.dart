@@ -90,7 +90,7 @@ class Profile extends StatelessWidget {
                                     context.pushNamed('register_car');
                                   },
                                   iconPath:
-                                      "assets/pages/profile/icons/add.svg"),
+                                  "assets/pages/profile/icons/add.svg"),
                             ),
                           )
                         ],
