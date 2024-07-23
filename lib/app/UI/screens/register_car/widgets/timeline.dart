@@ -15,20 +15,12 @@ class _TimeLineState extends State<TimeLine> {
     Responsive responsive = Responsive.of(context);
     return SfLinearGauge(
       showTicks: false,
-      minimum: 0,
-      maximum: 30,
+      showLabels: false,
+      minimum: 1,
+      maximum: 3,
       labelOffset: 15,
-      axisTrackStyle: const LinearAxisTrackStyle(color: Colors.grey, thickness: 10),
-      onGenerateLabels: () {
-        return <LinearAxisLabel>[
-          const LinearAxisLabel(text: 'Código único', value: 0),
-          const LinearAxisLabel(text: 'VIN', value: 10),
-          const LinearAxisLabel(text: 'Confirmar datos', value: 20),
-          const LinearAxisLabel(text: 'Crear cuenta', value: 30),
-        ];
-      },
-      axisLabelStyle:
-          TextStyle(fontSize: responsive.ip(1.35), color: Colors.black),
+      axisTrackStyle:
+          const LinearAxisTrackStyle(color: Colors.grey, thickness: 10),
       barPointers: <LinearBarPointer>[
         LinearBarPointer(
           //Modify this to change the value
@@ -40,7 +32,7 @@ class _TimeLineState extends State<TimeLine> {
       ],
       markerPointers: [
         const LinearShapePointer(
-          value: 0,
+          value: 1.5,
           enableAnimation: false,
           color: Config.secondColor,
           width: 24,
@@ -49,42 +41,43 @@ class _TimeLineState extends State<TimeLine> {
           shapeType: LinearShapePointerType.circle,
         ),
         LinearShapePointer(
-          value: 10,
+          value: 2.5,
           enableAnimation: false,
-          color: widget.value >= 10 ? Config.secondColor : Colors.grey,
-          width: 24,
-          height: 24,
-          position: LinearElementPosition.cross,
-          shapeType: LinearShapePointerType.circle,
-        ),
-        LinearShapePointer(
-          value: 20,
-          enableAnimation: false,
-          color: widget.value >= 20 ? Config.secondColor : Colors.grey,
-          width: 24,
-          height: 24,
-          position: LinearElementPosition.cross,
-          shapeType: LinearShapePointerType.circle,
-        ),
-        LinearShapePointer(
-          value: 30,
-          enableAnimation: false,
-          color: widget.value >= 30 ? Config.secondColor : Colors.grey,
+          color: widget.value >= 2 ? Config.secondColor : Colors.grey,
           width: 24,
           height: 24,
           position: LinearElementPosition.cross,
           shapeType: LinearShapePointerType.circle,
         ),
         LinearWidgetPointer(
-            enableAnimation: false,
-            value: widget.value,
-            position: LinearElementPosition.outside,
-            offset: 10,
-            child: SizedBox(
-              height: 40,
-              width: 40,
-              child: SvgPicture.asset("assets/pages/vehiculeRD/icons/car.svg",),
-            )),
+          enableAnimation: false,
+          value: widget.value,
+          position: LinearElementPosition.outside,
+          offset: 10,
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SvgPicture.asset(
+                "assets/pages/vehicle_RD/icons/car.svg",
+                height: 40,
+              ),
+            ),
+          ),
+        ),
+        LinearWidgetPointer(
+          enableAnimation: false,
+          value: widget.value,
+          position: LinearElementPosition.inside,
+          offset: 20,
+          child: Card(
+              child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              "Paso ${widget.value.floor()}/2",
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          )),
+        ),
       ],
     );
   }

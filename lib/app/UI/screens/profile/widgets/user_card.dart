@@ -1,14 +1,10 @@
+import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/config/config.dart';
 
 class UserCard extends StatelessWidget {
-  const UserCard(
-      {super.key,
-      this.firstname = "John",
-      this.lastname = "Doe",
-      this.email = "johnDoe@gmail.com"});
-  final String firstname;
-  final String lastname;
-  final String email;
+  const UserCard({super.key, required this.session});
+  final SessionController session;
+
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
@@ -37,7 +33,7 @@ class UserCard extends StatelessWidget {
                 children: [
                   InfoCard(
                     label: "Nombre",
-                    text: firstname,
+                    text: session.user!.displayName!,
                     leadingPath: "assets/pages/profile/icons/person.svg",
                     trailingPath: "assets/pages/profile/icons/edit.svg",
                   ),
@@ -45,18 +41,10 @@ class UserCard extends StatelessWidget {
                     height: 3,
                   ),
                   InfoCard(
-                      label: "Apellido",
-                      text: lastname,
-                      leadingPath: "assets/pages/profile/icons/person.svg",
-                      trailingPath: "assets/pages/profile/icons/edit.svg"),
-                  const SizedBox(
-                    height: 3,
+                    label: "Correo electronico",
+                    text: session.user!.email!,
+                    leadingPath: "assets/pages/profile/icons/email.svg",
                   ),
-                  InfoCard(
-                      label: "Correo electronico",
-                      text: email,
-                      leadingPath: "assets/pages/profile/icons/email.svg",
-                      trailingPath: "assets/pages/profile/icons/edit.svg"),
                   const SizedBox(
                     height: 3,
                   ),

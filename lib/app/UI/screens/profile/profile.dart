@@ -4,9 +4,7 @@ import 'package:auto_matic/app/config/config.dart';
 
 class Profile extends StatelessWidget {
   Profile({super.key});
-
   //Get this data from firebase
-  final String username = "John Doe";
   final List<Map<String, dynamic>> vehicules = [
     {
       "apodo": "Mi carrito uwu",
@@ -32,12 +30,13 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final session = sessionProvider.read;
     return Scaffold(
       appBar: CustomAppBar(
         actions: [
           AppBarButton(
             text: "Cerrar sesión",
-            onPressed: () async{
+            onPressed: () async {
               ProgressDialog.show(context);
               await sessionProvider.read.signOut();
               Navigator.pop(context);
@@ -62,12 +61,12 @@ class Profile extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 5, vertical: 5),
                       child: Text(
-                        "Bienvenido $username",
+                        "Bienvenido ${session.user!.displayName}",
                         style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
                     ),
-                    const UserCard(),
+                    UserCard(session: session,),
                     Container(
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -87,7 +86,9 @@ class Profile extends StatelessWidget {
                               alignment: Alignment.centerRight,
                               child: ImportantTextButton(
                                   text: "Añadir vehículo",
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.pushNamed('register_car');
+                                  },
                                   iconPath:
                                       "assets/pages/profile/icons/add.svg"),
                             ),

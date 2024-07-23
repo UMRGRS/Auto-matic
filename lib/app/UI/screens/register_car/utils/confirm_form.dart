@@ -4,9 +4,13 @@ import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/data/data_source/remote/vin_api_call.dart';
 import 'package:auto_matic/app/domain/responses/api_vin_response.dart';
 
-void confirmVIN(BuildContext context) async {
+void confirmForm(
+  BuildContext context, {
+  required VoidCallback changeVisibility,
+  required void Function(double) updateTimeLine,
+}) async {
   final controller = registerCarProvider.read;
-  final isValidForm = controller.keyVIN.currentState!.validate();
+  final isValidForm = controller.formKey.currentState!.validate();
   if (isValidForm) {
     ProgressDialog.show(context);
     ApiVinResponse response = await Api.get(controller.state.carVIN);
@@ -15,7 +19,9 @@ void confirmVIN(BuildContext context) async {
       controller.onCarModelChanged(response.model!);
       controller.onCarMadeChanged(response.make!);
       controller.onYearChanged(response.year!);
-      context.pushReplacementNamed('sign-up-III');
+      //Change page visibility
+      changeVisibility();
+      updateTimeLine(2.5);
     } else {
       String content = "";
       switch (response.error) {
@@ -29,5 +35,7 @@ void confirmVIN(BuildContext context) async {
       }
       Dialogs.showAlert(context, title: "Error", content: content);
     }
+  } else {
+    Dialogs.showAlert(context, title: "Error", content: "Campos invalidos");
   }
 }

@@ -20,7 +20,7 @@ class Register extends StatelessWidget {
             AppBarButton(
               text: "Cancelar",
               onPressed: () {
-                context.pushNamed('landing');
+                context.pushReplacementNamed('landing');
               },
               color: Config.fifthColor,
             ),
@@ -53,7 +53,8 @@ class Register extends StatelessWidget {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 67.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 67.0),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,

@@ -1,3 +1,4 @@
+import 'package:auto_matic/app/UI/screens/logIn/utils/sign_in_with_google.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
@@ -20,9 +21,11 @@ class AccessWithSM extends StatelessWidget {
           SignInButton(
             Buttons.googleDark,
             text: "Registrate con Google",
-            onPressed: () {},
+            onPressed: () => signInWithGoogle(context),
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           const Text(
             "¿Ya tienes cuenta?",
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
@@ -49,9 +52,10 @@ class AccessWithSM extends StatelessWidget {
                     Text(
                       "Inicia sesión",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "Helvetica",
-                          fontSize: 15),
+                        color: Colors.white,
+                        fontFamily: "Helvetica",
+                        fontSize: 15,
+                      ),
                     ),
                   ],
                 ),

@@ -15,8 +15,9 @@ class SignUpRepositoryImpl extends SignUpRepository{
         email: data.email,
         password: data.password,
       );
-      userCredential.user!.updateDisplayName("${data.name} ${data.lastname}");
-      return SignUpResponse(null, userCredential.user);
+      await userCredential.user?.updateDisplayName("${data.name} ${data.lastname}");
+      _auth.currentUser!.reload();
+      return SignUpResponse(null, _auth.currentUser);
     } on FirebaseAuthException catch (e) {
       return SignUpResponse(
         parseStringToSignUpError(e.code),

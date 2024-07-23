@@ -22,7 +22,7 @@ void cleanVIN(BuildContext context) {
               ),
               CupertinoDialogAction(
                 onPressed: () {
-                  context.pushReplacementNamed('sign-up-IV');
+
                 },
                 child: const Text(
                   "Continuar",

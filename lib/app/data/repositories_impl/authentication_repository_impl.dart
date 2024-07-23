@@ -8,7 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final FirebaseAuth _auth;
-  final GoogleSignIn _googleSignIn;
+  final GoogleSignIn? _googleSignIn;
   final GoogleAuthProvider _googleAuthProvider;
   User? _user;
 
@@ -46,7 +46,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       }
     }
     if(providerId == 'google.com' && !kIsWeb){
-      _googleSignIn.signOut();
+      _googleSignIn!.signOut();
     }
     return _auth.signOut();
   }
@@ -70,7 +70,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   @override
   Future<SignInResponse> signInWithGoogleMobile() async {
     try {
-      final account = await _googleSignIn.signIn();
+      final account = await _googleSignIn!.signIn();
       if (account == null) {
         return SignInResponse(
             error: SignInError.cancelled, user: null, providerId: null);

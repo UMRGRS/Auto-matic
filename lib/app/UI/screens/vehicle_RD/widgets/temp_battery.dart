@@ -21,7 +21,7 @@ class _TempBatteryState extends State<TempBattery> {
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 leading: SvgPicture.asset(
-                  "assets/pages/vehiculeRD/icons/temperature.svg",
+                  "assets/pages/vehicle_RD/icons/temperature.svg",
                   height: 50,
                 ),
                 title: const Text(
@@ -81,7 +81,7 @@ class _TempBatteryState extends State<TempBattery> {
           Card(
             child: ListTile(
               leading: SvgPicture.asset(
-                "assets/pages/vehiculeRD/icons/carBattery.svg",
+                "assets/pages/vehicle_RD/icons/carBattery.svg",
                 height: 50,
               ),
               title: const Text(

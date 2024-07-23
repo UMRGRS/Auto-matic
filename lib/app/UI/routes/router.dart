@@ -37,35 +37,17 @@ mixin RouterMixin on State<App> {
         builder: (_, __) => Profile(),
       ),
       GoRoute(
-        name: Routes.registerCar1,
-        path: '/register-car-1',
+        name: Routes.registerCar,
+        path: '/register-car',
         redirect: (_, __) async {
           bool auth = await isAuth();
           return auth ? null : '/login';
         },
-        builder: (_, __) => const SignUp1(),
-      ),
-      GoRoute(
-        name: Routes.registerCar2,
-        path: '/register-car-2',
-        redirect: (_, __) async {
-          bool auth = await isAuth();
-          return auth ? null : '/login';
-        },
-        builder: (_, __) => const SignUp2(),
-      ),
-      GoRoute(
-        name: Routes.registerCar3,
-        path: '/register-car-3',
-        redirect: (_, __) async {
-          bool auth = await isAuth();
-          return auth ? null : '/login';
-        },
-        builder: (_, __) => const SignUp3(),
+        builder: (_, __) => const RegisterCar(),
       ),
       GoRoute(
         name: Routes.register,
-        path: '/Register',
+        path: '/register',
         redirect: (_, __) async {
           bool auth = await isAuth();
           return auth ? '/profile' : null;

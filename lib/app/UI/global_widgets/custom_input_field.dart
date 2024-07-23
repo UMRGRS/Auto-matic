@@ -7,6 +7,7 @@ class CustomInputField extends StatefulWidget {
   final bool isPassword;
   final String? Function(String?)? validator;
   final int? maxLength;
+  final AutovalidateMode mode;
   const CustomInputField({
     super.key,
     this.onChanged,
@@ -15,6 +16,7 @@ class CustomInputField extends StatefulWidget {
     this.isPassword = false,
     this.validator,
     this.maxLength,
+    this.mode = AutovalidateMode.onUserInteraction,
   });
 
   @override
@@ -34,7 +36,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
   Widget build(BuildContext context) {
     return FormField<String>(
         validator: widget.validator,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: widget.mode,
         builder: (state) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,9 +61,12 @@ class _CustomInputFieldState extends State<CustomInputField> {
                   ),
                   suffixIcon: widget.isPassword
                       ? CupertinoButton(
-                          child: Icon(_obscureText
-                              ? Icons.visibility
-                              : Icons.visibility_off, size: 18,),
+                          child: Icon(
+                            _obscureText
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            size: 18,
+                          ),
                           onPressed: () {
                             _obscureText = !_obscureText;
                             setState(() {});

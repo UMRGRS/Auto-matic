@@ -23,7 +23,7 @@ class VehicleIndicators extends StatelessWidget {
               ImportantTextButton(
                 text: "Datos del vehiculo",
                 onPressed: () => Scaffold.of(context).openDrawer(),
-                iconPath: "assets/pages/vehiculeRD/icons/car.svg",
+                iconPath: "assets/pages/vehicle_RD/icons/car.svg",
               )
             ],
           ),

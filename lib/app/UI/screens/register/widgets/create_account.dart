@@ -26,7 +26,6 @@ class CreateAccount extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-
                         children: [
                           const Text('Crear cuenta',
                               style: TextStyle(
@@ -37,7 +36,9 @@ class CreateAccount extends StatelessWidget {
                             onChanged: controller.onNameChanged,
                             validator: (text) {
                               if (text == null) return "Nombre invalido";
-                              return isValidName(text) ? null : "Nombre invalido";
+                              return isValidName(text)
+                                  ? null
+                                  : "El nombre no pueden contener espacios en blanco o caracteres especiales";
                             },
                           ),
                           const SizedBox(height: 20),
@@ -48,7 +49,7 @@ class CreateAccount extends StatelessWidget {
                               if (text == null) return "Apellido invalido";
                               return isValidName(text)
                                   ? null
-                                  : "Apellido invalido";
+                                  : "El apellido no pueden contener espacios en blanco o caracteres especiales";
                             },
                           ),
                           const SizedBox(height: 20),
@@ -83,15 +84,13 @@ class CreateAccount extends StatelessWidget {
                               label: 'Verfica tu contraseña',
                               onChanged: controller.onVPasswordChanged,
                               isPassword: true,
+                              mode: AutovalidateMode.always,
                               validator: (text) {
                                 if (text == null) return "Contraseña invalida";
                                 if (controller.state.password != text) {
                                   return "Las contraseñas no coinciden";
                                 }
-                                if (text.trim().length >= 8) {
-                                  return null;
-                                }
-                                return "Contraseña invalida";
+                                return null;
                               },
                             );
                           }),
@@ -120,13 +119,14 @@ class CreateAccount extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 15,),
+                          const SizedBox(
+                            height: 15,
+                          ),
                           const AccessWithSM()
                         ],
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

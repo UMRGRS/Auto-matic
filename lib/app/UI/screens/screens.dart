@@ -20,15 +20,16 @@ export 'vehicle_RD/widgets/failure_codes_card.dart';
 export 'landing/widgets/landing_card.dart';
 export 'landing/landing.dart';
 
-//Register
-export 'register_car/register_car_1.dart';
-export 'register_car/register_car_2.dart';
-export 'register_car/register_car_3.dart';
+//Car register
+export 'register_car/register_car.dart';
+export 'register_car/widgets/car_data_box.dart';
+export 'register_car/widgets/timeline.dart';
+export 'register_car/widgets/register_car_form.dart';
+
+//User register
 export 'register/register.dart';
-export 'register_car/widgets/data_box.dart';
 export 'register/widgets/access_with_SM.dart';
 export 'register/widgets/create_account.dart';
-export 'register_car/widgets/timeline.dart';
 
 //LogIn
 export 'logIn/log_in.dart';

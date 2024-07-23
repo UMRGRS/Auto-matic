@@ -1,7 +1,7 @@
+import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/UI/screens/register_car/controller/register_car_state.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/domain/inputs/car_data.dart';
-import 'package:auto_matic/app/domain/repositories/authentication_repository.dart';
 import 'package:auto_matic/app/domain/repositories/register_car_repository.dart';
 import 'package:auto_matic/app/domain/responses/register_car_response.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
@@ -9,14 +9,12 @@ import 'package:flutter_meedu/flutter_meedu.dart';
 class RegisterCarController extends StateNotifier<RegisterCarState>{
   RegisterCarController() : super(RegisterCarState.initialState);
 
-  final GlobalKey<FormState> uniqueCodeKey = GlobalKey();
-  final GlobalKey<FormState> keyVIN = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
 
   Future<RegisterCarResponse> submitCar() async {
     final registerCarRepository = Get.i.find<RegisterCarRepository>();
-    final authRepository = Get.i.find<AuthenticationRepository>();
-
-    final user = await authRepository.user;
+    final SessionController sessionController = sessionProvider.read;
+    final user = sessionController.user;
     final response = await registerCarRepository.createRealTime(state.uniqueCode);
 
     if (response.error != null) {

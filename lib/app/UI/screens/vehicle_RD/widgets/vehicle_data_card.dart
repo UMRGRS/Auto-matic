@@ -53,7 +53,7 @@ class VehicleDataCard extends StatelessWidget {
             child: ImportantTextButton(
                 text: "Eliminar vehículo",
                 onPressed: () {},
-                iconPath: "assets/pages/vehiculeRD/icons/delete.svg"),
+                iconPath: "assets/pages/vehicle_RD/icons/delete.svg"),
           )
         ],
       ),
