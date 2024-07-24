@@ -6,6 +6,7 @@ export 'profile/profile.dart';
 export 'profile/widgets/user_card.dart';
 export 'profile/widgets/vehicle_list.dart';
 export 'profile/widgets/state_indicator.dart';
+export 'profile/widgets/display_user_image.dart';
 
 //Vehicule realtime data
 export 'vehicle_RD/vehicle_RD.dart';

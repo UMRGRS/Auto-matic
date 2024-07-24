@@ -17,11 +17,7 @@ class UserCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           direction: isScreenWide ? Axis.horizontal : Axis.vertical,
           children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/default.jpg",
-                )),
+            DisplayUserImage(imageURL: session.user!.photoURL,),
             const SizedBox(
               width: 10,
               height: 10,
