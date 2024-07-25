@@ -1,23 +1,31 @@
+import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
+import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VehicleRD extends StatelessWidget {
-  const VehicleRD({super.key});
-
+  const VehicleRD({super.key, required this.documentSnapshot});
+  //with this we do everything c:
+  final DocumentSnapshot documentSnapshot;
   @override
   Widget build(BuildContext context) {
+    print(documentSnapshot.data().toString());
     return Scaffold(
       appBar: CustomAppBar(
         actions: [
           AppBarButton(
             text: "Perfil",
             onPressed: () {
-              context.pushNamed('profile');
+              context.pushReplacementNamed('profile');
             },
           ),
           AppBarButton(
               text: "Cerrar sesión",
-              onPressed: () {
-                context.pushNamed('landing');
+              onPressed: () async{
+                ProgressDialog.show(context);
+                await sessionProvider.read.signOut();
+                Navigator.pop(context);
+                context.go("/login");
               },
               color: Config.fifthColor),
         ],

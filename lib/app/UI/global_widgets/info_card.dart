@@ -2,35 +2,30 @@ import 'package:auto_matic/app/config/config.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-class InfoCard extends StatefulWidget {
+class InfoCard extends StatelessWidget {
   const InfoCard(
       {super.key,
       required this.label,
       required this.text,
       this.leadingPath,
-      this.trailingPath});
+      this.trailing});
   final String label;
   final String text;
   final String? leadingPath;
-  final String? trailingPath;
+  final Widget? trailing;
 
-  @override
-  State<InfoCard> createState() => _InfoCardState();
-}
-
-class _InfoCardState extends State<InfoCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.white,
       child: ListTile(
-          leading: ShowLeading(),
+          leading: showLeading(),
           title: Column(
             children: [
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(
-                  widget.label,
+                  label,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -40,33 +35,20 @@ class _InfoCardState extends State<InfoCard> {
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(
-                  widget.text,
-                  style: TextStyle(fontSize: 15),
+                  text,
+                  style: const TextStyle(fontSize: 15),
                 ),
               ),
             ],
           ),
-          trailing: ShowTrailing()),
+          trailing: trailing,),
     );
   }
 
-  Widget? ShowTrailing() {
-    if (widget.trailingPath != null) {
-      return IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            widget.trailingPath!,
-            color: Colors.black54,
-          ));
-    } else {
-      return null;
-    }
-  }
-
-  Widget? ShowLeading() {
-    if (widget.leadingPath != null) {
+  Widget? showLeading() {
+    if (leadingPath != null) {
       return SvgPicture.asset(
-        widget.leadingPath!,
+        leadingPath!,
         color: Colors.black54,
         height: 30,
       );

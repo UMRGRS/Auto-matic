@@ -1,10 +1,12 @@
+import 'package:auto_matic/app/UI/screens/profile/utils/vehicle_states.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:auto_matic/app/domain/models/car_data.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
 class StateIndicator extends StatefulWidget {
   const StateIndicator({super.key, required this.state});
-  final vehiculeState state;
+  final String state;
 
   @override
   State<StateIndicator> createState() => _StateIndicatorState();
@@ -17,7 +19,7 @@ class _StateIndicatorState extends State<StateIndicator> {
   @override
   void initState() {
     super.initState();
-    data = Config.VehiculeStates[widget.state]!;
+    data = VehicleStates.vehicleStates[CarData.stringToState(widget.state)]!;
   }
 
   @override
@@ -36,7 +38,11 @@ class _StateIndicatorState extends State<StateIndicator> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: data["color"]),
-                child: SvgPicture.asset(data["iconPath"], color: Colors.white, height: responsive.ip(1.6),),
+                child: SvgPicture.asset(
+                  data["iconPath"],
+                  color: Colors.white,
+                  height: responsive.ip(1.6),
+                ),
               ),
               Builder(
                 builder: (_) {

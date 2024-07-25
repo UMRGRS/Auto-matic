@@ -1,101 +1,153 @@
+import 'package:auto_matic/app/UI/screens/profile/controller/get_static_data_controller.dart';
+import 'package:auto_matic/app/UI/screens/profile/utils/vehicle_states.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:auto_matic/app/domain/models/car_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class VehiculeList extends StatelessWidget {
-  const VehiculeList({super.key, required this.vehicules});
-  final List<Map<String, dynamic>> vehicules;
+class VehicleList extends StatelessWidget {
+  const VehicleList({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final Stream<QuerySnapshot> carsStream =
+        GetStaticDataController.getUserCars();
     final Responsive responsive = Responsive.of(context);
-    return ListView.builder(
-        itemCount: vehicules.length,
-        itemBuilder: (BuildContext context, index) {
-          return CupertinoButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {
-              context.pushNamed('vehicle-real-time');
-            },
-            child: SizedBox(
-              height: 110,
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: responsive.wp(20),
-                        clipBehavior: Clip.hardEdge,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Image.asset(
-                          "assets/images/default.jpg",
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text("Apodo",
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text(
-                              "${vehicules[index]["apodo"]}",
-                              maxLines: 3,
-                              overflow: TextOverflow.clip,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: responsive.wp(1),
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Column(
-                            children: [
-                              const Text(
-                                "Modelo",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+    bool isScreenWide = responsive.width >= 550;
+    return StreamBuilder(
+        stream: carsStream,
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return const Text('Something went wrong');
+          }
 
-                              ),
-                              Text(
-                                "${vehicules[index]["modelo"]}",
-                                maxLines: 3,
-                                overflow: TextOverflow.clip,
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Text("Loading");
+          }
+
+          return ListView(
+            children: snapshot.data!.docs
+                .map((DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data()! as Map<String, dynamic>;
+                  final stateData = VehicleStates
+                      .vehicleStates[CarData.stringToState(data['state'])]!;
+                  return CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      context.pushNamed('vehicle-real-time', extra: document);
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: responsive.width,
+                          child: Flex(
+                            direction:
+                                isScreenWide ? Axis.horizontal : Axis.vertical,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const Text("Estado",
-                                  style:
-                                  TextStyle(fontWeight: FontWeight.bold)),
-                              StateIndicator(state: vehicules[index]["state"])
+                              Image.asset(
+                                "assets/images/default_car.png",
+                                height: 75,
+                                width: 150,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Text("Apodo",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18)),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    data['alias'],
+                                    maxLines: 3,
+                                    overflow: TextOverflow.clip,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  const Text(
+                                    "Modelo",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "${data['model']} ${data['year']}",
+                                    maxLines: 3,
+                                    overflow: TextOverflow.clip,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  const Text("Estado",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18)),
+                                  Card(
+                                    child: FittedBox(
+                                      fit: BoxFit.fill,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                  color: stateData["color"]),
+                                              child: SvgPicture.asset(
+                                                stateData["iconPath"],
+                                                color: Colors.white,
+                                                height: responsive.ip(1.6),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              stateData["text"],
+                                              style:
+                                                  const TextStyle(fontSize: 16),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+                    ),
+                  );
+                })
+                .toList()
+                .cast(),
           );
         });
   }

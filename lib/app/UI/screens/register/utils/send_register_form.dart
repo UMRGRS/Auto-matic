@@ -22,11 +22,11 @@ Future<void> sendRegisterForm(BuildContext context) async {
         case SignUpError.unknown:
           content = "Error desconocido";
       }
-      Dialogs.showAlert(context, title: "Error", content: content);
+      Dialogs.showAlert(title: "Error", content: content, context: context);
     } else {
       context.pushReplacementNamed("profile");
     }
   } else {
-    Dialogs.showAlert(context, title: "Error", content: "Campos invalidos");
+    Dialogs.showAlert(title: "Error", content: "Campos invalidos", context: context);
   }
 }

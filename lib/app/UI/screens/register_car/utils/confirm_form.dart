@@ -33,9 +33,9 @@ void confirmForm(
         default:
           content = "Ocurrio un error, verifica el VIN e intenta de nuevo";
       }
-      Dialogs.showAlert(context, title: "Error", content: content);
+      Dialogs.showAlert(title: "Error", content: content, context: context);
     }
   } else {
-    Dialogs.showAlert(context, title: "Error", content: "Campos invalidos");
+    Dialogs.showAlert(title: "Error", content: "Campos invalidos", context: context);
   }
 }

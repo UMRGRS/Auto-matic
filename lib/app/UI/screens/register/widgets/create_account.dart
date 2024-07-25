@@ -34,6 +34,7 @@ class CreateAccount extends StatelessWidget {
                           CustomInputField(
                             label: 'Nombre',
                             onChanged: controller.onNameChanged,
+                            maxLength: 15,
                             validator: (text) {
                               if (text == null) return "Nombre invalido";
                               return isValidName(text)
@@ -45,6 +46,7 @@ class CreateAccount extends StatelessWidget {
                           CustomInputField(
                             label: 'Apellido',
                             onChanged: controller.onLastNameChanged,
+                            maxLength: 15,
                             validator: (text) {
                               if (text == null) return "Apellido invalido";
                               return isValidName(text)
@@ -77,23 +79,26 @@ class CreateAccount extends StatelessWidget {
                             },
                           ),
                           const SizedBox(height: 20),
-                          Consumer(builder: (_, watch, __) {
-                            watch(registerProvider
-                                .select((state) => state.password));
-                            return CustomInputField(
-                              label: 'Verfica tu contraseña',
-                              onChanged: controller.onVPasswordChanged,
-                              isPassword: true,
-                              mode: AutovalidateMode.always,
-                              validator: (text) {
-                                if (text == null) return "Contraseña invalida";
-                                if (controller.state.password != text) {
-                                  return "Las contraseñas no coinciden";
-                                }
-                                return null;
-                              },
-                            );
-                          }),
+                          Consumer(
+                            builder: (_, watch, __) {
+                              watch(registerProvider
+                                  .select((state) => state.password));
+                              return CustomInputField(
+                                label: 'Verfica tu contraseña',
+                                onChanged: controller.onVPasswordChanged,
+                                isPassword: true,
+                                mode: AutovalidateMode.always,
+                                validator: (text) {
+                                  if (text == null)
+                                    return "Contraseña invalida";
+                                  if (controller.state.password != text) {
+                                    return "Las contraseñas no coinciden";
+                                  }
+                                  return null;
+                                },
+                              );
+                            },
+                          ),
                           const SizedBox(height: 20),
                           Row(
                             children: [

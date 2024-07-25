@@ -1,5 +1,6 @@
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/UI/routes/router.dart';
+import 'package:flutter/services.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -11,6 +12,10 @@ class App extends StatefulWidget {
 class _AppState extends State<App> with RouterMixin {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp.router(
       title: "Auto-matic",
       theme: ThemeData(

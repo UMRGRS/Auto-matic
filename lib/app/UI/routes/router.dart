@@ -1,5 +1,6 @@
 import 'package:auto_matic/app/UI/routes/utils/check_auth.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 mixin RouterMixin on State<App> {
@@ -34,7 +35,7 @@ mixin RouterMixin on State<App> {
           bool auth = await isAuth();
           return auth ? null : '/login';
         },
-        builder: (_, __) => Profile(),
+        builder: (_, __) => const Profile(),
       ),
       GoRoute(
         name: Routes.registerCar,
@@ -61,7 +62,10 @@ mixin RouterMixin on State<App> {
           bool auth = await isAuth();
           return auth ? null : '/login';
         },
-        builder: (_, __) => const VehicleRD(),
+        builder: (_, state){
+          DocumentSnapshot documentSnapShot = state.extra as DocumentSnapshot;
+          return VehicleRD(documentSnapshot: documentSnapShot);
+        } ,
       ),
     ],
   );

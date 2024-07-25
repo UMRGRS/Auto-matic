@@ -30,7 +30,7 @@ void handleLogInResponse(BuildContext context, SignInResponse response) {
         default:
           content = "Error desconocido";
       }
-      Dialogs.showAlert(context, title: "Error", content: content);
+      Dialogs.showAlert(title: "Error", content: content, context: context);
     }
   } else {
     context.pushReplacementNamed("profile");

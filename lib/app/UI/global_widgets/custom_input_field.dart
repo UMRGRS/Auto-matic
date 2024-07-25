@@ -1,4 +1,5 @@
 import 'package:auto_matic/app/config/config.dart';
+import 'package:flutter/services.dart';
 
 class CustomInputField extends StatefulWidget {
   final void Function(String)? onChanged;
@@ -39,12 +40,15 @@ class _CustomInputFieldState extends State<CustomInputField> {
         autovalidateMode: widget.mode,
         builder: (state) {
           return Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
-                maxLength: widget.maxLength,
                 keyboardType: widget.inputType,
                 obscureText: _obscureText,
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(widget.maxLength),
+                ],
                 onChanged: (text) {
                   if (widget.validator != null) {
                     state.setValue(text);

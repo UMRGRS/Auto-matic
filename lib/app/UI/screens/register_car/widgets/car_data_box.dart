@@ -1,3 +1,4 @@
+import 'package:auto_matic/app/UI/screens/register_car/utils/confirm_car_data.dart';
 import 'package:auto_matic/app/UI/screens/register_car/utils/send_car_form.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/UI/screens/register_car/controller/register_car_controller.dart';
@@ -90,9 +91,7 @@ class CarDataBox extends StatelessWidget {
             Row(
               children: [
                 ElevatedButton(
-                  onPressed: () async {
-                    await sendCarForm(context);
-                  },
+                  onPressed: () => confirmCarData(context),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Config.confirmGreen,
                   ),

@@ -34,7 +34,9 @@ class _RegisterCarState extends State<RegisterCar> {
           actions: [
             AppBarButton(
               text: "Cancelar",
-              onPressed: () {},
+              onPressed: () {
+                context.pushReplacementNamed('profile');
+              },
               color: Config.fifthColor,
             ),
           ],

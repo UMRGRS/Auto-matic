@@ -42,6 +42,9 @@ class RegisterCarForm extends StatelessWidget {
               InfoButton(),
             ],
           ),
+          const SizedBox(
+            height: 5,
+          ),
           CustomInputField(
             label: "Código unico (16 caracteres)",
             onChanged: controller.onUniqueCodeChanged,
@@ -55,6 +58,9 @@ class RegisterCarForm extends StatelessWidget {
               }
               return null;
             },
+          ),
+          const SizedBox(
+            height: 20,
           ),
           const Row(
             children: [
@@ -76,6 +82,9 @@ class RegisterCarForm extends StatelessWidget {
               InfoButton(),
             ],
           ),
+          const SizedBox(
+            height: 5,
+          ),
           CustomInputField(
             onChanged: controller.onCarVINChanged,
             label: "VIN del vehículo (17 caracteres)",
@@ -89,6 +98,9 @@ class RegisterCarForm extends StatelessWidget {
               }
               return isValidVIN(text);
             },
+          ),
+          const SizedBox(
+            height: 20,
           ),
           ElevatedButton(
             onPressed: () {

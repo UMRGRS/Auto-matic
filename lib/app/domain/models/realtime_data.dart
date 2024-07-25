@@ -1,8 +1,10 @@
+import 'package:auto_matic/app/UI/screens/profile/utils/vehicle_states.dart';
+
 class RealtimeTemplate {
-  double batteryVoltage, rpm, speed, temp;
-  String speedUnit, tempUnit;
-  List<String> failureCodes;
-  DateTime lastServiceDate;
+  final double batteryVoltage, rpm, speed, temp;
+  final String speedUnit, tempUnit;
+  final List<String> failureCodes;
+  final DateTime lastServiceDate;
 
   RealtimeTemplate({
     required this.batteryVoltage,
@@ -17,14 +19,15 @@ class RealtimeTemplate {
 
   factory RealtimeTemplate.fromMap(Map<String, dynamic> data) {
     return RealtimeTemplate(
-        batteryVoltage: data['batteryVoltage'],
-        rpm: data['rpm'],
-        speed: data['speed'],
-        temp: data['temp'],
-        speedUnit: data['speedUnit'],
-        tempUnit: data['tempUnit'],
-        failureCodes: data['failureCodes'],
-        lastServiceDate: data['lastServiceDate']);
+      batteryVoltage: data['batteryVoltage'],
+      rpm: data['rpm'],
+      speed: data['speed'],
+      temp: data['temp'],
+      speedUnit: data['speedUnit'],
+      tempUnit: data['tempUnit'],
+      failureCodes: data['failureCodes'],
+      lastServiceDate: data['lastServiceDate'],
+    );
   }
 
   Map<String, dynamic> toMap() {

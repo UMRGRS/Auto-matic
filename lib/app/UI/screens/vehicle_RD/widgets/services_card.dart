@@ -79,7 +79,7 @@ class _ServiceCardState extends State<ServicesCard> {
             ImportantTextButton(
               text: "Reiniciar servicio",
               onPressed: () {},
-              iconPath: 'assets/pages/vehiculeRD/icons/reset.svg',
+              iconPath: 'pages/vehicle_RD/icons/reset.svg',
             )
           ],
         ),
