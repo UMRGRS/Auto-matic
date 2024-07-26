@@ -2,10 +2,10 @@ import 'package:auto_matic/app/UI/screens/profile/utils/vehicle_states.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CarData {
-  final String carVIN, carModel, carMake, carYear, userUID, alias;
+  final String? carVIN, carModel, carMake, carYear, userUID, alias;
   final String? uniqueCode;
-  final DocumentReference reference;
-  final VehicleState state;
+  final DocumentReference? reference;
+  final VehicleState? state;
   CarData({
     required this.alias,
     required this.reference,
@@ -32,17 +32,16 @@ class CarData {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toFirestore() {
     return {
-      "alias": alias,
-      "VIN": carVIN,
-      "model": carModel,
-      "make": carMake,
-      "year": carYear,
-      "realtime": reference,
-      "userUID": userUID,
-      //Make a function to transform to string a vice versa
-      "state": stateToString(state)
+      if(alias != null) "alias": alias,
+      if(carVIN != null) "VIN": carVIN,
+      if(carModel != null) "model": carModel,
+      if(carMake != null) "make": carMake,
+      if(carYear != null) "year": carYear,
+      if(reference != null) "realtime": reference,
+      if(userUID != null) "userUID": userUID,
+      if(state != null) "state": stateToString(state!)
     };
   }
 

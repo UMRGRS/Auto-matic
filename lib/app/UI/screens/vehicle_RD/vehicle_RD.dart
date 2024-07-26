@@ -1,15 +1,13 @@
 import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
+
 import 'package:auto_matic/app/config/config.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VehicleRD extends StatelessWidget {
-  const VehicleRD({super.key, required this.documentSnapshot});
-  //with this we do everything c:
-  final DocumentSnapshot documentSnapshot;
+  const VehicleRD({super.key, required this.references});
+  final Map<String, dynamic> references;
   @override
   Widget build(BuildContext context) {
-    print(documentSnapshot.data().toString());
     return Scaffold(
       appBar: CustomAppBar(
         actions: [
@@ -21,7 +19,7 @@ class VehicleRD extends StatelessWidget {
           ),
           AppBarButton(
               text: "Cerrar sesión",
-              onPressed: () async{
+              onPressed: () async {
                 ProgressDialog.show(context);
                 await sessionProvider.read.signOut();
                 Navigator.pop(context);
@@ -37,7 +35,7 @@ class VehicleRD extends StatelessWidget {
             return SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: const VehicleIndicators(),
+                child: VehicleIndicators(realtimeReference: references['realtime_reference'],),
               ),
             );
           },
@@ -46,12 +44,14 @@ class VehicleRD extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: 100,
             ),
-            VehicleDataCard(),
-            SizedBox(
+            VehicleDataCard(
+              reference: references['static_reference'],
+            ),
+            const SizedBox(
               height: 50,
             )
           ],

@@ -17,7 +17,7 @@ class RegisterCarRepositoryImpl implements RegisterCarRepository {
     _firestore
         .collection('vehicleStatic')
         .doc(data.uniqueCode)
-        .set(data.toMap())
+        .set(data.toFirestore())
         .then((document) => error = null)
         .onError((e, _) {
       error = e.toString();

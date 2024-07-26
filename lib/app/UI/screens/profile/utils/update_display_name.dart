@@ -12,8 +12,9 @@ Future<void> updateDisplayName(BuildContext context) async {
     context.pop();
     context.pop();
     Dialogs.showAlert(
-        title: "Éxito",
-        content: "Nombre actualizado con éxito",
-        context: context);
+      title: "Éxito",
+      content: "Nombre actualizado con éxito",
+      context: context,
+    );
   }
 }

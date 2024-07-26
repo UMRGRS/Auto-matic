@@ -18,11 +18,18 @@ class VehicleList extends StatelessWidget {
         stream: carsStream,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return const Text('Something went wrong');
+            return const Text('Algo salio mal, intenta mas tarde');
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Text("Loading");
+            return const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(
+                  color: Config.secondColor,
+                ),
+              ],
+            );
           }
 
           return ListView(
@@ -35,7 +42,13 @@ class VehicleList extends StatelessWidget {
                   return CupertinoButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      context.pushNamed('vehicle-real-time', extra: document);
+                      context.pushReplacementNamed(
+                        'vehicle-real-time',
+                        extra: {
+                          "static_reference": document.reference,
+                          "realtime_reference": data['realtime']
+                        },
+                      );
                     },
                     child: Card(
                       child: Padding(

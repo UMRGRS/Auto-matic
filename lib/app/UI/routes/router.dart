@@ -63,8 +63,8 @@ mixin RouterMixin on State<App> {
           return auth ? null : '/login';
         },
         builder: (_, state){
-          DocumentSnapshot documentSnapShot = state.extra as DocumentSnapshot;
-          return VehicleRD(documentSnapshot: documentSnapShot);
+          Map<String, dynamic> documentsReferences = state.extra as Map<String, dynamic>;
+          return VehicleRD(references: documentsReferences);
         } ,
       ),
     ],

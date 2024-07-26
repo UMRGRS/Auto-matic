@@ -1,12 +1,15 @@
+import 'package:auto_matic/app/UI/screens/vehicle_RD/controller/get_real_time_data.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VehicleIndicators extends StatelessWidget {
-  const VehicleIndicators({super.key});
-
+  const VehicleIndicators({super.key, required this.realtimeReference});
+  final DocumentReference realtimeReference;
   @override
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
+    final Stream<DocumentSnapshot> stream = GetRealTimeData.getDocumentSnapshot(realtimeReference);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -27,31 +30,29 @@ class VehicleIndicators extends StatelessWidget {
               )
             ],
           ),
-          //RPM & KPM / TEMP & BATTERY
-          const Column(
+          Column(
             children: [
-              TempBattery(),
-              SizedBox(height: 10,),
-              RPMKPM(),
+              TempBattery(stream: stream,),
+              const SizedBox(height: 10,),
+              RPMKPM(stream: stream,),
             ],
           ),
           const SizedBox(height: 10,),
-          // FAILURE CODES / SERVICES
           Builder(builder: (_){
             if(isScreenWide){
-              return const Row(
+              return Row(
                 children: [
                   Expanded(child: ServicesCard()),
-                  Expanded(child: FailureCodesCard())
+                  Expanded(child: FailureCodesCard(stream: stream,))
                 ],
               );
             }
             else{
-              return const Column(
+              return Column(
                 children: [
                   ServicesCard(),
-                  SizedBox(height: 10,),
-                  FailureCodesCard()
+                  const SizedBox(height: 10,),
+                  FailureCodesCard(stream: stream,)
                 ],
               );
             }
