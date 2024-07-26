@@ -1,6 +1,7 @@
 import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/domain/models/car_data.dart';
 import 'package:auto_matic/app/domain/repositories/car_data_repository.dart';
+import 'package:auto_matic/app/domain/responses/delete_car_response.dart';
 import 'package:auto_matic/app/domain/responses/update_car_response.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -33,5 +34,19 @@ class CarDataRepositoryImpl implements CarDataRepository {
   Stream<DocumentSnapshot> getDocumentSnapshot(
       DocumentReference<Object?> reference) {
     return reference.snapshots();
+  }
+
+  @override
+  Future<DeleteCarResponse> deleteDocument(
+      Map<String, dynamic> references) async{
+    references['static_reference']!.delete().then(
+          (doc) => print("Document deleted"),
+          onError: (e) => print("Error updating document $e"),
+        );
+    references['realtime_reference']!.delete().then(
+          (doc) => print("Document deleted"),
+          onError: (e) => print("Error updating document $e"),
+        );
+    return DeleteCarResponse(error: null);
   }
 }

@@ -1,17 +1,18 @@
 import 'package:auto_matic/app/UI/screens/vehicle_RD/controller/get_real_time_data.dart';
+import 'package:auto_matic/app/UI/screens/vehicle_RD/widgets/delete_car_pop_up.dart';
 import 'package:auto_matic/app/UI/screens/vehicle_RD/widgets/update_alias_pop_up.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_svg/svg.dart';
 
 class VehicleDataCard extends StatelessWidget {
-  const VehicleDataCard({super.key, required this.reference});
-  final DocumentReference reference;
+  const VehicleDataCard({super.key, required this.references});
+  final Map<String, dynamic> references;
 
   @override
   Widget build(BuildContext context) {
     final Stream<DocumentSnapshot> carStream =
-        GetRealTimeData.getDocumentSnapshot(reference);
+        GetRealTimeData.getDocumentSnapshot(references['static_reference']!);
     return StreamBuilder(
         stream: carStream,
         builder:
@@ -53,7 +54,7 @@ class VehicleDataCard extends StatelessWidget {
                       IconButton(
                           onPressed: () =>
                               UpdateAliasPopUp.showUpdateAliasPopUp(
-                                  context, reference),
+                                  context, references['static_reference']!),
                           icon: SvgPicture.asset(
                             "assets/pages/profile/icons/edit.svg",
                             color: Colors.black54,
@@ -78,9 +79,8 @@ class VehicleDataCard extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: ImportantTextButton(
                         text: "Eliminar vehículo",
-                        onPressed: () {
-                          //call to warning pop up
-                        },
+                        onPressed: () =>
+                            showDeleteCarPopUp(context, references),
                         iconPath: "assets/pages/vehicle_RD/icons/delete.svg"),
                   )
                 ],

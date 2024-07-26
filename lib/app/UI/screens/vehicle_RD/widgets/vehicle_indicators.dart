@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VehicleIndicators extends StatelessWidget {
   const VehicleIndicators({super.key, required this.realtimeReference});
-  final DocumentReference realtimeReference;
+  final DocumentReference? realtimeReference;
   @override
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
-    final Stream<DocumentSnapshot> stream = GetRealTimeData.getDocumentSnapshot(realtimeReference);
+    final Stream<DocumentSnapshot> stream = GetRealTimeData.getDocumentSnapshot(realtimeReference!);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(

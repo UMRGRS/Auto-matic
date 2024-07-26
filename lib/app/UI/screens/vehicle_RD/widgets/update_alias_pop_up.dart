@@ -1,4 +1,4 @@
-import 'package:auto_matic/app/UI/screens/vehicle_RD/controller/update_static_delete_controller.dart';
+import 'package:auto_matic/app/UI/screens/vehicle_RD/controller/update_static_controller.dart';
 import 'package:auto_matic/app/UI/screens/vehicle_RD/controller/update_static_state.dart';
 import 'package:auto_matic/app/UI/screens/vehicle_RD/utils/send_alias_update.dart';
 import 'package:auto_matic/app/config/config.dart';

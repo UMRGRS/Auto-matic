@@ -1,6 +1,5 @@
 import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
-
 import 'package:auto_matic/app/config/config.dart';
 
 class VehicleRD extends StatelessWidget {
@@ -49,7 +48,7 @@ class VehicleRD extends StatelessWidget {
               height: 100,
             ),
             VehicleDataCard(
-              reference: references['static_reference'],
+              references: references,
             ),
             const SizedBox(
               height: 50,
