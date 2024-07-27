@@ -1,7 +1,10 @@
 import 'package:auto_matic/app/UI/screens/register_car/controller/register_car_controller.dart';
 import 'package:auto_matic/app/UI/screens/register_car/utils/confirm_form.dart';
 import 'package:auto_matic/app/UI/screens/register_car/utils/vin_validator.dart';
+import 'package:auto_matic/app/UI/screens/register_car/widgets/unique_code_pop_up.dart';
 import 'package:auto_matic/app/config/config.dart';
+
+import 'find_vin_pop_up.dart';
 
 class RegisterCarForm extends StatelessWidget {
   const RegisterCarForm({
@@ -39,7 +42,7 @@ class RegisterCarForm extends StatelessWidget {
                   ],
                 ),
               ),
-              InfoButton(),
+              InfoButton(showFunction: showUniqueCodePopUp),
             ],
           ),
           const SizedBox(
@@ -79,7 +82,7 @@ class RegisterCarForm extends StatelessWidget {
                   ],
                 ),
               ),
-              InfoButton(),
+              InfoButton(showFunction: showFindVinPopUp,),
             ],
           ),
           const SizedBox(
