@@ -14,7 +14,7 @@ class UpdateNamePopUp {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Escribe el nuevo nombre de usuario"),
+        title: const Text("Escribe el nuevo nombre"),
         content: ProviderListener<UpdateProfileController>(
           provider: updateDisplayNameProvider,
           builder: (_, controller) {
@@ -24,7 +24,7 @@ class UpdateNamePopUp {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CustomInputField(
-                    label: 'Nombre de usuario',
+                    label: 'Nombre',
                     maxLength: 30,
                     onChanged: controller.onNameChange,
                     validator: (text) {

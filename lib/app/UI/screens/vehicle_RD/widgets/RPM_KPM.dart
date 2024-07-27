@@ -8,7 +8,7 @@ class RPMKPM extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
-    bool isScreenWide = responsive.width >= 600;
+    bool isScreenWide = responsive.width >= 850;
     return StreamBuilder(
         stream: stream,
         builder:
@@ -50,13 +50,13 @@ class RPMKPM extends StatelessWidget {
                               showLastLabel: true,
                               pointers: <GaugePointer>[
                                 NeedlePointer(
-                                  value: data['speed'],
+                                  value: double.parse('${data['speed']}'),
                                   enableAnimation: true,
                                 )
                               ],
                               annotations: <GaugeAnnotation>[
                                 GaugeAnnotation(
-                                    widget: Text('${data['speed']}',
+                                    widget: Text('${data['speed']} KM/H',
                                         style: const TextStyle(
                                             fontSize: 25,
                                             fontWeight: FontWeight.bold)),
@@ -101,13 +101,13 @@ class RPMKPM extends StatelessWidget {
                               showLastLabel: true,
                               pointers: <GaugePointer>[
                                 NeedlePointer(
-                                  value: data['rpm'],
+                                  value: double.parse('${data['rpm']}'),
                                   enableAnimation: true,
                                 )
                               ],
                               annotations: <GaugeAnnotation>[
                                 GaugeAnnotation(
-                                    widget: Text('${data['rpm']}',
+                                    widget: Text('${data['rpm']} R/MIN',
                                         style: const TextStyle(
                                             fontSize: 25,
                                             fontWeight: FontWeight.bold)),

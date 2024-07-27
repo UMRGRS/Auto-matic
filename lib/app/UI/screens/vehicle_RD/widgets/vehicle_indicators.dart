@@ -9,7 +9,8 @@ class VehicleIndicators extends StatelessWidget {
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
-    final Stream<DocumentSnapshot> stream = GetRealTimeData.getDocumentSnapshot(realtimeReference!);
+    final Stream<DocumentSnapshot> stream =
+        GetRealTimeData.getDocumentSnapshot(realtimeReference!);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -32,27 +33,48 @@ class VehicleIndicators extends StatelessWidget {
           ),
           Column(
             children: [
-              TempBattery(stream: stream,),
-              const SizedBox(height: 10,),
-              RPMKPM(stream: stream,),
+              TempBattery(
+                stream: stream,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              RPMKPM(
+                stream: stream,
+              ),
             ],
           ),
-          const SizedBox(height: 10,),
-          Builder(builder: (_){
-            if(isScreenWide){
+          const SizedBox(
+            height: 10,
+          ),
+          Builder(builder: (_) {
+            if (isScreenWide) {
               return Row(
                 children: [
-                  Expanded(child: ServicesCard()),
-                  Expanded(child: FailureCodesCard(stream: stream,))
+                  Expanded(
+                      child: ServicesCard(
+                    stream: stream,
+                    realtimeReference: realtimeReference,
+                  )),
+                  Expanded(
+                      child: FailureCodesCard(
+                    stream: stream,
+                  ))
                 ],
               );
-            }
-            else{
+            } else {
               return Column(
                 children: [
-                  ServicesCard(),
-                  const SizedBox(height: 10,),
-                  FailureCodesCard(stream: stream,)
+                  ServicesCard(
+                    stream: stream,
+                    realtimeReference: realtimeReference,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  FailureCodesCard(
+                    stream: stream,
+                  )
                 ],
               );
             }

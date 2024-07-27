@@ -57,7 +57,7 @@ class TempBattery extends StatelessWidget {
                             markerPointers: [
                               LinearWidgetPointer(
                                   position: LinearElementPosition.outside,
-                                  value: data['temp'],
+                                  value: double.parse('${data['temp']}'),
                                   child: SizedBox(
                                     height: 45,
                                     child: Column(children: [
@@ -129,7 +129,7 @@ class TempBattery extends StatelessWidget {
                           markerPointers: [
                             LinearWidgetPointer(
                                 position: LinearElementPosition.outside,
-                                value: data['batteryVoltage'],
+                                value: double.parse('${data['batteryVoltage']}'),
                                 child: SizedBox(
                                   height: 45,
                                   child: Column(children: [

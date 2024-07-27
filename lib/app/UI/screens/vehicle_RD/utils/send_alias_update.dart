@@ -10,7 +10,7 @@ Future<void> sendAliasUpdate(
   final isValidForm = controller.formKey.currentState!.validate();
   if (isValidForm) {
     ProgressDialog.show(context);
-    await controller.updateDocument(reference);
+    await controller.updateAlias(reference);
     context.pop();
     context.pop();
     Dialogs.showAlert(

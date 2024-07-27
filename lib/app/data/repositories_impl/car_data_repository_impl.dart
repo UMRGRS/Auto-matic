@@ -23,7 +23,7 @@ class CarDataRepositoryImpl implements CarDataRepository {
 
   @override
   Future<UpdateCarResponse> updateDocument(
-      DocumentReference reference, CarData data) async {
+      DocumentReference reference, dynamic data) async {
     reference.update(data.toFirestore()).then(
         (value) => print("DocumentSnapshot successfully updated!"),
         onError: (e) => print("Error updating document $e"));

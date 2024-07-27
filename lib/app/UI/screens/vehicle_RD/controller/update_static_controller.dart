@@ -11,7 +11,7 @@ class UpdateStaticController extends StateNotifier<UpdateStaticState> {
 
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  Future<UpdateCarResponse> updateDocument(DocumentReference reference) async {
+  Future<UpdateCarResponse> updateAlias(DocumentReference reference) async {
     final carDataRepository = Get.i.find<CarDataRepository>();
     return await carDataRepository.updateDocument(
       reference,

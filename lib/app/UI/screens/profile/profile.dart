@@ -1,6 +1,7 @@
 import 'package:auto_matic/app/UI/global_controllers/session_controller.dart';
 import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
 import 'package:auto_matic/app/config/config.dart';
+import 'package:flutter/foundation.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -49,18 +50,7 @@ class Profile extends StatelessWidget {
                                   fontWeight: FontWeight.bold, fontSize: 25),
                             ),
                           ),
-                          Expanded(
-                            child: Container(
-                              alignment: Alignment.centerRight,
-                              child: ImportantTextButton(
-                                  text: "Añadir vehículo",
-                                  onPressed: () {
-                                    context.pushNamed('register_car');
-                                  },
-                                  iconPath:
-                                      "assets/pages/profile/icons/add.svg"),
-                            ),
-                          )
+                          showAddCar(context),
                         ],
                       ),
                     ),
@@ -77,5 +67,21 @@ class Profile extends StatelessWidget {
       ),
       bottomNavigationBar: const CustomBottomAppBar(),
     );
+  }
+
+  Widget showAddCar(BuildContext context) {
+    return kIsWeb
+        ? Expanded(
+            child: Container(
+              alignment: Alignment.centerRight,
+              child: ImportantTextButton(
+                  text: "Añadir vehículo",
+                  onPressed: () {
+                    context.pushNamed('register_car');
+                  },
+                  iconPath: "assets/pages/profile/icons/add.svg"),
+            ),
+          )
+        : const SizedBox.shrink();
   }
 }

@@ -32,7 +32,7 @@ class RegisterCarRepositoryImpl implements RegisterCarRepository {
     _firestore
         .collection('vehicleRealtime')
         .doc(name)
-        .set(RealtimeTemplate(
+        .set(RealtimeData(
           batteryVoltage: 0,
           rpm: 0,
           speed: 0,
@@ -41,7 +41,7 @@ class RegisterCarRepositoryImpl implements RegisterCarRepository {
           tempUnit: "degree_Celsius",
           failureCodes: [],
           lastServiceDate: DateTime.now(),
-        ).toMap())
+        ).toFirestore())
         .onError((e, _) {
       error = e.toString();
     });

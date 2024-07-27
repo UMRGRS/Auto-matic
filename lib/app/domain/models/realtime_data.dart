@@ -1,24 +1,22 @@
-import 'package:auto_matic/app/UI/screens/profile/utils/vehicle_states.dart';
+class RealtimeData {
+  final double? batteryVoltage, rpm, speed, temp;
+  final String? speedUnit, tempUnit;
+  final List<String>? failureCodes;
+  final DateTime? lastServiceDate;
 
-class RealtimeTemplate {
-  final double batteryVoltage, rpm, speed, temp;
-  final String speedUnit, tempUnit;
-  final List<String> failureCodes;
-  final DateTime lastServiceDate;
-
-  RealtimeTemplate({
-    required this.batteryVoltage,
-    required this.rpm,
-    required this.speed,
-    required this.temp,
-    required this.speedUnit,
-    required this.tempUnit,
-    required this.failureCodes,
-    required this.lastServiceDate,
+  RealtimeData({
+    this.batteryVoltage,
+    this.rpm,
+    this.speed,
+    this.temp,
+    this.speedUnit,
+    this.tempUnit,
+    this.failureCodes,
+    this.lastServiceDate,
   });
 
-  factory RealtimeTemplate.fromMap(Map<String, dynamic> data) {
-    return RealtimeTemplate(
+  factory RealtimeData.fromMap(Map<String, dynamic> data) {
+    return RealtimeData(
       batteryVoltage: data['batteryVoltage'],
       rpm: data['rpm'],
       speed: data['speed'],
@@ -30,16 +28,16 @@ class RealtimeTemplate {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toFirestore() {
     return {
-      "batteryVoltage": batteryVoltage,
-      "rpm": rpm,
-      "speed": speed,
-      "temp": temp,
-      "speedUnit": speedUnit,
-      "tempUnit": tempUnit,
-      "failureCodes": failureCodes,
-      "lastServiceDate": lastServiceDate,
+      if(batteryVoltage != null) "batteryVoltage": batteryVoltage,
+      if(rpm != null) "rpm": rpm,
+      if(speed != null) "speed": speed,
+      if(temp != null) "temp": temp,
+      if(speedUnit != null) "speedUnit": speedUnit,
+      if(tempUnit != null) "tempUnit": tempUnit,
+      if(failureCodes != null) "failureCodes": failureCodes,
+      if(lastServiceDate != null) "lastServiceDate": lastServiceDate,
     };
   }
 }

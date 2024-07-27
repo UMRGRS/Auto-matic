@@ -38,7 +38,7 @@ class FailureCodesCard extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  height: 188,
+                  height: 248,
                   child: showFailureCodesList(data['failureCodes']),
                 )
               ],
@@ -67,10 +67,11 @@ class FailureCodesCard extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Card(
             child: ListTile(
-              leading: const Text("Codigo:"),
+              leading: const Text("Codigo:", style: TextStyle(fontSize: 15),),
               title: Text(failureCodes[index]),
               trailing: IconButton(
                 icon: const Icon(Icons.search),
+                //Add function to see failure code definition
                 onPressed: () {},
               ),
             ),
