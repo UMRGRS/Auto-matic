@@ -35,7 +35,6 @@ class LogInController extends SimpleNotifier {
     late final SignInResponse response;
     if(kIsWeb){
       response = await _auth.signInWithGoogleWeb();
-
     }else{
       response = await _auth.signInWithGoogleMobile();
     }

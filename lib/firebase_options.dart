@@ -51,22 +51,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDiAQN_2l_YicQJe2jUj0S6IwYr2Um0IRI',
-    appId: '1:238326040602:web:4f28c3ca6d72e14fab69a3',
+    appId: '1:238326040602:web:0332717dac2e1e35ab69a3',
     messagingSenderId: '238326040602',
     projectId: 'auto-matic-f20e7',
     authDomain: 'auto-matic-f20e7.firebaseapp.com',
     databaseURL: 'https://auto-matic-f20e7-default-rtdb.firebaseio.com',
     storageBucket: 'auto-matic-f20e7.appspot.com',
-    measurementId: 'G-CVG5YE294X',
+    measurementId: 'G-8TQDKJ5KFD',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAoFWbwm9kNgIDwPkijssDLSZXEdVKUfLE',
-    appId: '1:238326040602:android:a9c513a5ea93d011ab69a3',
+    appId: '1:238326040602:android:d82623698472d41eab69a3',
     messagingSenderId: '238326040602',
     projectId: 'auto-matic-f20e7',
     databaseURL: 'https://auto-matic-f20e7-default-rtdb.firebaseio.com',
     storageBucket: 'auto-matic-f20e7.appspot.com',
   );
-
 }

@@ -10,7 +10,6 @@ import 'package:auto_matic/app/domain/repositories/sign_up_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 
 import 'package:flutter_meedu/flutter_meedu.dart';
 import 'package:flutter_meedu/meedu.dart';
@@ -19,16 +18,13 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'app/data/repositories_impl/sign_up_respository_impl.dart';
 
 const List<String> scopes = <String>[
-  'email',
   'https://www.googleapis.com/auth/cloud-platform.read-only',
 ];
-
-GoogleSignIn? googleSignIn = kIsWeb ? null : GoogleSignIn(scopes: scopes);
 
 void injectDependencies() {
   Get.i.lazyPut<AuthenticationRepository>(
     () => AuthenticationRepositoryImpl(
-        FirebaseAuth.instance, googleSignIn, GoogleAuthProvider()),
+        FirebaseAuth.instance, GoogleSignIn(scopes: scopes), GoogleAuthProvider()),
   );
   Get.i.lazyPut<RegisterCarRepository>(
     () => RegisterCarRepositoryImpl(FirebaseFirestore.instance),
