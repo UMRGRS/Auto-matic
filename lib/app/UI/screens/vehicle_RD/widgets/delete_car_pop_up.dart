@@ -6,10 +6,10 @@ Future<void> showDeleteCarPopUp(
   return showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: const Text("¿Estas seguro?"),
+      title: const Text("¿Estás seguro?"),
       content: const Column(mainAxisSize: MainAxisSize.min, children: [
         Text(
-            "Esta acción es irreversible, para obtener la información de este vehículo tendras que volver a registrarlo")
+            "Esta acción es irreversible. Para obtener la información de este vehículo, tendrás que volver a registrarlo.")
       ]),
       actions: [
         AppBarButton(

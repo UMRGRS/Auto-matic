@@ -11,12 +11,13 @@ class DisplayUserImage extends StatelessWidget {
             height: 200,
           )
         : Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: ClipRRect(
+            padding: const EdgeInsets.all(20.0),
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(1000),
               child: Image.network(
                 imageURL!,
-              )),
-        );
+              ),
+            ),
+          );
   }
 }

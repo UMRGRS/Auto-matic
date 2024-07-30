@@ -15,7 +15,7 @@ class UpdateAliasPopUp {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Escribe el nuevo alias"),
+        title: const Text("Escribe el nuevo apodo"),
         content: ProviderListener<UpdateStaticController>(
           provider: updateDeleteCarProvider,
           builder: (_, controller) {
@@ -29,10 +29,10 @@ class UpdateAliasPopUp {
                     maxLength: 10,
                     onChanged: controller.onAliasChanged,
                     validator: (text) {
-                      if (text == null) return "Alias invalido";
+                      if (text == null) return "Apodo inválido";
                       return isValidAlias(text)
                           ? null
-                          : "El alias no puede contener caracteres especiales";
+                          : "El apodo no puede contener caracteres especiales";
                     },
                   ),
                 ],

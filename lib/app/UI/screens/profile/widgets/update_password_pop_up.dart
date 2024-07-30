@@ -28,7 +28,7 @@ class UpdatePasswordPopUp {
                     onChanged: controller.onPasswordChange,
                     isPassword: true,
                     validator: (text) {
-                      if (text == null) return "Contraseña invalida";
+                      if (text == null) return "Contraseña inválida";
                       return isValidPassword(text);
                     },
                   ),
@@ -39,12 +39,12 @@ class UpdatePasswordPopUp {
                     builder: (_, watch, __) {
                       watch(registerProvider.select((state) => state.password));
                       return CustomInputField(
-                        label: 'Verfica tu contraseña',
+                        label: 'Verifica tu contraseña',
                         onChanged: controller.onVPasswordChange,
                         isPassword: true,
                         mode: AutovalidateMode.always,
                         validator: (text) {
-                          if (text == null) return "Contraseña invalida";
+                          if (text == null) return "Contraseña inválida";
                           if (controller.state.password != text) {
                             return "Las contraseñas no coinciden";
                           }

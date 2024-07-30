@@ -17,7 +17,7 @@ Future<void> showFailureCodeDefinition(
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("Sucedio un error, intenta mas tarde"),
+              const Text("Se produjo un error, intenta más tarde."),
               CupertinoButton(
                 onPressed: () => context.pop(),
                 child: Container(
@@ -51,14 +51,14 @@ Future<void> showFailureCodeDefinition(
             children: [
               Text(
                 "Código: ${code}",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
                 "Definición: ${codeData.definition}",
-                style: TextStyle(fontSize: 13),
+                style: const TextStyle(fontSize: 13),
               ),
               const SizedBox(
                 height: 10,
@@ -83,7 +83,7 @@ Future<void> showFailureCodeDefinition(
                             color: Colors.red),
                         child: Text(
                           "${index + 1}",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
+                          style: const TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ),
                       title: Text("${codeData.causes![index]}"),

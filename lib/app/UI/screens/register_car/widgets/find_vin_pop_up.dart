@@ -80,7 +80,7 @@ Future<void> showFindVinPopUp(BuildContext context){
                 ),
               ),
               title: const Text(
-                  "Bajo el capó, cara frontal del motor o marco trasero"),
+                  "Bajo el capó, en la cara frontal del motor o en el marco trasero."),
             )
           ],
         ),

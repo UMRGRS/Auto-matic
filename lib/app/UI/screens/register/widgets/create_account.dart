@@ -12,130 +12,129 @@ class CreateAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderListener<RegisterController>(
-        provider: registerProvider,
-        builder: (_, controller) {
-          return Form(
-            key: controller.formKey,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Crear cuenta',
-                              style: TextStyle(
-                                  fontSize: 26, fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 10),
-                          CustomInputField(
-                            label: 'Nombre',
-                            onChanged: controller.onNameChanged,
-                            maxLength: 15,
-                            validator: (text) {
-                              if (text == null) return "Nombre invalido";
-                              return isValidName(text)
-                                  ? null
-                                  : "El nombre no pueden contener espacios en blanco o caracteres especiales";
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          CustomInputField(
-                            label: 'Apellido',
-                            onChanged: controller.onLastNameChanged,
-                            maxLength: 15,
-                            validator: (text) {
-                              if (text == null) return "Apellido invalido";
-                              return isValidName(text)
-                                  ? null
-                                  : "El apellido no pueden contener espacios en blanco o caracteres especiales";
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          CustomInputField(
-                            label: 'Correo electronico',
-                            inputType: TextInputType.emailAddress,
-                            onChanged: controller.onEmailChanged,
-                            validator: (text) {
-                              if (text == null) {
-                                return "Correo electronico invalido";
-                              }
-                              return isValidEmail(text)
-                                  ? null
-                                  : "Correo electronico invalido";
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          CustomInputField(
-                            label: 'Contraseña',
-                            onChanged: controller.onPasswordChanged,
-                            isPassword: true,
-                            validator: (text) {
-                              if (text == null) return "Contraseña invalida";
-                              return isValidPassword(text);
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          Consumer(
-                            builder: (_, watch, __) {
-                              watch(registerProvider
-                                  .select((state) => state.password));
-                              return CustomInputField(
-                                label: 'Verfica tu contraseña',
-                                onChanged: controller.onVPasswordChanged,
-                                isPassword: true,
-                                mode: AutovalidateMode.always,
-                                validator: (text) {
-                                  if (text == null)
-                                    return "Contraseña invalida";
-                                  if (controller.state.password != text) {
-                                    return "Las contraseñas no coinciden";
-                                  }
-                                  return null;
-                                },
-                              );
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: ElevatedButton(
-                                  onPressed: () => sendRegisterForm(context),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Config.confirmGreen,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
+      provider: registerProvider,
+      builder: (_, controller) {
+        return Form(
+          key: controller.formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text("Crear cuenta",
+                            style: TextStyle(
+                                fontSize: 26, fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 10),
+                        CustomInputField(
+                          label: 'Nombre',
+                          onChanged: controller.onNameChanged,
+                          maxLength: 15,
+                          validator: (text) {
+                            if (text == null) return "Nombre inválido";
+                            return isValidName(text)
+                                ? null
+                                : "El nombre no puede contener espacios en blanco o caracteres especiales.";
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        CustomInputField(
+                          label: 'Apellido',
+                          onChanged: controller.onLastNameChanged,
+                          maxLength: 15,
+                          validator: (text) {
+                            if (text == null) return "Apellido inválido";
+                            return isValidName(text)
+                                ? null
+                                : "El apellido no puede contener espacios en blanco o caracteres especiales";
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        CustomInputField(
+                          label: "Correo electrónico",
+                          inputType: TextInputType.emailAddress,
+                          onChanged: controller.onEmailChanged,
+                          validator: (text) {
+                            if (text == null) {
+                              return "Correo electrónico inválido";
+                            }
+                            return isValidEmail(text)
+                                ? null
+                                : "Correo electrónico inválido";
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        CustomInputField(
+                          label: "Contraseña",
+                          onChanged: controller.onPasswordChanged,
+                          isPassword: true,
+                          validator: (text) {
+                            if (text == null) return "Contraseña inválida";
+                            return isValidPassword(text);
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        Consumer(
+                          builder: (_, watch, __) {
+                            watch(registerProvider
+                                .select((state) => state.password));
+                            return CustomInputField(
+                              label: "Verifica tu contraseña",
+                              onChanged: controller.onVPasswordChanged,
+                              isPassword: true,
+                              mode: AutovalidateMode.always,
+                              validator: (text) {
+                                if (text == null) return "Contraseña inválida";
+                                if (controller.state.password != text) {
+                                  return "Las contraseñas no coinciden";
+                                }
+                                return null;
+                              },
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: () => sendRegisterForm(context),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Config.confirmGreen,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: const Text(
-                                    'Continuar',
-                                    style: TextStyle(
-                                      color: Colors
-                                          .white, // Cambia el valor hexadecimal aquí
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                ),
+                                child: const Text(
+                                  "Continuar",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const AccessWithSM()
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const AccessWithSM()
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }

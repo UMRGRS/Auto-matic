@@ -31,7 +31,7 @@ class RegisterCarForm extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Introduce el código único del producto',
+                      "Introduce el código único del producto",
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -49,15 +49,15 @@ class RegisterCarForm extends StatelessWidget {
             height: 5,
           ),
           CustomInputField(
-            label: "Código unico (16 caracteres)",
+            label: "Código único (16 caracteres)",
             onChanged: controller.onUniqueCodeChanged,
             maxLength: 16,
             validator: (text) {
               if (text == null) {
-                return "El codigo no puede estar vacío";
+                return "El código no puede estar vacío";
               }
               if (text.trim().length < 16) {
-                return "El codigo tiene que ser de 16 caracteres y no contener espacios vacíos";
+                return "El código debe contener 16 caracteres y no tener espacios en blanco.";
               }
               return null;
             },
@@ -97,7 +97,7 @@ class RegisterCarForm extends StatelessWidget {
                 return "El VIN no puede estar vacío";
               }
               if (text.trim().length < 17) {
-                return "No puede contener caracteres vacíos";
+                return "No puede contener espacio en blanco";
               }
               return isValidVIN(text);
             },
@@ -116,7 +116,7 @@ class RegisterCarForm extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Config.confirmGreen,
             ),
-            child: const Text('Continuar',
+            child: const Text("Continuar",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

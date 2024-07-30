@@ -2,7 +2,6 @@ import 'package:auto_matic/app/UI/screens/logIn/utils/sign_in_with_google.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
-// Sección de acceso con redes sociales
 class AccessWithSM extends StatelessWidget {
   const AccessWithSM({super.key});
 
@@ -12,7 +11,7 @@ class AccessWithSM extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
-          const Text('Registrate con',
+          const Text("Regístrate con",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -20,7 +19,7 @@ class AccessWithSM extends StatelessWidget {
           const SizedBox(height: 8),
           SignInButton(
             Buttons.googleDark,
-            text: "Registrate con Google",
+            text: "Regístrate con Google",
             onPressed: () => signInWithGoogle(context),
           ),
           const SizedBox(

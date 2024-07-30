@@ -28,7 +28,7 @@ class UpdateNamePopUp {
                     maxLength: 30,
                     onChanged: controller.onNameChange,
                     validator: (text) {
-                      if (text == null) return "Nombre invalido";
+                      if (text == null) return "Nombre inválido";
                       return isValidName(text)
                           ? null
                           : "El nombre no puede contener espacios en blanco o caracteres especiales";
@@ -42,7 +42,7 @@ class UpdateNamePopUp {
                     onChanged: controller.onLastnameChange,
                     maxLength: 15,
                     validator: (text) {
-                      if (text == null) return "Apellido invalido";
+                      if (text == null) return "Apellido inválido";
                       return isValidName(text)
                           ? null
                           : "El apellido no puede contener espacios en blanco o caracteres especiales";

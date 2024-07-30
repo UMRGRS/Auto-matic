@@ -18,7 +18,7 @@ class VehicleList extends StatelessWidget {
         stream: carsStream,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return const Text('Algo salio mal, intenta mas tarde');
+            return const Text('Algo salió mal, intenta más tarde.');
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -39,7 +39,7 @@ class VehicleList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "No tienes autos registrados, añade uno para comenzar :3",
+                    "No tienes autos registrados; añade uno para comenzar :3",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),

@@ -10,7 +10,7 @@ class VehicleStates{
       "color": const Color.fromRGBO(79, 240, 141, 1)
     },
     VehicleState.Danger: {
-      "text": "¡Atencion!",
+      "text": "¡Atención!",
       "iconPath": "assets/pages/profile/icons/danger.svg",
       "color": const Color.fromRGBO(240, 220, 91, 1),
     },

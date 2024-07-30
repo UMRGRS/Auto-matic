@@ -32,7 +32,7 @@ Future<void> showUniqueCodePopUp(BuildContext context){
                 ),
               ),
               title: const Text(
-                  "En la primer página del instructivo incluido con el producto"),
+                  "En la primera página del instructivo incluido con el producto"),
             ),
             ListTile(
               leading: Container(

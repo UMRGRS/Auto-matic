@@ -1,5 +1,4 @@
 import 'package:auto_matic/app/UI/screens/register_car/utils/confirm_car_data.dart';
-import 'package:auto_matic/app/UI/screens/register_car/utils/send_car_form.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/UI/screens/register_car/controller/register_car_controller.dart';
 
@@ -27,7 +26,7 @@ class CarDataBox extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Confirma los datos de tu vehículo',
+                        "Confirma los datos de tu vehículo",
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -96,7 +95,7 @@ class CarDataBox extends StatelessWidget {
                     backgroundColor: Config.confirmGreen,
                   ),
                   child: const Text(
-                    'Continuar',
+                    "Continuar",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -115,7 +114,7 @@ class CarDataBox extends StatelessWidget {
                     backgroundColor: Colors.grey,
                   ),
                   child: const Text(
-                    'Corregir VIN',
+                    "Corregir VIN",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

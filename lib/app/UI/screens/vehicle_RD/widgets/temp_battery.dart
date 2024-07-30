@@ -13,7 +13,7 @@ class TempBattery extends StatelessWidget {
         builder:
             (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
           if (snapshot.hasError) {
-            return const Text('Algo salio mal, intenta mas tarde');
+            return const Text("Algo salió mal, intenta más tarde.");
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -108,7 +108,7 @@ class TempBattery extends StatelessWidget {
                           height: 50,
                         ),
                         title: const Text(
-                          "Bateria",
+                          "Batería",
                           style:
                               TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                         ),

@@ -36,7 +36,7 @@ class LogInForm extends StatelessWidget {
                           height: 15,
                         ),
                         const Text(
-                          "Correo electronico",
+                          "Correo electrónico",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -44,16 +44,16 @@ class LogInForm extends StatelessWidget {
                           height: 5,
                         ),
                         CustomInputField(
-                          label: "Correo electronico",
+                          label: "Correo electrónico",
                           inputType: TextInputType.emailAddress,
                           onChanged: controller.onEmailChange,
                           validator: (text) {
                             if (text == null) {
-                              return "Correo electronico invalido";
+                              return "Correo electrónico invalido";
                             }
                             return isValidEmail(text)
                                 ? null
-                                : "Correo electronico invalido";
+                                : "Correo electrónico invalido";
                           },
                         ),
                         const SizedBox(
@@ -73,12 +73,12 @@ class LogInForm extends StatelessWidget {
                           label: "Contraseña",
                           validator: (text) {
                             if (text == null) {
-                              return "Contraseña invalida";
+                              return "Contraseña inválida";
                             }
                             if (text.trim().length >= 8) {
                               return null;
                             }
-                            return "Contraseña invalida";
+                            return "Contraseña inválida";
                           },
                         ),
                         const SizedBox(
@@ -173,7 +173,7 @@ class LogInForm extends StatelessWidget {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Text(
-                                          "Registrate",
+                                          "Regístrate",
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontFamily: "Helvetica",
@@ -188,7 +188,6 @@ class LogInForm extends StatelessWidget {
                                 width: 0,
                                 height: 0,
                               ),
-
                       ],
                     ),
                   ),

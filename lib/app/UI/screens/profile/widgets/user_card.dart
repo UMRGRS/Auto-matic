@@ -70,7 +70,7 @@ class _UserCardState extends State<UserCard> {
                         height: 3,
                       ),
                       InfoCard(
-                        label: "Correo electronico",
+                        label: "Correo electrónico",
                         text: widget.session.user!.email!,
                         leadingPath: "assets/pages/profile/icons/email.svg",
                       ),
@@ -80,7 +80,9 @@ class _UserCardState extends State<UserCard> {
                       ImportantTextButton(
                         iconPath: "assets/pages/profile/icons/edit.svg",
                         text: "Cambiar contraseña",
-                        onPressed: () async => await UpdatePasswordPopUp.showUpdatePasswordPopUp(context),
+                        onPressed: () async =>
+                            await UpdatePasswordPopUp.showUpdatePasswordPopUp(
+                                context),
                       )
                     ],
                   ),

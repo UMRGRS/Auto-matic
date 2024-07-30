@@ -12,7 +12,7 @@ Future<void> showResetServicePopUp(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-              "Solo resetea el servicio despues de que tu mecanico lo haya realizado, resetear tu servicio es una acción irreversible ¿Deseas continuar?")
+              "Solo resetea el servicio después de que tu mecánico lo haya realizado. Resetear el servicio es una acción irreversible. ¿Deseas continuar?")
         ],
       ),
       actions: [

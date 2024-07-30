@@ -25,7 +25,7 @@ class VehicleIndicators extends StatelessWidget {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               ImportantTextButton(
-                text: "Datos del vehiculo",
+                text: "Datos del vehículo",
                 onPressed: () => Scaffold.of(context).openDrawer(),
                 iconPath: "assets/pages/vehicle_RD/icons/car.svg",
               )

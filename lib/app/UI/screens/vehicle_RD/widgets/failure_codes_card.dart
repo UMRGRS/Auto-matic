@@ -12,7 +12,7 @@ class FailureCodesCard extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text('Algo salio mal, intenta mas tarde');
+          return const Text("Algo salió mal, intenta más tarde");
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -35,7 +35,7 @@ class FailureCodesCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Codigos de falla",
+                  "Códigos de falla",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -57,7 +57,7 @@ class FailureCodesCard extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return const Card(
             child: ListTile(
-              title: Text("No hay codigos de falla actualmente"),
+              title: Text("No hay códigos de falla actualmente."),
             ),
           );
         },
@@ -69,7 +69,7 @@ class FailureCodesCard extends StatelessWidget {
           return Card(
             child: ListTile(
               leading: const Text(
-                "Codigo:",
+                "Código:",
                 style: TextStyle(fontSize: 15),
               ),
               title: Text(failureCodes[index]),
