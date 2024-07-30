@@ -54,8 +54,9 @@ class Profile extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 300,
+                      width: constraints.maxWidth,
                       child: VehicleList(),
                     ),
                   ],

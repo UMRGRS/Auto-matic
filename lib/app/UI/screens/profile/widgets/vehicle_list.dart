@@ -32,6 +32,22 @@ class VehicleList extends StatelessWidget {
             );
           }
 
+          if (snapshot.data!.docs.isEmpty) {
+            return const Card(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "No tienes autos registrados, añade uno para comenzar :3",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            );
+          }
+
           return ListView(
             children: snapshot.data!.docs
                 .map((DocumentSnapshot document) {

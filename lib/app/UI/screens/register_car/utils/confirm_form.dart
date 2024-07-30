@@ -13,7 +13,7 @@ void confirmForm(
   final isValidForm = controller.formKey.currentState!.validate();
   if (isValidForm) {
     ProgressDialog.show(context);
-    ApiVinResponse response = await Api.get(controller.state.carVIN);
+    ApiVinResponse response = await getVinData(controller.state.carVIN);
     context.pop();
     if (response.error == null) {
       controller.onCarModelChanged(response.model!);

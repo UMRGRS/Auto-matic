@@ -1,4 +1,6 @@
 import 'package:auto_matic/app/config/config.dart';
+import 'package:auto_matic/app/data/data_source/remote/failure_codes_api_call.dart';
+import 'package:auto_matic/app/data/data_source/remote/translation_api_call.dart';
 
 class Landing extends StatelessWidget {
   const Landing({super.key});
@@ -28,8 +30,11 @@ class Landing extends StatelessWidget {
           actions: [
             AppBarButton(
               text: "Iniciar sesión",
-              onPressed: () {
-                context.pushNamed('login');
+              onPressed: () async{
+                //context.pushNamed('login');
+                //final data = await getFailureCodeData("P0001");
+                //print("${data.definition}, ${data.causes}, ${data.error}");
+                Translate();
               },
             ),
             AppBarButton(
