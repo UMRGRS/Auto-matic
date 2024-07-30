@@ -1,3 +1,4 @@
+import 'package:auto_matic/app/UI/screens/vehicle_RD/widgets/code_definition_pop_up.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -67,12 +68,16 @@ class FailureCodesCard extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Card(
             child: ListTile(
-              leading: const Text("Codigo:", style: TextStyle(fontSize: 15),),
+              leading: const Text(
+                "Codigo:",
+                style: TextStyle(fontSize: 15),
+              ),
               title: Text(failureCodes[index]),
               trailing: IconButton(
                 icon: const Icon(Icons.search),
                 //Add function to see failure code definition
-                onPressed: () {},
+                onPressed: () async => await
+                    showFailureCodeDefinition(context, failureCodes[index]),
               ),
             ),
           );

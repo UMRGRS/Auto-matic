@@ -27,7 +27,6 @@ Future<FailureCodesApiResponse> getFailureCodeData(String code) async {
           error: "Hubo un error intenta mas tarde",
         );
       }
-      print(json['cause']);
       final causes = await getCauses(json['cause']);
       print(causes.toString());
       return FailureCodesApiResponse(
