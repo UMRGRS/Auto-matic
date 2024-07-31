@@ -1,5 +1,18 @@
-import 'package:auto_matic/config/config.dart';
+import 'package:auto_matic/app/config/config.dart';
+import 'package:auto_matic/inject_dependecies.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+//Firebase imports
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async{
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  setPathUrlStrategy();
+  injectDependencies();
   runApp(const App());
 }
