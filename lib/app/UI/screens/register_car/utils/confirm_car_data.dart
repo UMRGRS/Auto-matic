@@ -10,7 +10,7 @@ void confirmCarData(BuildContext context) {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             content: const Text(
-                "Verfica que los datos sean correctos no podras modificarlos mas adelante"),
+                "Verifica que los datos sean correctos, no podrás modificarlos mas adelante"),
             actions: [
               AppBarButton(
                 text: "Continuar",

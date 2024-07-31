@@ -16,7 +16,7 @@ Future<void> sendRegisterForm(BuildContext context) async {
         case SignUpError.emailAlreadyInUse:
           content = "Ya existe una cuenta con ese correo";
         case SignUpError.weakPassword:
-          content = "Tu contraseña es muy debil";
+          content = "Tu contraseña es muy débil";
         case SignUpError.networkRequestFailed:
           content = "Sin conexión a internet";
         case SignUpError.unknown:
@@ -27,6 +27,6 @@ Future<void> sendRegisterForm(BuildContext context) async {
       context.pushReplacementNamed("profile");
     }
   } else {
-    Dialogs.showAlert(title: "Error", content: "Campos invalidos", context: context);
+    Dialogs.showAlert(title: "Error", content: "Campos inválidos", context: context);
   }
 }

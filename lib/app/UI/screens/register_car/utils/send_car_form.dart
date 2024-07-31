@@ -8,7 +8,7 @@ Future<void> sendCarForm(BuildContext context) async{
   final response = await controller.submitCar();
   context.pop();
   if(response.error!=null){
-    Dialogs.showAlert(title: "Error", content: "Hubo un error intentalo mas tarde", context: context);
+    Dialogs.showAlert(title: "Error", content: "Hubo un error, inténtalo más tarde", context: context);
   }else{
     context.pushReplacementNamed('profile');
   }

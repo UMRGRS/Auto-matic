@@ -7,16 +7,16 @@ String? isValidPassword(text) {
           if (RegExp(r'^(?=.*[A-Z]).*$').hasMatch(text)) {
             return null;
           } else {
-            return "Debe contener una letra mayuscula";
+            return "Debe contener una letra mayúscula";
           }
         } else {
-          return "Debe tener contener un caracter especial";
+          return "Debe contener un carácter especial";
         }
       } else {
-        return "Debe contener un numero";
+        return "Debe contener un número";
       }
     } else {
-      return "Debe contener una letra minuscula";
+      return "Debe contener una letra minúscula";
     }
   } else {
     return "Debe tener mínimo 8 caracteres";

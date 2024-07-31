@@ -31,11 +31,11 @@ void confirmForm(
         case "INCORRECT_PARAMS":
           content = "El VIN es incorrecto verificalo e intenta de nuevo";
         default:
-          content = "Ocurrio un error, verifica el VIN e intenta de nuevo";
+          content = "Ocurrió un error, verifica el VIN e intenta de nuevo";
       }
       Dialogs.showAlert(title: "Error", content: content, context: context);
     }
   } else {
-    Dialogs.showAlert(title: "Error", content: "Campos invalidos", context: context);
+    Dialogs.showAlert(title: "Error", content: "Campos inválidos", context: context);
   }
 }
