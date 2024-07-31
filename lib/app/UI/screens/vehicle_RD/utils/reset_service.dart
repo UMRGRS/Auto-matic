@@ -12,7 +12,7 @@ Future<void> resetService(
   context.pop();
   Dialogs.showAlert(
     title: "Éxito",
-    content: "Servicio reestablecido con éxito",
+    content: "Servicio restablecido con éxito",
     context: context,
   );
 }

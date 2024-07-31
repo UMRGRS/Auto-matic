@@ -49,11 +49,11 @@ class LogInForm extends StatelessWidget {
                           onChanged: controller.onEmailChange,
                           validator: (text) {
                             if (text == null) {
-                              return "Correo electrónico invalido";
+                              return "Correo electrónico inválido";
                             }
                             return isValidEmail(text)
                                 ? null
-                                : "Correo electrónico invalido";
+                                : "Correo electrónico inválido";
                           },
                         ),
                         const SizedBox(
