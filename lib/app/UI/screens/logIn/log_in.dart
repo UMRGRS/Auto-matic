@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_meedu/meedu.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-//Document this
 final loginProvider = SimpleProvider(
       (_) => LogInController(sessionProvider.read), autoDispose: false,
 );
@@ -24,7 +23,6 @@ class LogIn extends StatelessWidget {
                 ? AppBarButton(
                     text: "Cancelar",
                     onPressed: () {
-                      //Document this
                       context.pushReplacementNamed('landing');
                     },
                     color: Config.fifthColor,
