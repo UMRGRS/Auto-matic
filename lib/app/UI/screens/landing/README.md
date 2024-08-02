@@ -11,4 +11,5 @@ onPressed: () {
   context.pushNamed('register');
 }
 ```
-El método `context.pushNamed()` agrega una nueva página al stack de navegación, es llamado en el evento `onPressed`
+El método `context.pushNamed()` agrega una nueva página al stack de navegación, es llamado en el evento `onPressed` de los
+botones *Iniciar sesión* y *Regístrate*
