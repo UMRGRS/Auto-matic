@@ -52,7 +52,7 @@ onChanged: controller.onNameChange
 
 onChanged: controller.onLastnameChange
 ```
-Las funciones `onNameChange` y `onLastnameChange` son llamados en el evento onChange de los campos de texto del formulario
+Las funciones `onNameChange` y `onLastnameChange` son llamadas en el evento onChange de los campos de texto del formulario
 para guardar la información introducida por el usuario
 
 ```dart
