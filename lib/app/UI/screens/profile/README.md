@@ -6,8 +6,7 @@ onPressed: () {
   context.pushNamed('register_car');
 },
 ```
-El método `context.pushNamed()` agrega una nueva página al stack de navegación, es llamado en el evento `onPressed` del botón
-*Añadir vehículo*
+El método `context.pushNamed()` agrega una nueva página al stack de navegación, es llamado en el evento `onPressed` del botón *Añadir vehículo*
 
 #### Manejo de sesiones
 ```dart
@@ -19,7 +18,7 @@ onPressed: () async {
 },
 ```
 En el evento `onPressed` del botón *Cerrar sesión* es una función asíncrona llama a la función `signOut()` del controlador 
-de sesión y espera hasta que se complete el proceso para llamar al método `context.go()` el cual elimina todas las páginas
+de sesión, espera hasta que se complete el proceso para llamar al método `context.go()` el cual elimina todas las páginas
 del stack y las remplaza por la indicada
 
 #### Widgets
