@@ -30,7 +30,6 @@ class Landing extends StatelessWidget {
         appBar: CustomAppBar(
           actions: [
             AppBarButton(
-              //Document this
               text: "Iniciar sesión",
               onPressed: () {
                 context.pushNamed('login');
@@ -39,7 +38,6 @@ class Landing extends StatelessWidget {
             AppBarButton(
               text: "Regístrate",
               onPressed: () {
-                //Document this
                 context.pushNamed('register');
               },
             )
