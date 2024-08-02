@@ -85,7 +85,6 @@ class LogInForm extends StatelessWidget {
                           height: 15,
                         ),
                         CupertinoButton(
-                          //Document this
                           onPressed: () => sendLogInForm(context),
                           padding: EdgeInsets.zero,
                           child: Container(
@@ -135,7 +134,6 @@ class LogInForm extends StatelessWidget {
                         SignInButton(
                           Buttons.googleDark,
                           text: "Inicia sesión con Google",
-                          //Document this
                           onPressed: () => signInWithGoogle(context),
                         ),
                         const SizedBox(
@@ -154,7 +152,6 @@ class LogInForm extends StatelessWidget {
                         kIsWeb
                             ? CupertinoButton(
                                 onPressed: () {
-                                  //Document this
                                   context.pushReplacementNamed('register');
                                 },
                                 padding: EdgeInsets.zero,
