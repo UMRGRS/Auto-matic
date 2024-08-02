@@ -8,7 +8,6 @@ class TempBattery extends StatelessWidget {
   final Stream<DocumentSnapshot> stream;
   @override
   Widget build(BuildContext context) {
-    //Document this
     return StreamBuilder(
         stream: stream,
         builder:
