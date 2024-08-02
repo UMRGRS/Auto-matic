@@ -13,14 +13,12 @@ class VehicleRD extends StatelessWidget {
           AppBarButton(
             text: "Perfil",
             onPressed: () {
-              //Document this
               context.pushReplacementNamed('profile');
             },
           ),
           AppBarButton(
               text: "Cerrar sesión",
               onPressed: () async {
-                //Document this
                 ProgressDialog.show(context);
                 await sessionProvider.read.signOut();
                 Navigator.pop(context);
