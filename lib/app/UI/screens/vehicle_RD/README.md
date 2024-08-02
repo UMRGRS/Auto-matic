@@ -147,3 +147,30 @@ la fecha del siguiente servicio, el porcentaje de días restantes hasta el sigui
 onPressed: () =>showResetServicePopUp(context, realtimeReference!),
 ```
 En el evento `onPressed` del botón *Reiniciar servicio* se llama a la función `showResetServicePopUp()` el cual muestra el cuadro de diálogo para confirmar el reinicio del servicio del vehículo
+
+Widgets/update_alias_pop_up.dart
+------
+#### Manejo de estados
+```dart
+final updateDeleteCarProvider =
+  StateProvider<UpdateStaticController, UpdateStaticState>((_) => UpdateStaticController());
+```
+La variable `updateDeleteCarProvider` es una instancia de `StateProvider` la cual es creada con base en la clase 
+`UpdateStaticController`, es creada cuando se carga el widget para manejar la actualización de los datos del vehículo
+
+#### Formularios
+```dart
+onChanged: controller.onAliasChanged
+```
+La función `onAliasChanged` es llamada en el evento onChange del campo de texto del formulario para guardar la información introducida por el usuario
+
+```dart
+onPressed: () => sendAliasUpdate(context, reference)
+```
+En el evento `onPressed` del botón *Confirmar* se llama al método `sendAliasUpdate()` el cual actualiza el apodo del vehículo en la base de datos
+
+#### Navegación
+```dart
+onPressed: () => context.pop()
+```
+En el evento `onPressed` del botón *Cancelar* se llama al metodo `context.pop()` el cual cierra el cuadro de diálogo
