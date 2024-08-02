@@ -36,7 +36,6 @@ class CreateAccount extends StatelessWidget {
                           //Document this
                           onChanged: controller.onNameChanged,
                           maxLength: 15,
-                          //Document this
                           validator: (text) {
                             if (text == null) return "Nombre inválido";
                             return isValidName(text)
@@ -47,10 +46,8 @@ class CreateAccount extends StatelessWidget {
                         const SizedBox(height: 20),
                         CustomInputField(
                           label: 'Apellido',
-                          //Document this
                           onChanged: controller.onLastNameChanged,
                           maxLength: 15,
-                          //Document this
                           validator: (text) {
                             if (text == null) return "Apellido inválido";
                             return isValidName(text)
@@ -62,9 +59,7 @@ class CreateAccount extends StatelessWidget {
                         CustomInputField(
                           label: "Correo electrónico",
                           inputType: TextInputType.emailAddress,
-                          //Document this
                           onChanged: controller.onEmailChanged,
-                          //Document this
                           validator: (text) {
                             if (text == null) {
                               return "Correo electrónico inválido";
@@ -77,10 +72,8 @@ class CreateAccount extends StatelessWidget {
                         const SizedBox(height: 20),
                         CustomInputField(
                           label: "Contraseña",
-                          //Document this
                           onChanged: controller.onPasswordChanged,
                           isPassword: true,
-                          //Document this
                           validator: (text) {
                             if (text == null) return "Contraseña inválida";
                             return isValidPassword(text);
@@ -93,11 +86,9 @@ class CreateAccount extends StatelessWidget {
                                 .select((state) => state.password));
                             return CustomInputField(
                               label: "Verifica tu contraseña",
-                              //Document this
                               onChanged: controller.onVPasswordChanged,
                               isPassword: true,
                               mode: AutovalidateMode.always,
-                              //Document this
                               validator: (text) {
                                 if (text == null) return "Contraseña inválida";
                                 if (controller.state.password != text) {
@@ -113,7 +104,6 @@ class CreateAccount extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                //Document this
                                 onPressed: () => sendRegisterForm(context),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Config.confirmGreen,
