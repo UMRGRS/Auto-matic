@@ -32,7 +32,7 @@ class Landing extends StatelessWidget {
             AppBarButton(
               //Document this
               text: "Iniciar sesión",
-              onPressed: () async {
+              onPressed: () {
                 context.pushNamed('login');
               },
             ),
