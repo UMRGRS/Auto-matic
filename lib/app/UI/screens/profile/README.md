@@ -142,4 +142,4 @@ return StreamBuilder(
   }
 );
 ```
-Al cargarse el widget se hace uso de un wiget de tipo `StreamBuilder` para mostrar en pantalla los datos de los vehículos registrados por el usuario
+Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla los datos de los vehículos registrados por el usuario
