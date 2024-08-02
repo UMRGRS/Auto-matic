@@ -1,6 +1,7 @@
 import 'package:auto_matic/app/UI/screens/vehicle_RD/utils/delete_car_documents.dart';
 import 'package:auto_matic/app/config/config.dart';
 
+//Document this
 Future<void> showDeleteCarPopUp(
     BuildContext context, Map<String, dynamic> references) {
   return showDialog(
@@ -14,11 +15,13 @@ Future<void> showDeleteCarPopUp(
       actions: [
         AppBarButton(
           text: "Confirmar",
+          //Document this
           onPressed: () => deleteCarDocuments(context, references),
           color: Config.confirmGreen,
         ),
         AppBarButton(
           text: "Cancelar",
+          //Document this
           onPressed: () => context.pop(),
           color: Config.fifthColor,
         ),

@@ -11,22 +11,25 @@ class VehicleDataCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Document this
     final Stream<DocumentSnapshot> carStream =
         GetRealTimeData.getDocumentSnapshot(references['static_reference']!);
+    //Document this
     return StreamBuilder(
-        stream: carStream,
-        builder:
-            (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return const Text("Algo salió mal, intenta más tarde.");
-          }
+      stream: carStream,
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return const Text("Algo salió mal, intenta más tarde.");
+        }
 
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator(
-              color: Config.secondColor,
-            );
-          }
-          return Builder(builder: (_) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator(
+            color: Config.secondColor,
+          );
+        }
+        return Builder(
+          builder: (_) {
             Map<String, dynamic> carData =
                 snapshot.data!.data() as Map<String, dynamic>;
             return Padding(
@@ -52,6 +55,7 @@ class VehicleDataCard extends StatelessWidget {
                         ),
                       ),
                       IconButton(
+                          //Document this
                           onPressed: () =>
                               UpdateAliasPopUp.showUpdateAliasPopUp(
                                   context, references['static_reference']!),
@@ -79,6 +83,7 @@ class VehicleDataCard extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: ImportantTextButton(
                         text: "Eliminar vehículo",
+                        //Document this
                         onPressed: () =>
                             showDeleteCarPopUp(context, references),
                         iconPath: "assets/pages/vehicle_RD/icons/delete.svg"),
@@ -86,7 +91,9 @@ class VehicleDataCard extends StatelessWidget {
                 ],
               ),
             );
-          });
-        });
+          },
+        );
+      },
+    );
   }
 }

@@ -11,6 +11,7 @@ class ServicesCard extends StatelessWidget {
   final DocumentReference? realtimeReference;
   @override
   Widget build(BuildContext context) {
+    //Document this
     return StreamBuilder(
       stream: stream,
       builder:
@@ -66,6 +67,7 @@ class ServicesCard extends StatelessWidget {
                           onGenerateLabels: () {
                             return <LinearAxisLabel>[
                               LinearAxisLabel(
+                                //Document this
                                   text:
                                       "${ConvertDate.getPer(data['lastServiceDate'])}%",
                                   value: 50),
@@ -83,6 +85,7 @@ class ServicesCard extends StatelessWidget {
                           ),
                           barPointers: <LinearBarPointer>[
                             LinearBarPointer(
+                              //Document this
                                 value:
                                     ConvertDate.getPer(data['lastServiceDate']),
                                 thickness: 30,
@@ -94,6 +97,7 @@ class ServicesCard extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
+                      //Document this
                       "Fecha del último servicio: ${ConvertDate.getFormatedDate(data['lastServiceDate'])}",
                       style: const TextStyle(
                           fontSize: 18,
@@ -104,6 +108,7 @@ class ServicesCard extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
+                      //Document this
                       "Fecha del siguiente servicio: ${ConvertDate.getNextServiceDate(data['lastServiceDate'])}",
                       style: const TextStyle(
                           fontSize: 18,
@@ -114,6 +119,7 @@ class ServicesCard extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
+                      //Document this
                       "Restante: ${ConvertDate.daysBetween(data['lastServiceDate']).toString()} dias",
                       style: const TextStyle(
                           fontSize: 18,
@@ -125,6 +131,7 @@ class ServicesCard extends StatelessWidget {
                     ),
                     ImportantTextButton(
                       text: "Reiniciar servicio",
+                      //Document this
                       onPressed: () =>
                           showResetServicePopUp(context, realtimeReference!),
                       iconPath: 'assets/pages/vehicle_RD/icons/reset.svg',

@@ -4,6 +4,7 @@ import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter_meedu/meedu.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+//Document this
 final registerProvider = StateProvider<RegisterController, RegisterState>(
     (_) => RegisterController());
 
@@ -20,6 +21,7 @@ class Register extends StatelessWidget {
             AppBarButton(
               text: "Cancelar",
               onPressed: () {
+                //Document this
                 context.pushReplacementNamed('landing');
               },
               color: Config.fifthColor,

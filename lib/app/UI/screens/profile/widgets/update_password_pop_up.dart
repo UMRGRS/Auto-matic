@@ -61,12 +61,13 @@ class UpdatePasswordPopUp {
         actions: [
           AppBarButton(
             text: "Confirmar",
-            //Change to update password
+            //Document this
             onPressed: () => updatePassword(context),
             color: Config.confirmGreen,
           ),
           AppBarButton(
             text: "Cancelar",
+            //Document this
             onPressed: () => context.pop(),
             color: Config.fifthColor,
           ),

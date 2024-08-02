@@ -14,6 +14,7 @@ class Profile extends StatelessWidget {
           AppBarButton(
             text: "Cerrar sesión",
             onPressed: () async {
+              //Document this
               ProgressDialog.show(context);
               await sessionProvider.read.signOut();
               Navigator.pop(context);
@@ -69,7 +70,7 @@ class Profile extends StatelessWidget {
       bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
-
+  //Document this
   Widget showAddCar(BuildContext context) {
     return kIsWeb
         ? Expanded(
@@ -78,6 +79,7 @@ class Profile extends StatelessWidget {
               child: ImportantTextButton(
                   text: "Añadir vehículo",
                   onPressed: () {
+                    //Document this
                     context.pushNamed('register_car');
                   },
                   iconPath: "assets/pages/profile/icons/add.svg"),

@@ -57,6 +57,7 @@ class _UserCardState extends State<UserCard> {
                         leadingPath: "assets/pages/profile/icons/person.svg",
                         trailing: IconButton(
                           onPressed: () async {
+                            //Document this
                             await UpdateNamePopUp.showUpdateNamePopUp(context);
                             setState(() {});
                           },
@@ -80,6 +81,7 @@ class _UserCardState extends State<UserCard> {
                       ImportantTextButton(
                         iconPath: "assets/pages/profile/icons/edit.svg",
                         text: "Cambiar contraseña",
+                        //Document this
                         onPressed: () async =>
                             await UpdatePasswordPopUp.showUpdatePasswordPopUp(
                                 context),
