@@ -72,3 +72,46 @@ onPressed: () async => await showFailureCodeDefinition(context, failureCodes[ind
 ```
 En el evento `onPressed` del botón *Ver definición* se llama al función asíncrona `showFailureCodeDefinition()` la cual 
 muestra un cuadro de diálogo con la información relevante del código de falla seleccionado
+
+Widgets/reset_service_pop_up.dart
+------
+#### Formularios
+```dart
+onPressed: () => resetService(context, reference),
+```
+En el evento `onPressed` del botón *Confirmar* se llama al método `resetService()` el cual actualiza la base de datos para
+reflejar que se acaba de realizar servicio al automóvil
+
+#### Navegación
+```dart
+onPressed: () => context.pop()
+```
+En el evento `onPressed` del botón *Cancelar* se llama al metodo `context.pop()` el cual cierra el cuadro de diálogo
+
+Widgets/RPM_KPM.dart
+------
+#### Widgets
+```dart
+return StreamBuilder(
+  stream: stream,
+  builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    /..../
+  }
+);
+```
+Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla la información sobre la
+velocidad y revoluciones por minuto del vehículo
+
+Widgets/temp_battery.dart
+------
+#### Widgets
+```dart
+return StreamBuilder(
+  stream: stream,
+  builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    /..../
+  }
+);
+```
+Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla la información sobre el
+estado de la batería y la temperatura del refrigerante del motor
