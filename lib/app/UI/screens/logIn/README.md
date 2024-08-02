@@ -6,8 +6,7 @@ final loginProvider = SimpleProvider(
       (_) => LogInController(sessionProvider.read), autoDispose: false,
 );
 ```
-La variable `loginProvider` es una instancia de `SimpleProvider` la cual es creada con base en la clase `LogInController`[^1],
-es usada para manejar el inicio de sesión, lee controlador de sesiones para cambiar su estado cuando sea necesario
+La variable `loginProvider` es una instancia de `SimpleProvider` la cual es creada con base en la clase `LogInController`[^1], cuando se carga la página es usada para manejar el inicio de sesión, lee controlador de sesiones para cambiar su estado cuando sea necesario
 
 #### Navegación
 ```dart
