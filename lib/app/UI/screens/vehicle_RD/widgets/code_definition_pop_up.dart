@@ -2,7 +2,6 @@ import 'package:auto_matic/app/UI/global_widgets/dialogs/progress_dialog.dart';
 import 'package:auto_matic/app/config/config.dart';
 import 'package:auto_matic/app/data/data_source/remote/failure_codes_api_call.dart';
 
-//Document this
 Future<void> showFailureCodeDefinition(
     BuildContext context, String code) async {
   ProgressDialog.show(context);
@@ -20,7 +19,6 @@ Future<void> showFailureCodeDefinition(
             children: [
               const Text("Se produjo un error, intenta más tarde."),
               CupertinoButton(
-                //Document this
                 onPressed: () => context.pop(),
                 child: Container(
                   width: 35,
@@ -96,7 +94,6 @@ Future<void> showFailureCodeDefinition(
               Container(
                 alignment: Alignment.center,
                 child: CupertinoButton(
-                  //Document this
                   onPressed: () => context.pop(),
                   child: Container(
                     width: 35,
