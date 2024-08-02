@@ -56,11 +56,13 @@ class UpdateNamePopUp {
         actions: [
           AppBarButton(
             text: "Confirmar",
+            //Document this
             onPressed: () => updateDisplayName(context),
             color: Config.confirmGreen,
           ),
           AppBarButton(
             text: "Cancelar",
+            //Document this
             onPressed: () => context.pop(),
             color: Config.fifthColor,
           ),

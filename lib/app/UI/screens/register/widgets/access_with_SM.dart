@@ -11,15 +11,18 @@ class AccessWithSM extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
-          const Text("Regístrate con",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              )),
+          const Text(
+            "Regístrate con",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           const SizedBox(height: 8),
           SignInButton(
             Buttons.googleDark,
             text: "Regístrate con Google",
+            //Document this
             onPressed: () => signInWithGoogle(context),
           ),
           const SizedBox(
@@ -31,6 +34,7 @@ class AccessWithSM extends StatelessWidget {
           ),
           CupertinoButton(
             onPressed: () {
+              //Document this
               context.pushReplacementNamed('login');
             },
             padding: EdgeInsets.zero,

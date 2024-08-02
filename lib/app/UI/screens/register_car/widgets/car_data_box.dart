@@ -90,6 +90,7 @@ class CarDataBox extends StatelessWidget {
             Row(
               children: [
                 ElevatedButton(
+                  //Document this
                   onPressed: () => confirmCarData(context),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Config.confirmGreen,
@@ -107,6 +108,7 @@ class CarDataBox extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    //Document this
                     changeVisibility();
                     updateTimeLine(1.5);
                   },

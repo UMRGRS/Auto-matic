@@ -12,7 +12,6 @@ class TimeLine extends StatefulWidget {
 class _TimeLineState extends State<TimeLine> {
   @override
   Widget build(BuildContext context) {
-    Responsive responsive = Responsive.of(context);
     return SfLinearGauge(
       showTicks: false,
       showLabels: false,
@@ -23,7 +22,6 @@ class _TimeLineState extends State<TimeLine> {
           const LinearAxisTrackStyle(color: Colors.grey, thickness: 10),
       barPointers: <LinearBarPointer>[
         LinearBarPointer(
-          //Modify this to change the value
           value: widget.value,
           color: Config.secondColor,
           enableAnimation: false,
