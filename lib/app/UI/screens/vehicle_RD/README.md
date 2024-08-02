@@ -115,3 +115,35 @@ return StreamBuilder(
 ```
 Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla la información sobre el
 estado de la batería y la temperatura del refrigerante del motor
+
+Widgets/services_card.dart
+------
+#### Widgets
+```dart
+return StreamBuilder(
+  stream: stream,
+  builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    /..../
+  }
+);
+```
+Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla la información sobre el
+estado del servicio del vehículo
+
+```dart
+ConvertDate.getPer(data['lastServiceDate'])
+
+ConvertDate.getFormatedDate(data['lastServiceDate'])
+
+ConvertDate.getNextServiceDate(data['lastServiceDate'])
+
+ConvertDate.daysBetween(data['lastServiceDate']).toString()
+```
+Al cargarse el widget se hace uso de los metodos dentro de la clase `ConvertDate` para mostrar la fecha el último servicio, 
+la fecha del siguiente servicio, el porcentaje de días restantes hasta el siguiente servicio y los días restantes
+
+#### Navegación
+```dart
+onPressed: () =>showResetServicePopUp(context, realtimeReference!),
+```
+En el evento `onPressed` del botón *Reiniciar servicio* se llama a la función `showResetServicePopUp()` el cual muestra el cuadro de diálogo para confirmar el reinicio del servicio del vehículo
