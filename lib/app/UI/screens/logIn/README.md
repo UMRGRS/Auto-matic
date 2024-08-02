@@ -20,6 +20,13 @@ Widgets/log_in_form.dart
 ------
 #### Formularios
 ```dart
+onChanged: controller.onEmailChanged
+
+onChanged: controller.onPasswordChanged
+```
+Las funciones `onEmailChanged` y `onPasswordChanged` son llamadas en el evento onChange de los campos de texto del formulario para guardar la información introducida por el usuario
+
+```dart
 onPressed: () => sendLogInForm(context)
 ```
 En el evento `onPressed` del botón *Iniciar sesión* se llama a la función `sendLogInForm()` la cual valida el formulario de inicio de sesión y en caso de ser válido redirige al usuario a la página de perfil
