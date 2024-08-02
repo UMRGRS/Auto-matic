@@ -50,10 +50,8 @@ class RegisterCarForm extends StatelessWidget {
           ),
           CustomInputField(
             label: "Código único (16 caracteres)",
-            //Document this
             onChanged: controller.onUniqueCodeChanged,
             maxLength: 16,
-            //Document this
             validator: (text) {
               if (text == null) {
                 return "El código no puede estar vacío";
@@ -93,11 +91,9 @@ class RegisterCarForm extends StatelessWidget {
             height: 5,
           ),
           CustomInputField(
-            //Document this
             onChanged: controller.onCarVINChanged,
             label: "VIN del vehículo (17 caracteres)",
             maxLength: 17,
-            //Document this
             validator: (text) {
               if (text == null) {
                 return "El VIN no puede estar vacío";
@@ -113,7 +109,6 @@ class RegisterCarForm extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              //Document this
               confirmForm(
                 context,
                 changeVisibility: changeVisibility,
