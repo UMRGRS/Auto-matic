@@ -22,7 +22,6 @@ class AccessWithSM extends StatelessWidget {
           SignInButton(
             Buttons.googleDark,
             text: "Regístrate con Google",
-            //Document this
             onPressed: () => signInWithGoogle(context),
           ),
           const SizedBox(
@@ -34,7 +33,6 @@ class AccessWithSM extends StatelessWidget {
           ),
           CupertinoButton(
             onPressed: () {
-              //Document this
               context.pushReplacementNamed('login');
             },
             padding: EdgeInsets.zero,
