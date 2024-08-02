@@ -1,4 +1,4 @@
-Login
+Log_in.dart
 ------
 #### Manejo de estados
 ```dart
@@ -14,4 +14,25 @@ onPressed: () {
   context.pushReplacementNamed('landing');
 },
 ```
-El método `context.pushNamed()` agrega una nueva página al stack de navegación, es llamado en el evento `onPressed`
+El método `context.pushReplacementNamed()` agrega una nueva página al stack de navegación y elimina la actual, es llamado en el evento `onPressed`
+
+Widgets/log_in_form.dart
+------
+#### Formularios
+```dart
+onPressed: () => sendLogInForm(context)
+```
+En el evento `onPressed` del botón *Iniciar sesión* se llama a la función `sendLogInForm()` la cual valida el formulario de inicio de sesión y en caso de ser válido redirige al usuario a la página de perfil
+
+```dart
+onPressed: () => signInWithGoogle(context)
+```
+En el evento `onPressed` del botón *Inicia sesión con Google* se llama a la función `signInWithGoogle()` la cual redirige al proceso de incio de sesión con Google y en caso de ser exitoso redirige al usuario a la página de perfil
+
+#### Navegación
+```dart
+onPressed: () {
+  context.pushReplacementNamed('register');
+},
+```
+El método `context.pushReplacementNamed()` agrega una nueva página al stack de navegación y elimina la actual, es llamado en el evento `onPressed`
