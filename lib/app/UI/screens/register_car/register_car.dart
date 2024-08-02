@@ -3,7 +3,6 @@ import 'package:auto_matic/app/UI/screens/register_car/controller/register_car_s
 import 'package:auto_matic/app/config/config.dart';
 import 'package:flutter_meedu/flutter_meedu.dart';
 
-//Document this
 final registerCarProvider =
     StateProvider<RegisterCarController, RegisterCarState>(
         (_) => RegisterCarController());
@@ -20,12 +19,10 @@ class _RegisterCarState extends State<RegisterCar> {
 
   @override
   Widget build(BuildContext context) {
-    //Document this
     void setTimeLineValue(double val) {
       value = val;
       setState(() {});
     }
-    //Document this
     void setVisibility() {
       visible = !visible;
       setState(() {});
@@ -37,7 +34,6 @@ class _RegisterCarState extends State<RegisterCar> {
             AppBarButton(
               text: "Cancelar",
               onPressed: () {
-                //Document this
                 context.pushReplacementNamed('profile');
               },
               color: Config.fifthColor,
@@ -45,7 +41,6 @@ class _RegisterCarState extends State<RegisterCar> {
           ],
         ),
         body: GestureDetector(
-          //Document this
           onTap: () => FocusScope.of(context).unfocus(),
           child: Container(
             padding: const EdgeInsets.all(16),
