@@ -11,8 +11,8 @@ Future<FailureCodesApiResponse> getFailureCodeData(String code) async {
   Uri url = Uri.parse('https://car-code.p.rapidapi.com/obd2/$code');
 
   Map<String, String> headers = {
-    "x-rapidapi-host": "car-code.p.rapidapi.com",
-    "x-rapidapi-key": "64ab7c3ddfmsha48c0f4a2de946fp16fe8fjsnda0cc4a66ed4",
+    "x-rapidapi-host": "",
+    "x-rapidapi-key": "",
   };
 
   try {
