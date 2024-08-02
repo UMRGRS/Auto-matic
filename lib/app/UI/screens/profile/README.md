@@ -81,7 +81,7 @@ La variable `updatePasswordProvider` es una instancia de `StateProvider` la cual
 ```dart
 onChanged: controller.onPasswordChange
 
- onChanged: controller.onVPasswordChange
+onChanged: controller.onVPasswordChange
 ```
 Las funciones `onPasswordChange` y `onVPasswordChange` son llamados en el evento onChange de los campos de texto del formulario para guardar la información introducida por el usuario
 
