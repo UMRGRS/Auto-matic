@@ -62,3 +62,25 @@ onPressed: () {
 ```
 En el evento `onPressed` del botón *Corregir VIN* se llama a las funciones `changeVisibility()` y `updateTimeLine()` 
 las cuales actualizan la interfaz para mostrar de nuevo el formulario de registro de vehículos
+
+Wigets/register_car_form.dart
+------
+#### Formularios
+```dart
+onChanged: controller.onUniqueCodeChanged
+
+onChanged: controller.onCarVINChanged
+```
+Las funciones `onUniqueCodeChanged` y `onCarVINChanged` son llamadas en el evento onChange de los campos de texto del formulario para guardar la información introducida por el usuario
+
+```dart
+onPressed: () {
+    confirmForm(
+        context,
+        changeVisibility: changeVisibility,
+        updateTimeLine: updateTimeLine,
+    );
+},
+```
+En el evento `onPressed` del botón *Continuar* se llama a la función `confirmForm()` la cual valida el formulario de
+registro de vehículos y activa las funciones `changeVisibility()` y `updateTimeLine()` para actualizar la interfaz
