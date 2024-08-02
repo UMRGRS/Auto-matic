@@ -9,7 +9,6 @@ class RPMKPM extends StatelessWidget {
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 850;
-    //Document this
     return StreamBuilder(
       stream: stream,
       builder:
