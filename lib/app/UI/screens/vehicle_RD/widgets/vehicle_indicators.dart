@@ -9,7 +9,6 @@ class VehicleIndicators extends StatelessWidget {
   Widget build(BuildContext context) {
     Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 600;
-    //Document this
     final Stream<DocumentSnapshot> stream =
         GetRealTimeData.getDocumentSnapshot(realtimeReference!);
     return Padding(
@@ -27,7 +26,6 @@ class VehicleIndicators extends StatelessWidget {
               ),
               ImportantTextButton(
                 text: "Datos del vehículo",
-                //Document this
                 onPressed: () => Scaffold.of(context).openDrawer(),
                 iconPath: "assets/pages/vehicle_RD/icons/car.svg",
               )
