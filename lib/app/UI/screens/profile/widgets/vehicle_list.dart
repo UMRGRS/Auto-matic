@@ -10,12 +10,10 @@ class VehicleList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Document this -> getUserCars
     final Stream<QuerySnapshot> carsStream =
         GetStaticDataController.getUserCars();
     final Responsive responsive = Responsive.of(context);
     bool isScreenWide = responsive.width >= 550;
-    //Document this
     return StreamBuilder(
         stream: carsStream,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
