@@ -58,7 +58,6 @@ class VehicleList extends StatelessWidget {
                   return CupertinoButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      //Document this
                       context.pushReplacementNamed(
                         'vehicle-real-time',
                         extra: {
