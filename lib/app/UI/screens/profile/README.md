@@ -35,7 +35,7 @@ Widget showAddCar(BuildContext context) {
 La función `showAddCar` se llama al cargarse la página, y muestra el botón *Añadir vehículo* dependiendo de la plataforma en
 que nos encontremos
 
-Update_name_pop_up.dart
+Widgets/update_name_pop_up.dart
 ------
 #### Manejo de estados
 ```dart
