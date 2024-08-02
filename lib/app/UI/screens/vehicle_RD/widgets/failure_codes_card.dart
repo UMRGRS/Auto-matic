@@ -7,7 +7,6 @@ class FailureCodesCard extends StatelessWidget {
   final Stream<DocumentSnapshot> stream;
   @override
   Widget build(BuildContext context) {
-    //Document this
     return StreamBuilder(
       stream: stream,
       builder:
@@ -50,7 +49,6 @@ class FailureCodesCard extends StatelessWidget {
       },
     );
   }
-//Document this
   Widget showFailureCodesList(List<dynamic> failureCodes) {
     if (failureCodes.isEmpty) {
       return ListView.builder(
@@ -76,9 +74,7 @@ class FailureCodesCard extends StatelessWidget {
               title: Text(failureCodes[index]),
               trailing: IconButton(
                 icon: const Icon(Icons.search),
-                //Add function to see failure code definition
                 onPressed: () async => await
-                //Document this
                     showFailureCodeDefinition(context, failureCodes[index]),
               ),
             ),
