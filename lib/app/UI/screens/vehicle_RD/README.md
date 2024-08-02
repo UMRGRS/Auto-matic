@@ -204,3 +204,17 @@ En el evento `onPressed` del botón *Editar apodo* se llama al metodo `showUpdat
 onPressed: () => showDeleteCarPopUp(context, references)
 ```
 En el evento `onPressed` del botón *Eliminar vehículo* se llama al metodo `showUpdateAliasPopUp()` el cual muestra el cuadro de dialogo para confirmar la eliminación de los datos del vehículo
+
+Widgets/vehicle_indicators.dart
+------
+#### Widgets
+```dart
+final Stream<DocumentSnapshot> stream = GetRealTimeData.getDocumentSnapshot(realtimeReference!);
+```
+Al cargarse el widget se llama al metodo `getDocumentSnapshot()` para obtener el stream de datos sobre un vehículo registrado por el usuario
+
+#### Navegación
+```dart
+onPressed: () => Scaffold.of(context).openDrawer(),
+```
+En el evento `onPressed` del botón *Datos del vehículo* se llama al metodo `openDrawer()` el cual abre un drawer el cual contiene los datos del vehículo
