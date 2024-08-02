@@ -4,7 +4,7 @@ import 'package:auto_matic/app/domain/responses/api_vin_response.dart';
 import 'package:http/http.dart' as http;
 
 Future<ApiVinResponse> getVinData(String vin) async {
-  const String apiKey = 'ZrQEPSkKZ3VpbHR5c3BhcmsxMjM1QGdtYWlsLmNvbQ==';
+  const String apiKey = '';
 
   http.Client client = http.Client();
   http.Response data;
