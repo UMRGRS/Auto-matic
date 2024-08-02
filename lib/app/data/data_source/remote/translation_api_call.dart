@@ -4,7 +4,7 @@ import 'package:google_cloud_translation/google_cloud_translation.dart';
 Future<TranslationApiResponse> translate(String text) async{
   String? translatedText, error;
   Translation _translation = Translation(
-    apiKey: 'AIzaSyCnIkzU_80jd2V8FH0bd_-l19U1hWEFcvs',
+    apiKey: '',
     onError: (_){
       translatedText = null;
       error = "Hubo un error";
