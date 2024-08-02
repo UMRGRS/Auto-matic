@@ -174,3 +174,33 @@ En el evento `onPressed` del botón *Confirmar* se llama al método `sendAliasUp
 onPressed: () => context.pop()
 ```
 En el evento `onPressed` del botón *Cancelar* se llama al metodo `context.pop()` el cual cierra el cuadro de diálogo
+
+Widgets/vehicle_data_card.dart
+------
+#### Widgets
+```dart
+final Stream<DocumentSnapshot> carStream =
+    GetRealTimeData.getDocumentSnapshot(references['static_reference']!);
+```
+Al cargarse el widget se llama al metodo `getDocumentSnapshot()` para obtener el stream de datos sobre un vehículo registrado por el usuario
+
+```dart
+return StreamBuilder(
+  stream: carStream,
+  builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    /..../
+  }
+);
+```
+Al cargarse el widget se hace uso de un widget de tipo `StreamBuilder` para mostrar en pantalla la información principal sobre el vehículo
+
+#### Navegación
+```dart
+onPressed: () => UpdateAliasPopUp.showUpdateAliasPopUp(context, references['static_reference']!),
+```
+En el evento `onPressed` del botón *Editar apodo* se llama al metodo `showUpdateAliasPopUp()` el cual muestra el cuadro de dialogo para actualizazr el apodo del vehículo
+
+```dart
+onPressed: () => showDeleteCarPopUp(context, references)
+```
+En el evento `onPressed` del botón *Eliminar vehículo* se llama al metodo `showUpdateAliasPopUp()` el cual muestra el cuadro de dialogo para confirmar la eliminación de los datos del vehículo
